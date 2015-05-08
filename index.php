@@ -11,4 +11,5 @@
 		echo Session::flash('success');
 	}
 
+	echo "<p style='font-family: Calibri;'>Na maika ti potkata.</p> <!-- Za niki -->";
 ?>

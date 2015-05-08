@@ -48,7 +48,7 @@
 						));
 
 					Session::flash('success', 'You registered successfully and can login successfully.');
-					header('Location: index.php');					
+					Redirect::to('index.php');					
 				} 
 				catch (Exception $e)
 				{
