@@ -3,8 +3,26 @@
 <html>
 	<head>
 		<title>Official HackTUES Website</title>
-		<link rel="stylesheet" href="style.css">
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="plugins/FlipClock/compiled/flipclock.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="plugins/FlipClock/compiled/flipclock.js"></script>
+		<script type="text/javascript">
+					var clock;
+		
+					$(document).ready(function() {
+		
+						var currentDate = new Date();
+		
+						var futureDate  = new Date(2015, 5, 26, 8, 0, 0, 0);
+						var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+		
+						clock = $('.clock').FlipClock(diff, {
+							clockFace: 'DailyCounter',
+							countdown: true
+						});
+					});
+				</script>
 	</head>
 	
 	<body>
@@ -42,6 +60,15 @@
 					</li>
 				</ul>
 			</nav>
+			
+			<section class="timer">
+				<h1>
+					LOSING SOCIAL STATUS IN:
+				</h1>
+				<article>
+					<div class="clock"></div>
+				</article>
+			</section>
 			
 			<footer>
 				<p>Хакатон @ Технологично училище „Електронни системи” към Технически университет – София</p>
