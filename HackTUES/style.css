@@ -9,8 +9,7 @@ body, div, header, img, nav, ul, li, input, footer, section, h1, article, p {
 }
 
 body {
-	background-image: url("images/test.jpg");
-	background-repeat: no-repeat;
+	background-image: url("images/footer_lodyas.png");
 }
 
 #wrapper {
@@ -19,7 +18,7 @@ body {
 }
 
 #wrapper header img {
-	width: 60%;
+	width: 50%;
 }
 
 #wrapper nav ul li {
