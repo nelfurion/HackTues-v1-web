@@ -1,0 +1,19 @@
+body {
+	background-color: transparent;
+	text-align: center;
+}
+
+body section h1 {
+	color: white;
+}
+
+body section article {
+	color: white;
+}
+
+#login-form {
+	width: 700px;
+	height: 300px;
+	border: 3px solid white;
+	border-radius: 15px;
+}
