@@ -89,6 +89,8 @@ body {
     margin: auto;
 }
 .iframe-rwd iframe {
+	width: 30em;
+	height: 80em;
 	position: absolute;
 	top: 0;
 	left: 0;
