@@ -47,7 +47,7 @@
 							'level' => 1
 						));
 
-					Session::flash('success', 'You registered successfully and can login successfully.');
+					Session::flash('home', 'You registered successfully and can now login.');
 					Redirect::to('index.php');					
 				} 
 				catch (Exception $e)

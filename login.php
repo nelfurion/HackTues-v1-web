@@ -18,7 +18,7 @@
 
 				if ($login)
 				{
-					echo 'Success';
+					Redirect::to('index.php');
 				}
 				else 
 				{

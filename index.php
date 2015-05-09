@@ -6,10 +6,23 @@
 
 	require_once 'core/user/init.php';
 
-	if (Session::exists('success'))
+	if (Session::exists('home'))
 	{
-		echo Session::flash('success');
+		echo Session::flash('home');
 	}
 
-	echo "<p style='font-family: Calibri;'>Na maika ti potkata.</p> <!-- Za niki -->";
-?>
+	$user = new User();
+	if ($user->isLoggedIn())
+	{
+	?>
+		<p>Username: <a href="#"><?php echo escape($user->getData()->username); ?></a></p>
+
+		<ul>
+			<li><a href="logout.php">Log out</a></li>
+		</ul>
+	<?php
+	} 
+	else 
+	{
+		echo '<p>You need to <a href="login.php">log</a> in or <a href="register.php">register</a>.';
+	}

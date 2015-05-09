@@ -74,6 +74,11 @@
 			return false;
 		}
 
+		public function logout()
+		{
+			Session::delete($this->_sessionName);
+		}
+
 		public function getData()
 		{
 			return $this->_data;
