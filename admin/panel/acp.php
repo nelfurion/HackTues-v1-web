@@ -40,6 +40,16 @@
 		#top-nav li a:active {
 			background-color: #797A78;
 		}
+		#content {
+			position: relative;
+			left: 115px;
+		}
+		#content #areaHolder {
+			height: 200px;
+			min-width: 300px;
+			max-width: 50%;
+			overflow: scroll;
+		}
 	</style>
 </head>
 <body>
@@ -89,6 +99,7 @@
 		<!-- 
 			AJAX request
 		-->
+
 	</section>
 	<script type="text/javascript">
 		//add onclickevent to the menu
@@ -136,11 +147,13 @@
 			};
 
 			//opens the request, with unique value, so it is not cached
-			xmlhttp.open("POST",'scripts/content-handler.php' + "?t=" + Math.random() + "&data=" + requested, true);
+			xmlhttp.open("POST",'views/' + requested + '.php' + "?t=" + Math.random(), true);
 			xmlhttp.send();
 		}
 
 		
 	</script>
-</body>
+	<script type="text/javascript" src="scripts/nicedit.js"></script>
+	<script type="text/javascript" src="scripts/addnews.js"></script>
+	</body>
 </html>
