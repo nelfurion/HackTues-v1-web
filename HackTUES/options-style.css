@@ -1,6 +1,12 @@
 body {
 	background-color: transparent;
 	text-align: center;
+	font-family: railway;
+}
+
+@font-face {
+    font-family: railway;
+    src: url(fonts/Raleway-Thin.ttf);
 }
 
 body section h1 {
