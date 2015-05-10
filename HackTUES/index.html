@@ -5,24 +5,10 @@
 		<title>Official HackTUES Homepage</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="plugins/FlipClock/compiled/flipclock.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="plugins/FlipClock/compiled/flipclock.js"></script>
-		<script type="text/javascript">
-					var clock;
-		
-					$(document).ready(function() {
-		
-						var currentDate = new Date();
-		
-						var futureDate  = new Date(2015, 5, 26, 8, 0, 0, 0);
-						var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-		
-						clock = $('.clock').FlipClock(diff, {
-							clockFace: 'DailyCounter',
-							countdown: true
-						});
-					});
-		</script>
+		<script src="date-calculator.js"></script>
+		<script src="input-handler.js"></script>
 	</head>
 	
 	<body>
@@ -34,29 +20,29 @@
 			<nav>
 				<ul>
 					<li>
-						<input type="button" value="Участвай!">
+						<input id="participate" type="button" value="Участвай!" onclick="changeFrame('participate')">
 					</li>
 					<li>
-						<input type="button" value="Новини">
+						<input id="news" type="button" value="Новини" onclick="changeFrame('news')">
 					</li>
 					<li>
-						<input type="button" value="Програма">
+						<input id="agenda" type="button" value="Програма" onclick="changeFrame('agenda')">
 					</li>
 					<li>
-						<input type="button" value="Правила">
+						<input id="rules" type="button" value="Правила" onclick="changeFrame('rules')">
 					</li>
 					<br>
 					<li>
-						<input type="button" value="Награди">
+						<input id="prizes" type="button" value="Награди" onclick="changeFrame('prizes')">
 					</li>
 					<li>
-						<input type="button" value="Спонсори">
+						<input id="sponsors" type="button" value="Спонсори" onclick="changeFrame('sponsors')">
 					</li>
 					<li>
-						<input type="button" value="ЧЗВ">
+						<input id="faq" type="button" value="ЧЗВ" onclick="changeFrame('faq')">
 					</li>
 					<li>
-						<input type="button" value="Екип">
+						<input id="team" type="button" value="Екип" onclick="changeFrame('team')">
 					</li>
 				</ul>
 			</nav>
@@ -71,8 +57,8 @@
 			</section>
 			
 			<section>
-					 <div class="iframe-rwd">
-        				<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="participate.html"></iframe>
+					 <div id="hi" class="iframe-rwd">
+        				<iframe id="page-field" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="news.html"></iframe>
     				</div>
 			</section>
 			
