@@ -27,17 +27,29 @@
 					{
 						switch ($rule)
 						{
-							case 'min':
+							case 'min_len':
 								if (strlen($value) < $rule_value)
 								{
 									$this->addError("{$item} must be a minimum of {$rule_value} characters.");
 								}
 								break;
-							case 'max':
+							case 'max_len':
 								if (strlen($value) > $rule_value)
 								{
 									$this->addError("{$item} must be a maximum of {$rule_value} characters.");
 								}							
+								break;
+							case 'min_num':
+								if ($value < $rule_value)
+								{
+									$this->addError("{$item} must be higher than {$rule_value}.");
+								}
+								break;
+							case 'max_num':
+								if ($value > $rule_value)
+								{
+									$this->addError("{$item} must be lower than {$rule_value}.");									
+								}
 								break;
 							case 'matches':
 								if ($value != $source[$rule_value])

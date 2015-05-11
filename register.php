@@ -7,27 +7,42 @@
 		if (Token::check(Input::get('token')))
 		{
 			$validate = new Validate();
-			// TODO: Modify the database values here.
 			$validation = $validate->check($_POST, array(
 				'username' => array(
 					'required' => true,
-					'min' => 2,
-					'max' => 20,
+					'min_len' => 2,
+					'max_len' => 20,
 					'unique' => 'users'
 				),
 				'password' => array(
 					'required' => true,
-					'min' => 6
+					'min_len' => 6
 				),
-				'password_again' => array(
+				'password-again' => array(
 					'required' => true,
 					'matches' => 'password'
 				),
-				'name' => array(
+				'first-name' => array(
 					'required' => true,
-					'min' => 2,
-					'max' => 50
+					'min_len' => 2,
+					'max_len' => 50
+				),
+				'last-name' => array(
+					'required' => true,
+					'min_len' => 2,
+					'max_len' => 50
+				),
+				'email' => array(
+					'required' => true,
+					'min_len' => 2,
+					'max_len' => 50
+				),
+				'class-number' => array(
+					'require' => true,
+					'min_num' => 8,
+					'max_num' => 12
 				)
+
 			));
 
 			if ($validation->isPassed())
@@ -42,7 +57,10 @@
 							'username' => Input::get('username'),
 							'password' => Hash::make(Input::get('password'), $salt),
 							'salt' => $salt,
-							'first_name' => Input::get('name'),
+							'first-name' => Input::get('first-name'),
+							'last-name' => Input::get('last-name'),
+							'email' => Input::get('email'),
+							'class' => Input::get('class-number') . Input::get('class-letter'),					
 							'timestamp' => date('Y-m-d H:i:s'),
 							'level' => 1
 						));
@@ -69,23 +87,44 @@
 
 <form action="" method="post">
 	<div class="field">
-		<label for="username">Username: </label>
+		<label for="first-name">Име: </label>
+		<input type="text" name="first-name" id="first-name" value="<?php echo escape(Input::get('first-name')); ?>" autocomplete="off">
+	</div>
+
+	<div class="field">
+		<label for="last-name">Фамилия: </label>
+		<input type="text" name="last-name" id="last-name" value="<?php echo escape(Input::get('last-name')); ?>" autocomplete="off">
+	</div>
+
+	<div class="field">
+		<label for="class-number">Клас: </label>
+		<input type="number" name="class-number" min="8" max="12" id="class-number" value="<?php echo escape(Input::get('class-number')); ?>" autocomplete="off">
+		<select name="class-letter">
+		  <option value="A">А</option>
+		  <option value="B">Б</option>
+		  <option value="V">В</option>
+		  <option value="G">Г</option>
+		</select>		
+	</div>
+
+	<div class="field">
+		<label for="email">Ел. поща: </label>
+		<input type="email" name="email" id="email" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
+	</div>
+
+	<div class="field">
+		<label for="username">Потребител: </label>
 		<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
 	</div>
 
 	<div class="field">
-		<label for="password">Password: </label>
+		<label for="password">Парола: </label>
 		<input type="password" name="password" id="password">
 	</div>
 
 	<div class="field">
-		<label for="password_again">Confirm password: </label>
-		<input type="password" name="password_again" id="password_again">		
-	</div>
-
-	<div class="field">
-		<label for="name">Name: </label>
-		<input type="text" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>">
+		<label for="password-again">Потвърди парола: </label>
+		<input type="password" name="password-again" id="password_again">		
 	</div>
 
 	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
