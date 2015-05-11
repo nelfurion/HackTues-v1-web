@@ -66,7 +66,7 @@
 			</li>
 		</ul>
 		<ul id="left-nav">
-			<li onclick = "makeRequest('news');">
+			<li onclick="makeRequest('views/news.php')">
 				<a href="#">News</a>
 			</li>
 			<li>
@@ -101,7 +101,9 @@
 		-->
 
 	</section>
+	<script type="text/javascript" src="scripts/ajaxrequest.js"></script>
 	<script type="text/javascript">
+		var viewpath = "views/";
 		//add onclickevent to the menu
 		var topLis = document.getElementById("top-nav").childNodes;
 		var leftLis = document.getElementById("left-nav").childNodes;
@@ -109,51 +111,28 @@
 		for(var li in topLis) {
 			if (li.id == "userField") {
 				li.onclick = function () {
-					makeRequest("user");
+					makeRequest(viewpath + "user");
 				}
 			}
 			else {
 				li.onclick = function () {
-					makeRequest(li.innerHTML.toString().toLowerCase());
+					viewpath += li.innerHTML.toString().toLowerCase();
+					makeRequest(viewpath);
 				}
 			}
 		}
 
 		for(var li in leftLis) {
 			li.onclick = function () {
-				makeRequest(li.innerHTML.toString().toLowerCase());
+				viewpath += li.innerHTML.toString().toLowerCase();
+				console.log(viewpath);
+				makeRequest(viewpath);
 			}
 		}
-
-		function makeRequest (requested) {
-			if (!requested) {
-				alert("BAD REQUEST!");
-				return;
-			};
-
-			//IE7+, Firefox, Chrome, Opera, Safari
-			if (window.XMLHttpRequest) {
-				xmlhttp = new XMLHttpRequest();
-			}
-			else {
-				//IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-
-			xmlhttp.onreadystatechange = function () {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("content").innerHTML = xmlhttp.responseText;
-				};
-			};
-
-			//opens the request, with unique value, so it is not cached
-			xmlhttp.open("POST",'views/' + requested + '.php' + "?t=" + Math.random(), true);
-			xmlhttp.send();
-		}
-
-		
 	</script>
+	<script type="text/javascript" src="scripts/ajaxrequest.js"></script>
 	<script type="text/javascript" src="scripts/nicedit.js"></script>
 	<script type="text/javascript" src="scripts/addnews.js"></script>
+
 	</body>
 </html>

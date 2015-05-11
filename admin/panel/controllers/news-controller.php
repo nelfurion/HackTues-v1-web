@@ -3,16 +3,16 @@
 
 	$news = getData("news");
 
-	if ($news->num_rows <= 0) {
+	if (!count($news)) {
 		echo "В момента няма информация.";
 		return;
 	}
-	
-	while ($row = $news->fetch_assoc()) {
+
+	for ($i=0; $i < count($news); $i++) { 
 		echo
 			"<article class=\"newsArticle\">
-				<h3>" . $row['name'] . "</h3>
-				<p>" . $row['content'] . "</p>
+				<h3>" . $news[$i]->name . "</h3>
+				<p>" . $news[$i]->content . "</p>
 			</article>";
 	}
 ?>

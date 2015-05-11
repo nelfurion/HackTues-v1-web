@@ -4,11 +4,22 @@
  -->
 
 <?php
-	function getData($type) {
+	require '../../../core/init.php';
+	require '../../../classes/common/config.php';
+	require '../../../classes/common/database.php';
+
+	function getData($table)
+	{
+		$db = Database::getInstance();
+		$db->rawQuery("SELECT name, content FROM news", array());
+		return $db->getResults();
+	}
+
+	/*function getData($type) {
 		/*this should be changed, to be compatible with the server db's
 		  shoud be able to create array with fields,
 		  to be selected in the query*/
-		  $dbname;
+	/*	  $dbname;
 		  $sql;
 		switch ($type) {
 			case 'news':
@@ -63,5 +74,5 @@
 
 		//close connection
 		mysqli_close($conn);
-	}
+	}*/
  ?>

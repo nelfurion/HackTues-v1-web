@@ -12,7 +12,8 @@ function addArticle () {
 		section.insertBefore(areaHolder, firstArticle);
 		new nicEditor({
 				fullPanel : true, onSave : function(content, id, instance) {
-					alert('save button clicked for element '+id+' = '+content);
+					alert('<?php echo "asd";?>');
+					makeRequest("dbquery.php");
 				} 
 			}
 	  	).panelInstance('niceditArea');
