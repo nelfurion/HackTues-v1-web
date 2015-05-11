@@ -11,9 +11,33 @@
 			<h1>Запиши се за участие</h1>
 			<article>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, dolorem.</p>
-				<form action="POST" id="login-form">
-					
+				
+				<div id="inputs">
+					<form action="" method="post" id="login-form">
+						<div class="field">
+						<label for="username">Username: </label>
+						<input type="text" name="username" id="username" autocomplete="off">
+					</div>
+				
+					<div class="field">
+						<label for="password">Password: </label>
+						<input type="password" name="password" id="password">
+					</div>
+				
+					<div class="field">
+						<label for="password_again">Confirm password: </label>
+						<input type="password" name="password_again" id="password_again">
+					</div>
+				
+					<div class="field">
+						<label for="name">Name: </label>
+						<input type="text" name="name" id="name">
+					</div>
+				
+					<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+					<input type="submit" value="Register" id="register">
 				</form>
+				</div>
 			</article>
 		</section>
 	</body>

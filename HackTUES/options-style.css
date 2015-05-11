@@ -25,8 +25,19 @@ body section article {
 	border: 3px solid white;
 	border-radius: 15px;
 	display: inline-block;
+	padding-top: 8em;
+	padding-right: 4em;
 }
 
+	#login-form .field {
+		font-size: 180%;
+		text-align: right;
+	}
+		#login-form .field input {
+			width: 30em;
+			height: 3em;
+		}
+		
 .agenda {
 	display: inline-block;
 	font-size: 3em;
@@ -58,4 +69,14 @@ dd {
 
 .question {
 	font-weight: bold;
+}
+
+#register {
+	font-size: 1.7em;
+	margin-top: 1em;
+	margin-left: 13em;
+	font-family: railway;
+	border-radius: 5px;
+	color: black;
+	background-color: white;
 }
