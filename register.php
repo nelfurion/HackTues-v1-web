@@ -1,6 +1,6 @@
 <?php
-
-	require_once 'core/init.php';
+	
+	require_once 'functions/user/init.php';
 
 	if (Input::exists())
 	{
