@@ -11,10 +11,12 @@ body {
 
 body section h1 {
 	color: white;
+	font-size: 4em;
 }
 
 body section article {
 	color: white;
+	font-size: 1.2em;
 }
 
 #login-form {
@@ -22,4 +24,38 @@ body section article {
 	height: 20em;
 	border: 3px solid white;
 	border-radius: 15px;
+	display: inline-block;
+}
+
+.agenda {
+	display: inline-block;
+	font-size: 3em;
+	border: 3px solid white;
+	border-collapse: collapse;
+	overflow: hidden;
+}
+
+.agenda td {
+	padding: 20px;
+}
+
+dl {
+	margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+dt {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+dd {
+	margin-left: 4em;
+	font-size: 1.5em;
+}
+
+.question {
+	font-weight: bold;
 }
