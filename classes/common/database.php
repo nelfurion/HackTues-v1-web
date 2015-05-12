@@ -115,7 +115,7 @@
 					$currentFieldsCount++;
 				}
 
-				$queryString = "INSERT INTO users (`" . implode('`, `', $keys) ."`) VALUES ({$values})";
+				$queryString = "INSERT INTO {$table} (`" . implode('`, `', $keys) ."`) VALUES ({$values})";
 
 				if (!$this->rawQuery($queryString, $fields)->getLastError())
 				{

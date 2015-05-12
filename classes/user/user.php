@@ -4,12 +4,14 @@
 		private $_db,
 				$_data,
 				$_sessionName,
+				$_cookieName,
 				$_isLoggedIn;
 
 		public function __construct($user = null)
 		{
 			$this->_db = Database::getInstance();
 			$this->_sessionName = Config::getValue('session/session_name');
+			$this->_cookieName = Config::getValue('remember/cookie_name');
 
 			if (!$user)
 			{
@@ -58,7 +60,7 @@
 			return false;
 		}
 
-		public function login($username = null, $password = null)
+		public function login($username = null, $password = null, $remember)
 		{
 			$user = $this->find($username);
 			
@@ -67,6 +69,26 @@
 				if ($this->getData()->password === Hash::make($password, $this->getData()->salt))
 				{
 					Session::put($this->_sessionName, $this->getData()->id);
+					if ($remember)
+					{
+						$hash = Hash::unique();
+						$hashCheck = $this->_db->select('users_session', array('user_id', '=', $this->getData()->id));
+
+						if (!$hashCheck->getCount())
+						{
+							$this->_db->insert('users_session', array(
+									'user_id' => $this->getData()->id,
+									'hash' => $hash
+								));
+						}
+						else 
+						{
+							$hash = $hashCheck->getFirstResult()->hash;
+						}
+
+						Cookie::put($this->_cookieName, $hash, Config::getValue('remember/cookie_expiry'));
+					}
+
 					return true;
 				}
 			}

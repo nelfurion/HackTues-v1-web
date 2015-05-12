@@ -13,8 +13,9 @@
 
 			if ($validation->isPassed())
 			{
+				$remember = (Input::get('remember') === 'on') ? true : false;
 				$user = new User();
-				$login = $user->login(Input::get('username'), Input::get('password'));
+				$login = $user->login(Input::get('username'), Input::get('password'), $remember);
 
 				if ($login)
 				{
@@ -38,15 +39,20 @@
 
 <form action="" method="post">
 	<div class="field">
-		<label for="username">Username</label>
+		<label for="username">Потребител</label>
 		<input type="text" name="username" id="username" autocomplete="off">
 	</div>
 
 	<div class="field">
-		<label for="password">Password</label>
+		<label for="password">Парола</label>
 		<input type="password" name="password" id="password" autocomplete="off">
 	</div>
 
+	<div class="field">
+		<label for="remember">
+			<input type="checkbox" name="remember" id="remember"> Запомни ме
+		</label>
+	</div>
 	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 	<input type="submit" value="Log in">
 </form>

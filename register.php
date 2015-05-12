@@ -124,7 +124,7 @@
 
 	<div class="field">
 		<label for="password-again">Потвърди парола: </label>
-		<input type="password" name="password-again" id="password_again">		
+		<input type="password" name="password-again" id="password-again">		
 	</div>
 
 	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
