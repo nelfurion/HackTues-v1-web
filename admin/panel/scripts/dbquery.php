@@ -1,78 +1,46 @@
-<!--
-	Fetches the data, from the database,
-	 and sends it to the content handler.
- -->
 
 <?php
-	require '../../../core/init.php';
 	require '../../../classes/common/config.php';
 	require '../../../classes/common/database.php';
 
-	function getData($table)
+	if (isset($_POST['func'])) {
+		switch ($_POST['func']) {
+			case 'saveData':
+					saveData($_POST['table'], $_POST['sdata']);
+				break;
+			//TODO: fix getData and stuff
+			default:
+				
+				break;
+		}
+	}
+
+	/*
+	 ---------------------------------
+	Fetches the data, from the database,
+	 and sends it to the content handler.
+ 	*/ 
+	function getData($table, $data = array(), $parameters = array())
 	{
+		$selectedData = implode(", ", $data);
+		if (!count($data)) {
+			$selectedData = "*";
+		}
+		
 		$db = Database::getInstance();
-		$db->rawQuery("SELECT name, content FROM news", array());
+
+		$db->rawQuery("SELECT " . $selectedData . " FROM " .$table, $parameters);
+
 		return $db->getResults();
 	}
 
-	/*function getData($type) {
-		/*this should be changed, to be compatible with the server db's
-		  shoud be able to create array with fields,
-		  to be selected in the query*/
-	/*	  $dbname;
-		  $sql;
-		switch ($type) {
-			case 'news':
-				$dbname = 'news';
-				$sql = "SELECT id, name, content FROM articles";
-				break;
-			case 'competitors':
-				$dbname = 'competitors';
-				break;
-			case 'sponsors':
-				$dbname = 'sponsors';
-				break;
-			case 'user':
-				$dbname = 'admins';
-				break;
-			case 'teams':
-				$dbname = 'teams';
-				break;
-			case 'crew':
-				$dbname = 'crew';
-				break;	
-			default:
-				return "Bad data type!";
-				break;
-		}
-		$servername = 'localhost';
-		$username = 'root';
-		$password = '';
-		
-
-		//creates the connection
-		if (!$dbname) {
-			echo "Bad data type! Could not resolve db connection.";
-		}
-		$conn = new mysqli($servername, $username, $password, $dbname);
-
-		//check for errors
-		if ($conn->connect_error) {
-			die("Connection to database failed!" . $conn->connect_error);
-		}
-
-		//query the db
-		if (!$sql) {
-			//not sure if return or echo
-			return "Bad data type!";
-			echo "Bad data type! Could not resolve query.";
-		}
-
-		$result = $conn->query($sql);
-
-		return $result;
-
-		//close connection
-		mysqli_close($conn);
-	}*/
+	function saveData($table, $data)
+	{
+		$db = Database::getInstance();
+		//TODO: fix insert with fields, should get fields from $_POST['fields']
+		$db->insert($table, $data);
+		print_r("</br>");
+		print_r($table);
+		print_r($data);
+	}
  ?>

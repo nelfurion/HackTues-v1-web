@@ -1,5 +1,7 @@
 <?php
 
+	require '../../../core/config.php';
+
 	class Config 
 	{
 		public static function getValue($path = null) 

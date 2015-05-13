@@ -17,8 +17,8 @@
 		#left-nav {
 			clear: left;
 			width: 128px;
-			//padding-top: 20px;
 			float: left;
+			display: inline-block;
 		}
 		#top-nav li, #left-nav li {
 			background-color: #656665;
@@ -41,8 +41,7 @@
 			background-color: #797A78;
 		}
 		#content {
-			position: relative;
-			left: 115px;
+			overflow: hidden;
 		}
 		#content #areaHolder {
 			height: 200px;
@@ -50,47 +49,50 @@
 			max-width: 50%;
 			overflow: scroll;
 		}
+		.clear {
+			clear: both;
+		}
 	</style>
 </head>
 <body>
 	<nav>
 		<ul id="top-nav">
-			<li>
+			<li class="navLi">
 				<a href="#" id="userField">user field</a>
 			</li>
-			<li>
-				<a href="#">Dashboard</a>
+			<li class="navLi" id="dashboard">
+				<a href="#" >Dashboard</a>
 			</li>
-			<li>
+			<li class="navLi" id="statistics">
 				<a href="#">Statistics</a>
 			</li>
 		</ul>
 		<ul id="left-nav">
-			<li onclick="makeRequest('views/news.php')">
+			<li class="navLi" id="news">
 				<a href="#">News</a>
 			</li>
-			<li>
+			<li class="navLi" id="competitors">
 				<a href="#">Competitors</a>
 			</li>
-			<li>
+			<li class="navLi" id="teams">
 				<a href="#">Teams</a>
 			</li>
-			<li>
+			<li class="navLi" id="sponsors">
 				<a href="#">Sponsors</a>
 			</li>
-			<li>
+			<li class="navLi" id="schelude">
 				<a href="#">Schelude</a>
 			</li>
-			<li>
+			<li class="navLi" id="rules">
 				<a href="#">Rules</a>
 			</li>
-			<li>
+			<li class="navLi" id="prizes">
 				<a href="#">Prizes</a>
 			</li>
-			<li>
+			<li class="navLi" id="faq">
 				<a href="#">FAQ</a>
 			</li>
-			<li>
+			<li class="navLi" id="crew">
 				<a href="#">Crew</a>
 			</li>
 		</ul>
@@ -99,40 +101,31 @@
 		<!-- 
 			AJAX request
 		-->
-
 	</section>
-	<script type="text/javascript" src="scripts/ajaxrequest.js"></script>
-	<script type="text/javascript">
-		var viewpath = "views/";
-		//add onclickevent to the menu
-		var topLis = document.getElementById("top-nav").childNodes;
-		var leftLis = document.getElementById("left-nav").childNodes;
-
-		for(var li in topLis) {
-			if (li.id == "userField") {
-				li.onclick = function () {
-					makeRequest(viewpath + "user");
-				}
-			}
-			else {
-				li.onclick = function () {
-					viewpath += li.innerHTML.toString().toLowerCase();
-					makeRequest(viewpath);
-				}
-			}
-		}
-
-		for(var li in leftLis) {
-			li.onclick = function () {
-				viewpath += li.innerHTML.toString().toLowerCase();
-				console.log(viewpath);
-				makeRequest(viewpath);
-			}
-		}
-	</script>
+	<div class="clear"></div>
 	<script type="text/javascript" src="scripts/ajaxrequest.js"></script>
 	<script type="text/javascript" src="scripts/nicedit.js"></script>
 	<script type="text/javascript" src="scripts/addnews.js"></script>
-
+	<script type="text/javascript">
+		var viewsDir = "views/";
+		//TODO: fix request with fields and stuff
+		document.getElementById("top-nav").addEventListener("click", function (e) {
+			if (e.target && e.target.nodeName == "A") {
+				AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
+			};
+			if (e.target && e.target.nodeName == "LI") {
+				AJAXRequest(viewsDir + e.target.id + ".php", []);
+			};
+		});
+		document.getElementById("left-nav").addEventListener("click", function (e) {
+			if (e.target && e.target.nodeName == "A") {
+				AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
+			};
+			if (e.target && e.target.nodeName == "LI") {
+				AJAXRequest(viewsDir + e.target.id + ".php", []);
+			};
+		});
+		
+	</script>
 	</body>
 </html>
