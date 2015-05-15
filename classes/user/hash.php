@@ -9,7 +9,8 @@
 
 		public static function salt($length)
 		{
-			return mcrypt_create_iv($length);
+			// TODO: Use password_hash to avoid the utf8 hack.
+			return utf8_encode(mcrypt_create_iv($length));
 		}
 
 		public static function unique()

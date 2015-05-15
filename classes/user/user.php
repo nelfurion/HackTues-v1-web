@@ -46,6 +46,7 @@
 				throw new Exception('There was a problem updating an account.');
 			}
 		}
+
 		public function create($fields = array())
 		{
 			if (!$this->_db->insert('users', $fields))
@@ -72,16 +73,17 @@
 		}
 
 		public function login($username = null, $password = null, $remember = null)
-		{
-			$user = $this->find($username);
-			
+		{			
 			if (!$username && !$password && $this->exists())
 			{
 				Session::put($this->_sessionName, $this->getData()->id);
 			}
 			else {
+				$user = $this->find($username);				
 				if ($user)
 				{
+					echo $this->getData()->password . "<br />";
+					echo Hash::make($password, $this->getData()->salt);
 					if ($this->getData()->password === Hash::make($password, $this->getData()->salt))
 					{
 						Session::put($this->_sessionName, $this->getData()->id);
