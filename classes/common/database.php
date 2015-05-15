@@ -17,7 +17,7 @@
 				$databaseName = Config::getValue('mysql/db');
 				$databaseUsername = Config::getValue('mysql/username');
 				$databasePassword = Config::getValue('mysql/password');
-				$this->_pdo = new PDO('mysql:host=' . $databaseHost . ';dbname=' . $databaseName, $databaseUsername, $databasePassword);
+				$this->_pdo = new PDO('mysql:host=' . $databaseHost . ';dbname=' . $databaseName, $databaseUsername, $databasePassword, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 			} 
 			catch (PDOException $e)
 			{

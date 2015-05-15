@@ -23,7 +23,7 @@
 				}
 				else 
 				{
-					echo 'Logging in failed.';
+					echo 'Грешно потребителско име или парола.';
 				}
 			}
 			else 
@@ -54,5 +54,5 @@
 		</label>
 	</div>
 	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-	<input type="submit" value="Log in">
+	<input type="submit" value="Влез">
 </form>

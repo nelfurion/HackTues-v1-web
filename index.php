@@ -1,3 +1,5 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <?php
 
 	ini_set('display_errors', 1);
@@ -15,14 +17,14 @@
 	if ($user->isLoggedIn())
 	{
 	?>
-		<p>Username: <a href="#"><?php echo escape($user->getData()->username); ?></a></p>
+		<p>Username: <a href="profile.php?user=<?php echo escape($user->getData()->username); ?>"><?php echo escape($user->getData()->username); ?></a> [ <?php echo escape($user->fetchUserIdentifier($user->getData()->level)); ?> ]</p>
 
-		<ul>
-			<li><a href="logout.php">Log out</a></li>
+		<ul>		
+			<li><a href="logout.php">Излез</a></li>
 		</ul>
 	<?php
 	} 
 	else 
 	{
-		echo '<p>You need to <a href="login.php">log</a> in or <a href="register.php">register</a>.';
+		echo '<p>Трябва да <a href="login.php">влезете</a> или да се <a href="register.php">регистрирате</a>.';
 	}

@@ -22,12 +22,12 @@
 					'required' => true,
 					'matches' => 'password'
 				),
-				'first-name' => array(
+				'firstname' => array(
 					'required' => true,
 					'min_len' => 2,
 					'max_len' => 50
 				),
-				'last-name' => array(
+				'lastname' => array(
 					'required' => true,
 					'min_len' => 2,
 					'max_len' => 50
@@ -57,15 +57,16 @@
 							'username' => Input::get('username'),
 							'password' => Hash::make(Input::get('password'), $salt),
 							'salt' => $salt,
-							'first-name' => Input::get('first-name'),
-							'last-name' => Input::get('last-name'),
+							'firstname' => Input::get('firstname'),
+							'lastname' => Input::get('lastname'),
 							'email' => Input::get('email'),
 							'class' => Input::get('class-number') . Input::get('class-letter'),					
 							'timestamp' => date('Y-m-d H:i:s'),
 							'level' => 1
 						));
 
-					Session::flash('home', 'You registered successfully and can now login.');
+					$user->login(Input::get('username'), Input::get('password'), true);
+					Session::flash('home');
 					Redirect::to('index.php');					
 				} 
 				catch (Exception $e)
@@ -87,23 +88,23 @@
 
 <form action="" method="post">
 	<div class="field">
-		<label for="first-name">Име: </label>
-		<input type="text" name="first-name" id="first-name" value="<?php echo escape(Input::get('first-name')); ?>" autocomplete="off">
+		<label for="firstname">Име: </label>
+		<input type="text" name="firstname" id="firstname" value="<?php echo escape(Input::get('firstname')); ?>" autocomplete="off">
 	</div>
 
 	<div class="field">
-		<label for="last-name">Фамилия: </label>
-		<input type="text" name="last-name" id="last-name" value="<?php echo escape(Input::get('last-name')); ?>" autocomplete="off">
+		<label for="lastname">Фамилия: </label>
+		<input type="text" name="lastname" id="lastname" value="<?php echo escape(Input::get('lastname')); ?>" autocomplete="off">
 	</div>
 
 	<div class="field">
 		<label for="class-number">Клас: </label>
 		<input type="number" name="class-number" min="8" max="12" id="class-number" value="<?php echo escape(Input::get('class-number')); ?>" autocomplete="off">
 		<select name="class-letter">
-		  <option value="A">А</option>
-		  <option value="B">Б</option>
-		  <option value="V">В</option>
-		  <option value="G">Г</option>
+		  <option value="А">А</option>
+		  <option value="Б">Б</option>
+		  <option value="В">В</option>
+		  <option value="Г">Г</option>
 		</select>		
 	</div>
 
@@ -128,5 +129,5 @@
 	</div>
 
 	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-	<input type="submit" value="Register">
+	<input type="submit" value="Регистрирай се!">
 </form>

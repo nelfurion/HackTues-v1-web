@@ -35,7 +35,18 @@
 			}
 		}
 
-		public function create($fields)
+		public function update($fields = array(), $id = null)
+		{
+			if (!$id && $this->isLoggedIn())
+			{
+				$id = $this->getData()->id;
+			}
+			if (!$this->_db->update('users', $id, $fields))
+			{
+				throw new Exception('There was a problem updating an account.');
+			}
+		}
+		public function create($fields = array())
 		{
 			if (!$this->_db->insert('users', $fields))
 			{
@@ -100,6 +111,35 @@
 			}
 
 			return false;			
+		}
+
+		public function hasPermission($key)
+		{
+			$level = $this->_db->select('levels', array('id', '=', $this->getData()->level));
+
+			if ($level->getCount())
+			{
+				echo $permissions = json_decode($level->getFirstResult()->permissions, true);
+
+				if ($permissions[$key])
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		public function fetchUserIdentifier($id)
+		{
+			$result = $this->_db->select('levels', array('id', '=', $id));
+
+			if ($result->getCount())
+			{
+				return $result->getFirstResult()->name;
+			}
+
+			return false;
 		}
 
 		public function exists()

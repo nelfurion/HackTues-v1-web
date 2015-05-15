@@ -18,10 +18,10 @@
 				foreach ($rules as $rule => $rule_value)
 				{
 					$value = trim($source[$item]);
-					$item = escape($item);
+					$translatedItem = $this->toString(escape($item));					
 					if ($rule == 'required' && empty($value))
 					{
-						$this->addError("{$item} is required.");
+						$this->addError("Полето '{$translatedItem}' е задължително.");
 					}
 					else if(!empty($value))
 					{
@@ -30,38 +30,38 @@
 							case 'min_len':
 								if (strlen($value) < $rule_value)
 								{
-									$this->addError("{$item} must be a minimum of {$rule_value} characters.");
+									$this->addError("Полето '{$translatedItem}' трябва да бъде минимум {$rule_value} знака.");
 								}
 								break;
 							case 'max_len':
 								if (strlen($value) > $rule_value)
 								{
-									$this->addError("{$item} must be a maximum of {$rule_value} characters.");
+									$this->addError("Полето '{$translatedItem}' не трябва да надвишава {$rule_value} знака.");
 								}							
 								break;
 							case 'min_num':
 								if ($value < $rule_value)
 								{
-									$this->addError("{$item} must be higher than {$rule_value}.");
+									$this->addError("Стойността на полето '{$translatedItem}' трябва да е над {$rule_value}.");
 								}
 								break;
 							case 'max_num':
 								if ($value > $rule_value)
 								{
-									$this->addError("{$item} must be lower than {$rule_value}.");									
+									$this->addError("Стойността на полето '{$translatedItem}' не трябва да надвишава {$rule_value}.");									
 								}
 								break;
 							case 'matches':
 								if ($value != $source[$rule_value])
 								{
-									$this->addError("{$rule_value} must match {$item}.");
+									$this->addError("Полетата '" . $this->toString($rule_value) . "' и '{$translatedItem}' трябва да съвпадат.");
 								}
 								break;
 							case 'unique':
 								$check = $this->_db->select($rule_value, array($item, '=', $value));
 								if ($check->getCount())
 								{
-									$this->addError("{$item} already exists.");	
+									$this->addError("Стойността на полето '{$translatedItem}' вече съществува в базата данни.");	
 								}
 								break;
 						}
@@ -80,6 +80,30 @@
 		private function addError($error)
 		{
 			$this->_errors[] = $error;
+		}
+
+		private function toString($item)
+		{
+			switch ($item) {
+				case 'username':
+					return 'потребител';
+					break;
+				case 'password':
+					return 'парола';
+					break;
+				case 'password-again':
+					return 'потвърди парола';
+					break;
+				case 'email':
+					return 'е-поща';
+					break;
+				case 'firstname':
+					return 'име';
+					break;
+				case 'lastname':
+					return 'фамилия';
+					break;
+			}
 		}
 
 		public function getErrors()
