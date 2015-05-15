@@ -60,45 +60,58 @@
 			return false;
 		}
 
-		public function login($username = null, $password = null, $remember)
+		public function login($username = null, $password = null, $remember = null)
 		{
 			$user = $this->find($username);
 			
-			if ($user)
+			if (!$username && !$password && $this->exists())
 			{
-				if ($this->getData()->password === Hash::make($password, $this->getData()->salt))
+				Session::put($this->_sessionName, $this->getData()->id);
+			}
+			else {
+				if ($user)
 				{
-					Session::put($this->_sessionName, $this->getData()->id);
-					if ($remember)
+					if ($this->getData()->password === Hash::make($password, $this->getData()->salt))
 					{
-						$hash = Hash::unique();
-						$hashCheck = $this->_db->select('users_session', array('user_id', '=', $this->getData()->id));
-
-						if (!$hashCheck->getCount())
+						Session::put($this->_sessionName, $this->getData()->id);
+						if ($remember)
 						{
-							$this->_db->insert('users_session', array(
-									'user_id' => $this->getData()->id,
-									'hash' => $hash
-								));
-						}
-						else 
-						{
-							$hash = $hashCheck->getFirstResult()->hash;
+							$hash = Hash::unique();
+							$hashCheck = $this->_db->select('users_session', array('user_id', '=', $this->getData()->id));
+
+							if (!$hashCheck->getCount())
+							{
+								$this->_db->insert('users_session', array(
+										'user_id' => $this->getData()->id,
+										'hash' => $hash
+									));
+							}
+							else 
+							{
+								$hash = $hashCheck->getFirstResult()->hash;
+							}
+
+							Cookie::put($this->_cookieName, $hash, Config::getValue('remember/cookie_expiry'));
 						}
 
-						Cookie::put($this->_cookieName, $hash, Config::getValue('remember/cookie_expiry'));
+						return true;
 					}
-
-					return true;
 				}
 			}
 
-			return false;
+			return false;			
+		}
+
+		public function exists()
+		{
+			return (!empty($this->_data)) ? true : false;
 		}
 
 		public function logout()
 		{
+			$this->_db->delete('users_session', array('user_id', '=', $this->getData()->id));
 			Session::delete($this->_sessionName);
+			Cookie::delete($this->_cookieName);
 		}
 
 		public function getData()
