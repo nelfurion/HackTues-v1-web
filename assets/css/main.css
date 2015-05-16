@@ -127,7 +127,11 @@ body #wrapper section#main div#right-pane {
   margin-top: 50px;
   margin-left: 50px;
   float: left;
+  width: 40%;
   display: inline-block;
+}
+body #wrapper section#main div#right-pane img{
+  width: 99%;
 }
 body #wrapper .hidden {
   display: none;
@@ -137,7 +141,6 @@ body #wrapper footer {
   overflow: hidden;
   margin-top: 50px;
   clear: both;
-  background-color: #F1F1F1;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
