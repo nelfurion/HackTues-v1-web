@@ -76,7 +76,7 @@
 				<a href="#" >Dashboard</a>
 			</li>
 			<li class="navLi" id="statistics">
-				<a href="#">Statistics</a>
+				<a href="#" onclick="loadStatistics()">Statistics</a>
 			</li>
 		</ul>
 		<ul id="left-nav">
@@ -122,11 +122,13 @@
 		var viewsDir = "views/";
 		//TODO: fix request with fields and stuff
 		document.getElementById("top-nav").addEventListener("click", function (e) {
-			if (e.target && e.target.nodeName == "A") {
-				AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
-			};
-			if (e.target && e.target.nodeName == "LI") {
-				AJAXRequest(viewsDir + e.target.id + ".php", []);
+			if (e.target.id != 'statistics' && e.target.parentNode.id != 'statistics') {
+				if (e.target && e.target.nodeName == "A") {
+					AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
+				};
+				if (e.target && e.target.nodeName == "LI") {
+					AJAXRequest(viewsDir + e.target.id + ".php", []);
+				};
 			};
 		});
 		document.getElementById("left-nav").addEventListener("click", function (e) {
@@ -137,6 +139,25 @@
 				AJAXRequest(viewsDir + e.target.id + ".php", []);
 			};
 		});
+		
+
+		/*	A long time ago, in a galaxy far far away, javascript had a point.
+			This code works only if the developer options of the browser are closed.
+			JS is so good. I want to kiss it and lick it and do bad things to it.
+		*/
+		function loadStatistics () {
+			var script = document.createElement('script');
+			script.src='charts/Chart.js';
+
+			document.getElementsByTagName('body')[0].appendChild(script);
+
+			script = document.createElement('script');
+			script.src = 'linechart.js';
+
+			document.getElementsByTagName('body')[0].appendChild(script);
+		}
+
+
 		
 	</script>
 	</body>
