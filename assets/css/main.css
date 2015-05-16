@@ -1,0 +1,159 @@
+body {
+  background-color: #FFF;
+}
+body #wrapper {
+  background: #FFF;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+  width: 60%;
+  font-size: 16px;
+  margin: 0 auto;
+  height: 1000px;
+}
+body #wrapper header {
+  margin: 0 auto;
+}
+body #wrapper header #logo {
+  text-align: center;
+}
+body #wrapper header #logo h1 {
+  margin: 0px;
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 4em;
+}
+body #wrapper header #logo .blue {
+  color: #446576;
+}
+body #wrapper header nav.navbar,
+body #wrapper header nav.navbar-default {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: 0px;
+  height: 40px;
+  margin-bottom: 0px;
+}
+body #wrapper header nav.navbar div.container-fluid,
+body #wrapper header nav.navbar-default div.container-fluid {
+  padding: 0px;
+}
+body #wrapper header nav.navbar div.container-fluid div.collapse,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse {
+  padding: 0px;
+  width: 80%;
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav,
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav {
+  float: none;
+  display: inline-block;
+}
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav li a,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav li a,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav li a,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav li a,
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav li a,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav li a,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav li a,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav li a {
+  color: #888;
+  padding: 10px;
+  opacity: 0.5;
+}
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav li.active a,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav li.active a,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav li.active a,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav li.active a,
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav li.active a,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav li.active a,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav li.active a,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav li.active a {
+  background: #FFF;
+  box-shadow: none;
+  opacity: 1;
+}
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav li:hover a,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav li:hover a,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav li:hover a,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav li:hover a,
+body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav li:hover a,
+body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav li:hover a,
+body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav li:hover a,
+body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav li:hover a {
+  opacity: 1;
+}
+body #wrapper hr {
+  margin: 0px;
+}
+body #wrapper section#main {
+  overflow: hidden;
+}
+body #wrapper section#main div#left-pane {
+  margin-top: 50px;
+  float: left;
+  width: 40%;
+  display: inline-block;
+}
+body #wrapper section#main div#left-pane p {
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  padding-right: 30px;
+  text-align: left;
+}
+body #wrapper section#main div#left-pane button {
+  font-family: 'Open Sans', sans-serif;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 15px 10px 15px;
+  margin-top: 50px;
+}
+body #wrapper section#main div#left-pane button:hover {
+  background-color: #F1F1F1;
+}
+body #wrapper section#main div#right-pane {
+  border-left: 1px solid #F1F1F1;
+  margin-top: 50px;
+  margin-left: 50px;
+  float: left;
+  display: inline-block;
+}
+body #wrapper .hidden {
+  display: none;
+}
+body #wrapper footer {
+  padding: 20px 20px 20px 0px;
+  overflow: hidden;
+  margin-top: 50px;
+  clear: both;
+  background-color: #F1F1F1;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+body #wrapper footer img {
+  margin-left: 20px;
+}
+body #wrapper .clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+body #wrapper .clearfix {
+  display: inline-block;
+}
+body #wrapper .clearfix {
+  display: block;
+}

@@ -1,5 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<meta charset="UTF-8">
 <?php
 
 	ini_set('display_errors', 1);
@@ -17,7 +16,7 @@
 	if ($user->isLoggedIn())
 	{
 	?>
-		<p>Username: <a href="profile.php?user=<?php echo escape($user->getData()->username); ?>"><?php echo escape($user->getData()->username); ?></a> [ <?php echo escape($user->fetchUserIdentifier($user->getData()->level)); ?> ]</p>
+		<p>Добре дошъл, <a href="/<?php echo escape($user->getData()->username); ?>"><?php echo escape($user->getData()->username); ?></a> [ <?php echo escape($user->fetchUserIdentifier($user->getData()->level)); ?> ]</p>
 
 		<ul>		
 			<li><a href="logout.php">Излез</a></li>

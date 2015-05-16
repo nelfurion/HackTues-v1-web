@@ -37,6 +37,7 @@
 	}
 ?>
 
+<meta charset="UTF-8">
 <form action="" method="post">
 	<div class="field">
 		<label for="username">Потребител</label>

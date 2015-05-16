@@ -82,8 +82,6 @@
 				$user = $this->find($username);				
 				if ($user)
 				{
-					echo $this->getData()->password . "<br />";
-					echo Hash::make($password, $this->getData()->salt);
 					if ($this->getData()->password === Hash::make($password, $this->getData()->salt))
 					{
 						Session::put($this->_sessionName, $this->getData()->id);

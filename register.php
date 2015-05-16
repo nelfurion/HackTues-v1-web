@@ -85,7 +85,7 @@
 	}
 
 ?>
-
+<meta charset="UTF-8">
 <form action="" method="post">
 	<div class="field">
 		<label for="firstname">Име: </label>

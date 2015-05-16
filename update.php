@@ -89,6 +89,7 @@
 ?>
 
 <?php $token = Token::generate(); ?>
+<meta charset="UTF-8">
 <fieldset>
 	<legend>Основни</legend>
 	<form action="" method="post">
