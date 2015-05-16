@@ -3,10 +3,12 @@
 	require '../../../classes/common/config.php';
 	require '../../../classes/common/database.php';
 
-	if (isset($_POST['func'])) {
-		switch ($_POST['func']) {
-			case 'saveData':
-					saveData($_POST['table'], $_POST['sdata']);
+	//print_r($_GET);
+
+	if (isset($_GET['func'])) {
+		switch ($_GET['func']) {
+			case 'saveNews':
+					saveNews();
 				break;
 			//TODO: fix getData and stuff
 			default:
@@ -34,13 +36,12 @@
 		return $db->getResults();
 	}
 
-	function saveData($table, $data)
+	function saveNews()
 	{
 		$db = Database::getInstance();
-		//TODO: fix insert with fields, should get fields from $_POST['fields']
-		$db->insert($table, $data);
-		print_r("</br>");
-		print_r($table);
-		print_r($data);
+		$name = $_GET['name'];
+		$content = $_GET['content'];
+
+		$db->insert("news", array('name' => $name, 'content' => $content));
 	}
  ?>

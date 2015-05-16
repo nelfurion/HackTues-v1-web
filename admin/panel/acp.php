@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<title>HackTues - Админ панел</title>
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -49,6 +50,17 @@
 			max-width: 50%;
 			overflow: scroll;
 		}
+		#content .newsArticle
+		{
+			overflow: hidden;
+			width: 500px;
+			max-width: 500px;
+		}
+		#content #competitors, #competitors th, #competitors td {
+			border: 1px solid black;
+			border-collapse: collapse;
+
+		}
 		.clear {
 			clear: both;
 		}
@@ -69,10 +81,10 @@
 		</ul>
 		<ul id="left-nav">
 			<li class="navLi" id="news">
-				<a href="#">News</a>
+				<a href="#news">News</a>
 			</li>
 			<li class="navLi" id="competitors">
-				<a href="#">Competitors</a>
+				<a href="#competitors">Competitors</a>
 			</li>
 			<li class="navLi" id="teams">
 				<a href="#">Teams</a>
@@ -128,4 +140,5 @@
 		
 	</script>
 	</body>
+
 </html>
