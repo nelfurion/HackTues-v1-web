@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<title>HackTues - Админ панел</title>
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -49,6 +50,17 @@
 			max-width: 50%;
 			overflow: scroll;
 		}
+		#content .newsArticle
+		{
+			overflow: hidden;
+			width: 500px;
+			max-width: 500px;
+		}
+		#content #competitors, #competitors th, #competitors td {
+			border: 1px solid black;
+			border-collapse: collapse;
+
+		}
 		.clear {
 			clear: both;
 		}
@@ -64,15 +76,15 @@
 				<a href="#" >Dashboard</a>
 			</li>
 			<li class="navLi" id="statistics">
-				<a href="#">Statistics</a>
+				<a href="#" onclick="loadStatistics()">Statistics</a>
 			</li>
 		</ul>
 		<ul id="left-nav">
 			<li class="navLi" id="news">
-				<a href="#">News</a>
+				<a href="#news">News</a>
 			</li>
 			<li class="navLi" id="competitors">
-				<a href="#">Competitors</a>
+				<a href="#competitors">Competitors</a>
 			</li>
 			<li class="navLi" id="teams">
 				<a href="#">Teams</a>
@@ -110,11 +122,13 @@
 		var viewsDir = "views/";
 		//TODO: fix request with fields and stuff
 		document.getElementById("top-nav").addEventListener("click", function (e) {
-			if (e.target && e.target.nodeName == "A") {
-				AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
-			};
-			if (e.target && e.target.nodeName == "LI") {
-				AJAXRequest(viewsDir + e.target.id + ".php", []);
+			if (e.target.id != 'statistics' && e.target.parentNode.id != 'statistics') {
+				if (e.target && e.target.nodeName == "A") {
+					AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
+				};
+				if (e.target && e.target.nodeName == "LI") {
+					AJAXRequest(viewsDir + e.target.id + ".php", []);
+				};
 			};
 		});
 		document.getElementById("left-nav").addEventListener("click", function (e) {
@@ -126,6 +140,26 @@
 			};
 		});
 		
+
+		/*	A long time ago, in a galaxy far far away, javascript had a point.
+			This code works only if the developer options of the browser are closed.
+			JS is so good. I want to kiss it and lick it and do bad things to it.
+		*/
+		function loadStatistics () {
+			var script = document.createElement('script');
+			script.src='charts/Chart.js';
+
+			document.getElementsByTagName('body')[0].appendChild(script);
+
+			script = document.createElement('script');
+			script.src = 'linechart.js';
+
+			document.getElementsByTagName('body')[0].appendChild(script);
+		}
+
+
+		
 	</script>
 	</body>
+
 </html>
