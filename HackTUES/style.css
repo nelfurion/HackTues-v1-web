@@ -1,0 +1,53 @@
+body, div, header, img, nav, ul, li, input, footer {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+}
+
+#wrapper {
+	color: white;
+	text-align: center;
+}
+
+#wrapper header img {
+	width: 50%;
+}
+
+#wrapper nav ul li {
+	list-style: none;
+	display: inline;
+}
+
+#wrapper nav ul li input {
+	background-color: white;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 50px;
+	border: 0;
+	color: #008CFF;
+	height: 250px;
+	width: 250px;
+	margin: 5px;
+	border-radius: 15px;
+	outline:none;
+}
+
+#wrapper nav ul li input:hover {
+	background-color: #008CFF;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 50px;
+	border: 0;
+	color: white;
+	height: 250px;
+	width: 250px;
+	margin: 5px;
+	border-radius: 100%;
+}
+
+
+#wrapper footer p {
+	margin: 40px auto 15px auto;
+	font-size: 15px;
+}
