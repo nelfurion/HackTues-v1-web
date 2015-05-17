@@ -96,22 +96,23 @@ body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse 
 body #wrapper hr {
   margin: 0px;
 }
-body #wrapper section#main {
+body #wrapper div.jumbotron {
+  background-color: #FFF;
   overflow: hidden;
 }
-body #wrapper section#main div#left-pane {
+body #wrapper div.jumbotron div#left-pane {
   margin-top: 50px;
   float: left;
   width: 40%;
   display: inline-block;
 }
-body #wrapper section#main div#left-pane p {
+body #wrapper div.jumbotron div#left-pane p {
   font-size: 15px;
   font-family: 'Raleway', sans-serif;
   padding-right: 30px;
   text-align: left;
 }
-body #wrapper section#main div#left-pane button {
+body #wrapper div.jumbotron div#left-pane button {
   font-family: 'Open Sans', sans-serif;
   background-color: transparent;
   border: 1px solid #ddd;
@@ -119,19 +120,15 @@ body #wrapper section#main div#left-pane button {
   padding: 10px 15px 10px 15px;
   margin-top: 50px;
 }
-body #wrapper section#main div#left-pane button:hover {
+body #wrapper div.jumbotron div#left-pane button:hover {
   background-color: #F1F1F1;
 }
-body #wrapper section#main div#right-pane {
+body #wrapper div.jumbotron div#right-pane {
   border-left: 1px solid #F1F1F1;
   margin-top: 50px;
   margin-left: 50px;
   float: left;
-  width: 53%;
   display: inline-block;
-}
-body #wrapper section#main div#right-pane img{
-  width: 99%;
 }
 body #wrapper .hidden {
   display: none;
