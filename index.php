@@ -53,20 +53,9 @@
 		</div>
 		<hr />
 
-		<section id="news-section">
-			<div id="news-container">
-				<?php
-					require_once 'controllers/news-controller.php';
-				?>
-			</div>
-			<ul class="pagination" id="news-nav">
-			  <li><a class="page-link" href="#">1</a></li>
-			  <li><a class="page-link" href="#">2</a></li>
-			  <li><a class="page-link" href="#">3</a></li>
-			  <li><a class="page-link" href="#">4</a></li>
-			  <li><a class="page-link" href="#">5</a></li>
-			</ul>
-		</section>
+		<?php
+			require_once '/partials/news-partial.php';
+		?>
 
 		<footer id="footer" class="clearfix">
 			<a href="http://elsys-bg.org"><img src="assets/images/elsys-logo.png" alt="TUES" /></a>			

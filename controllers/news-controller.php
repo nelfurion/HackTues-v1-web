@@ -7,7 +7,7 @@
 				if (!isset($_GET['startIndex'])) {
 					exit("To get news, you need a startIndex. StartIndex is not given.");
 				}
-				showFiveNews($_GET['startIndex']);
+				showFiveNews($_GET['startIndex'] - 1);
 				break;
 			
 			default:
@@ -40,10 +40,8 @@
 		}
 	}
 	
-
-	
-
 	function showFiveNews($startIndex) {
+		//the $startIndex is taken - 1 in the call, for pagination reasons
 		$newsPerPage = 5;
 		if ($startIndex != 0) {
 			$startIndex *= $newsPerPage;
@@ -72,6 +70,25 @@
 					<p>" . $news[$index]->content . "</p>
 				</article>";
 			$index++;
+		}
+	}
+
+	function paginate() {
+		$newsPerPage = 5;
+		$reqData = ['*'];
+		$news = getData('news', $reqData);
+		$pagesCount;
+		echo '<li><a class="page-link selected-page" href="#">1</a></li>';
+
+		if (count($news) % 5 == 0) {
+			$pagesCount = count($news) / 5;
+		}
+		else {
+			$pagesCount = count($news) / 5 + 1;
+		}
+
+		for ($i=2; $i <= $pagesCount; $i++) { 
+			echo '<li><a class="page-link" href="#">' . $i . '</a></li>';
 		}
 	}
 ?>
