@@ -1,4 +1,5 @@
 function AJAXRequest (filepath, params, func) {
+
 	if (!filepath) {
 		alert("BAD REQUEST: filepath missing!");
 		return;
@@ -12,28 +13,74 @@ function AJAXRequest (filepath, params, func) {
 		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 	}
 
-	xmlhttp.onreadystatechange = function () {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			document.getElementById("content").innerHTML = xmlhttp.responseText;
+	if (params.containerId) {
+		console.log("CONTAINER: ", "'" + params.containerId + "'");
+		xmlhttp.onreadystatechange = function () {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				document.getElementById('news-container').innerHTML = xmlhttp.responseText;
+			};
 		};
-	};
-
-	
-	var request = filepath + "?";
-	
-
-	if (params.length > 0) {
-		for (var i = 0; i < params.length; i++) {
-			var keys = Object.keys(params[i]);
-			console.log(keys);
-			for (var j = 0; j < keys.length; j++) {
-				request += keys[j] + "=" + params[i][keys[j]];
-				request += "&";
+	}
+	else {
+		xmlhttp.onreadystatechange = function () {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				document.getElementById('content').innerHTML = xmlhttp.responseText;
 			};
 		};
 	}
 
+	//For older browsers, which do not support Object.keys()
+	// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+	if (!Object.keys) {
+	  Object.keys = (function() {
+	    'use strict';
+	    var hasOwnProperty = Object.prototype.hasOwnProperty,
+	        hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
+	        dontEnums = [
+	          'toString',
+	          'toLocaleString',
+	          'valueOf',
+	          'hasOwnProperty',
+	          'isPrototypeOf',
+	          'propertyIsEnumerable',
+	          'constructor'
+	        ],
+	        dontEnumsLength = dontEnums.length;
 
+	    return function(obj) {
+	      if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+	        throw new TypeError('Object.keys called on non-object');
+	      }
+
+	      var result = [], prop, i;
+
+	      for (prop in obj) {
+	        if (hasOwnProperty.call(obj, prop)) {
+	          result.push(prop);
+	        }
+	      }
+
+	      if (hasDontEnumBug) {
+	        for (i = 0; i < dontEnumsLength; i++) {
+	          if (hasOwnProperty.call(obj, dontEnums[i])) {
+	            result.push(dontEnums[i]);
+	          }
+	        }
+	      }
+	      return result;
+	    };
+	  }());
+	}
+	
+	var request = filepath + "?";
+
+	var paramKeys = Object.keys(params);
+
+	for (var i = 0; i < paramKeys.length; i++) {
+		request += paramKeys[i] + "=" + params[paramKeys[i]];
+		request += "&";
+	};
+	
 	if(func !== undefined)
 	{
 		request += func !== undefined ? "func=" + func : "";

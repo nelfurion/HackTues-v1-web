@@ -54,10 +54,18 @@
 		<hr />
 
 		<section id="news-section">
-			<?php
-				require_once 'controllers/news-controller.php';
-				echo "KUREC";
-			?>
+			<div id="news-container">
+				<?php
+					require_once 'controllers/news-controller.php';
+				?>
+			</div>
+			<ul class="pagination" id="news-nav">
+			  <li><a class="page-link" href="#">1</a></li>
+			  <li><a class="page-link" href="#">2</a></li>
+			  <li><a class="page-link" href="#">3</a></li>
+			  <li><a class="page-link" href="#">4</a></li>
+			  <li><a class="page-link" href="#">5</a></li>
+			</ul>
 		</section>
 
 		<footer id="footer" class="clearfix">
@@ -66,7 +74,9 @@
 		</footer>
 		
 	</div>
-	
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="functions/ajaxrequest.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('.left-pane-button').css('opacity', 0.5); 			
@@ -80,8 +90,17 @@
 			      $(this).stop().fadeTo('slow', 0.4);  
 			   });		    
 		});
+
+		document.getElementById("news-nav").addEventListener("click", function (e) {
+			console.log(e.target.innerHTML);
+			if (e.target && e.target.nodeName == "A") {
+				AJAXRequest('controllers/news-controller.php', {containerId: 'news-container', startIndex: e.target.innerHTML}, 'getNews');
+			};
+			/*if (e.target && e.target.nodeName == "LI") {
+				AJAXRequest('controllers/news-controller.php', [], 'getNews', {containerId: 'news-container'});
+			};*/
+		});
 	</script>
-	<script src="assets/js/rainbow-custom.min.js"></script>	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>	
+		
 </body>
 </html>
