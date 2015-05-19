@@ -11,5 +11,4 @@
 				paginate();
 			?>
 		</ul>
-	</div>
 </section>
