@@ -3,6 +3,10 @@
 	margin-bottom: 20px;	
 }
 
+.container hr:first-of-type {
+	margin-top: 0px;
+}
+
 header h1 {
 	font-size: 45px;
  	font-family: 'Raleway', sans-serif;	
@@ -17,6 +21,7 @@ header .row .blue {
 	padding: 0px !important;
 	background: #FFF;
 }
+
 .jumbotron button {
 	color: #888;
 	background-color: transparent;
@@ -36,8 +41,16 @@ header .row .blue {
 }
 
 hr {
-	margin-top: 0px;
 	clear: both;	
+}
+
+section .col-sm-12 {
+	padding: 0px;
+	padding-bottom: 10px;
+}
+
+section h2 {
+	margin-top: 0px;
 }
 
 .navbar-default {
@@ -48,14 +61,11 @@ hr {
 	margin-bottom: 0px;
 }
 
-.navbar-default .navbar-nav>.active>a {
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
 	color: #000;
 	background: transparent;
 }
 
-.navbar-default .navbar-nav>.active>a:hover {
-	background: transparent;
-}
 
 .nav, .navbar-nav {
 	display: inline-block;	
