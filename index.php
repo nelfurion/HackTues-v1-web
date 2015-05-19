@@ -33,11 +33,10 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Начало <span class="sr-only">(current)</span></a></li>
 							<li><a href="#">Награди</a></li>
-							<li><a href="#">Спонсори</a></li>
 							<li><a href="#">Регламент</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">За хакатона</a></li>
-							<li><a href="#">Екип</a></li>	        		        	        
+							<li><a href="pages/faq.php">FAQ</a></li>
+							<li><a href="pages/about.php">За хакатона</a></li>
+							<li><a href="pages/crew.php">Екип</a></li>	        		        	        
 						</ul>
 					</div>
 				</div>
