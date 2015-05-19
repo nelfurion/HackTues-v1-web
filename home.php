@@ -47,8 +47,8 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, perspiciatis quae tempore recusandae consequuntur, fugit, perferendis incidunt alias omnis totam libero, culpa minus ratione maxime necessitatibus eius dolorem itaque natus.</p>
-					<button type="button" class="hidden left-pane-button"><a href="register.php">Регистрирай се</a></button>
-					<button type="button" class="hidden left-pane-button"><a href="rules.php">Регламент</a></button>
+					<button type="button" class="hidden left-pane-button">Регистрирай се</button>
+					<button type="button" class="hidden left-pane-button"><a href="rules">Регламент</a></button>
 				</div>
 				<div class="col-sm-6">
 					<img src="assets/images/right-pane-dates.png" alt="Hackathon dates" class="img-responsive"/>
@@ -86,9 +86,6 @@
 			if (e.target && e.target.nodeName == "A") {
 				AJAXRequest('controllers/news-controller.php', {containerId: 'news-container', startIndex: e.target.innerHTML}, 'getNews');
 			};
-			/*if (e.target && e.target.nodeName == "LI") {
-				AJAXRequest('controllers/news-controller.php', [], 'getNews', {containerId: 'news-container'});
-			};*/
 		});
 	</script>
 		
