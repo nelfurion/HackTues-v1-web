@@ -31,13 +31,13 @@
 					</div>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="index.php">Начало <span class="sr-only">(current)</span></a></li>
-							<li><a href="prizes.php">Награди</a></li>
-							<li><a href="sponsors.php">Спонсори</a></li>
+							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
+							<li><a href="prizes">Награди</a></li>
+							<li><a href="sponsors">Спонсори</a></li>
 							<li class="active"><a href="#">Регламент</a></li>
-							<li><a href="faq.php">FAQ</a></li>
-							<li><a href="about.php">За хакатона</a></li>
-							<li><a href="crew.php">Екип</a></li>	        		        	        
+							<li><a href="faq">FAQ</a></li>
+							<li><a href="about">За хакатона</a></li>
+							<li><a href="team">Екип</a></li>	        		        	        
 						</ul>
 					</div>
 				</div>
