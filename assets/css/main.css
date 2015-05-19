@@ -1,163 +1,76 @@
-body {
-  background-color: #FFF;
+.container {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 20px;	
 }
-body #wrapper {
-  background: #FFF;
-  padding: 0px;
-  font-family: 'Open Sans', sans-serif;
-  width: 60%;
-  font-size: 16px;
-  margin: 0 auto;
-  height: 1000px;
+
+header h1 {
+	font-size: 45px;
+ 	font-family: 'Raleway', sans-serif;	
+	text-align: center;
 }
-body #wrapper header {
-  margin: 0 auto;
+
+header .row .blue {	
+	color: #446576;;
 }
-body #wrapper header #logo {
-  text-align: center;
+
+.jumbotron {
+	padding: 0px !important;
+	background: #FFF;
 }
-body #wrapper header #logo h1 {
-  margin: 0px;
-  padding: 10px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 4em;
+.jumbotron button {
+	color: #888;
+	background-color: transparent;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px 15px 10px 15px;
+	margin-bottom: 20px;
 }
-body #wrapper header #logo .blue {
-  color: #446576;
+
+.jumbotron button:hover {
+	background-color: #EEE;
 }
-body #wrapper header nav.navbar,
-body #wrapper header nav.navbar-default {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  border-radius: 0px;
-  height: 40px;
-  margin-bottom: 0px;
+
+.jumbotron p {
+	font-size: 1.2em;
+ 	font-family: 'Raleway', sans-serif;		
 }
-body #wrapper header nav.navbar div.container-fluid,
-body #wrapper header nav.navbar-default div.container-fluid {
-  padding: 0px;
+
+hr {
+	margin-top: 0px;
+	clear: both;	
 }
-body #wrapper header nav.navbar div.container-fluid div.collapse,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse {
-  padding: 0px;
-  width: 80%;
-  float: none;
-  margin: 0 auto;
-  text-align: center;
+
+.navbar-default {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	border-radius: 0px;
+	margin-bottom: 0px;
 }
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav,
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav {
-  float: none;
-  display: inline-block;
+
+.navbar-default .navbar-nav>.active>a {
+	color: #000;
+	background: transparent;
 }
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav li a,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav li a,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav li a,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav li a,
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav li a,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav li a,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav li a,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav li a {
-  color: #888;
-  padding: 10px;
-  opacity: 0.5;
+
+.navbar-default .navbar-nav>.active>a:hover {
+	background: transparent;
 }
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav li.active a,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav li.active a,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav li.active a,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav li.active a,
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav li.active a,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav li.active a,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav li.active a,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav li.active a {
-  background: #FFF;
-  box-shadow: none;
-  opacity: 1;
+
+.nav, .navbar-nav {
+	display: inline-block;	
+	float: none;	
 }
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.nav li:hover a,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.nav li:hover a,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.nav li:hover a,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.nav li:hover a,
-body #wrapper header nav.navbar div.container-fluid div.collapse ul.navbar-nav li:hover a,
-body #wrapper header nav.navbar-default div.container-fluid div.collapse ul.navbar-nav li:hover a,
-body #wrapper header nav.navbar div.container-fluid div.navbar-collapse ul.navbar-nav li:hover a,
-body #wrapper header nav.navbar-default div.container-fluid div.navbar-collapse ul.navbar-nav li:hover a {
-  opacity: 1;
+
+@media(min-width:1200px) {
+	.navbar .navbar-collapse {
+	    text-align: center;
+	}
 }
-body #wrapper hr {
-  margin: 0px;
-}
-body #wrapper div.jumbotron {
-  background-color: #FFF;
-  overflow: hidden;
-}
-body #wrapper div.jumbotron div#left-pane {
-  margin-top: 50px;
-  float: left;
-  width: 40%;
-  display: inline-block;
-}
-body #wrapper div.jumbotron div#left-pane p {
-  font-size: 15px;
-  font-family: 'Raleway', sans-serif;
-  padding-right: 30px;
-  text-align: left;
-}
-body #wrapper div.jumbotron div#left-pane button {
-  font-family: 'Open Sans', sans-serif;
-  background-color: transparent;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px 15px 10px 15px;
-  margin-top: 50px;
-}
-body #wrapper div.jumbotron div#left-pane button:hover {
-  background-color: #F1F1F1;
-}
-body #wrapper div.jumbotron div#right-pane {
-  border-left: 1px solid #F1F1F1;
-  margin-top: 50px;
-  margin-left: 50px;
-  float: left;
-  width: 53%;
-  display: inline-block;
-}
-body #wrapper div.jumbotron div#right-pane img {
-  width: 100%;
-}
-body #wrapper .hidden {
-  display: none;
-}
-body #wrapper footer {
-  padding: 20px 20px 20px 0px;
-  overflow: hidden;
-  margin-top: 50px;
-  clear: both;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-body #wrapper footer img {
-  margin-left: 20px;
-}
-body #wrapper .clearfix:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden;
-}
-body #wrapper .clearfix {
-  display: inline-block;
-}
-body #wrapper .clearfix {
-  display: block;
+
+@media(max-width:767px){
+	footer .row .col-sm-1 {
+		text-align: center;
+		margin-top: 15px;
+	}
 }

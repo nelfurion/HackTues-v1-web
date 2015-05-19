@@ -1,7 +1,7 @@
 
 <?php
-	require '/../classes/common/config.php';
-	require '/../classes/common/database.php';
+	require 'classes/common/config.php';
+	require 'classes/common/database.php';
 
 	//print_r($_GET);
 
