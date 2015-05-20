@@ -84,3 +84,26 @@ section h2 {
 		margin-top: 15px;
 	}
 }
+
+section#team div.row div.col-md-4 div.col-sm-6 div.row span.name {
+	font-weight: bold;
+}
+
+section#team div.row div.col-md-4 div.col-sm-6 div.row span.description {
+	font-style: italic;
+}
+
+section#team div.row div.col-md-4 div.col-sm-6:last-of-type {
+	padding-top: 50px;
+}
+
+
+@media(max-width:767px) {
+	section#team {
+		text-align: center;
+	}
+
+	section#team div.col-md-4 {
+		margin-bottom: 10px;
+	}
+}
