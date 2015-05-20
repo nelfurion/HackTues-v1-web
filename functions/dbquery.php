@@ -1,8 +1,8 @@
 <?php
-	//require 'classes/common/config.php';
-	//require 'classes/common/database.php';
-	require_once '/../classes/common/config.php';
-	require_once '/../classes/common/database.php';
+	require 'classes/common/config.php';
+	require 'classes/common/database.php';
+	//require_once '/../classes/common/config.php';
+	//require_once '/../classes/common/database.php';
 	//print_r($_GET);
 
 	if (isset($_GET['func'])) {

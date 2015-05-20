@@ -1,6 +1,7 @@
 <?php
-	require '/../functions/dbquery.php';
-
+	//require '/../functions/dbquery.php';
+	require 'functions/dbquery.php';
+	
 	if (isset($_GET['func'])) {
 		switch ($_GET['func']) {
 			case 'getNews':

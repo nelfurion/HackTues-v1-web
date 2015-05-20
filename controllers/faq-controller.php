@@ -1,5 +1,7 @@
 <?php
-	require_once '/../functions/dbquery.php';
+	//require_once '/../functions/dbquery.php';
+	require_once 'functions/dbquery.php';
+
 	$faq = getData('faq', ['question', 'answer']);
 	if (count($faq) == 0) {
 		echo 'Все още няма информация.';
