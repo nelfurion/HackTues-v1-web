@@ -45,7 +45,7 @@
 			</nav>
 		</header>
 		<hr />
-		<section>
+		<div class="row">
 			<div class="col-sm-12">
 				<h2>За хакатона</h2>
 					<p>
@@ -56,7 +56,7 @@
 						на ТУЕС, с подкрепата на училището и нашите спонсори.
 					</p>
 			</div>		
-		</section>
+		</div>
 		<hr />
 		
 	</div>

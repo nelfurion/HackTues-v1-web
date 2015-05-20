@@ -33,7 +33,6 @@
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
 							<li><a href="prizes">Награди</a></li>
-							<li><a href="sponsors">Спонсори</a></li>
 							<li class="active"><a href="#">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
@@ -44,7 +43,7 @@
 			</nav>
 		</header>
 		<hr />
-		<section>
+		<div class="row">
 			<div class="col-sm-12">
 				<h2 id="rules-header">Регламент</h2>
 				<ul>
@@ -71,7 +70,7 @@
 					Добре е приложенията да се придържат към темата.
 				</p>
 			</div>		
-		</section>
+		</div>
 		<hr />
 		
 	</div>

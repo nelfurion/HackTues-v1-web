@@ -58,10 +58,9 @@
 				</div>
   			</div>
   		</div>
-		<hr />
-		<section id='news-section'>
-			
-		</section>
+  		<?php
+  			require_once 'partials/news-partial.php';
+  		?>
 		<hr />
 		<footer>
 			<div class="row">

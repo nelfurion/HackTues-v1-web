@@ -1,6 +1,6 @@
 .container {
 	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 }
 
 .container hr:first-of-type {
@@ -25,7 +25,7 @@ header .row .blue {
 	background: #FFF;
 }
 
-.jumbotron button {
+.jumbotron button, input[type=submit] {
 	color: #888;
 	background-color: transparent;
 	border: 1px solid #ddd;
@@ -85,5 +85,49 @@ section h2 {
 	footer .row .col-sm-1 {
 		text-align: center;
 		margin-top: 15px;
+	}
+}
+
+.form-signin input, select {
+	margin-bottom: 10px;
+}
+
+.form-signin .row > .col-md-6 > .col-md-6:nth-of-type(2) {
+	padding: 0px;
+}
+
+@media(min-width:1200px) {
+	.form-signin .row > .col-md-6 > .col-md-6:nth-of-type(1) {
+		padding: 0px;
+		padding-right: 10px;
+	}
+}
+
+@media(max-width:767px){
+	.form-signin .row > .col-md-6 > .col-md-6:nth-of-type(1) {
+		padding: 0px;
+	}
+}
+
+section#team div.row div.col-md-4 div.col-sm-6 div.row span.name {
+	font-weight: bold;
+}
+
+section#team div.row div.col-md-4 div.col-sm-6 div.row span.description {
+	font-style: italic;
+}
+
+section#team div.row div.col-md-4 div.col-sm-6:last-of-type {
+	padding-top: 50px;
+}
+
+
+@media(max-width:767px) {
+	section#team {
+		text-align: center;
+	}
+
+	section#team div.col-md-4 {
+		margin-bottom: 10px;
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 	//require '/../functions/dbquery.php';
-	require 'functions/dbquery.php';
+	require dirname(__FILE__) . '/../functions/dbquery.php';
 	
 	if (isset($_GET['func'])) {
 		switch ($_GET['func']) {
@@ -27,17 +27,17 @@
 			return;
 		}
 
+		if (count($news) < 5) {
+			$newsPerPage = count($news);
+		}
+
 		$numOfPages = count($news) / $newsPerPage;
 		if (count($news) % $newsPerPage != 0) {
 			$numOfPages++;
 		}
 
-		for ($i=0; $i < $newsPerPage; $i++) { 
-			echo
-				'<article class="newsArticle clear">
-					<h3 class="news-title">' . $news[$i]->name . '</h3>
-					<p class="news-content">' . $news[$i]->content . '</p>
-				</article>';
+		for ($i=$newsPerPage - 1; $i >= 0; $i--) { 
+			echo '<h3>' . $news[$i]->name . '</h3><p>' . $news[$i]->content . '</p>';
 		}
 	}
 	

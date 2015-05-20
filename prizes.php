@@ -33,7 +33,6 @@
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
 							<li class="active"><a href="#">Награди</a></li>
-							<li><a href="sponsors">Спонсори</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
@@ -44,12 +43,12 @@
 			</nav>
 		</header>
 		<hr />
-		<section>
+		<div class="row">
 			<div class="col-sm-12">
 				<h2>Награди</h2>
 				<p>Малко награди. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consequatur quae nihil possimus eveniet, sapiente facilis, id officia quisquam quaerat corrupti, doloremque nulla adipisci, distinctio nisi ab harum magni quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat velit et, laboriosam nobis non sit, molestias id, autem inventore sed aperiam optio tenetur. Delectus hic enim libero, nobis laborum quisquam.</p>
 			</div>		
-		</section>
+		</div>
 		<hr />
 		
 	</div>

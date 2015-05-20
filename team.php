@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>Организатори</title>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -32,7 +33,6 @@
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
 							<li><a href="prizes">Награди</a></li>
-							<li><a href="sponsors">Спонсори</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>

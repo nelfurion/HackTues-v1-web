@@ -85,54 +85,82 @@
 	}
 
 ?>
-<!-- <meta charset="UTF-8"> -->
-<section id="section-register">
-	<img id="form-exit" src="assets/images/X.png"></img>
-	<form id="form-register" action="" method="post">
-		<div class="field">
-			<label for="firstname">Име: </label>
-			<input type="text" name="firstname" id="firstname" value="<?php echo escape(Input::get('firstname')); ?>" autocomplete="off">
+<meta charset="utf-8">
+<form class="form-signin" action="" method="post">
+		<div class="row">
+			<div class="col-md-6">
+				<label for="firstname">Име: </label>
+			</div>
+			<div class="col-md-6">
+				<input type="text" name="firstname" class="form-control" id="firstname" placeholder="Име" value="<?php echo escape(Input::get('firstname')); ?>" autocomplete="off">
+			</div>
 		</div>
-
-		<div class="field">
-			<label for="lastname">Фамилия: </label>
-			<input type="text" name="lastname" id="lastname" value="<?php echo escape(Input::get('lastname')); ?>" autocomplete="off">
+		<div class="row">
+			<div class="col-md-6">
+				<label for="lastname">Фамилия: </label>
+			</div>
+			<div class="col-md-6">
+				<input type="text" name="lastname" class="form-control" id="lastname" placeholder="Фамилия" value="<?php echo escape(Input::get('lastname')); ?>" autocomplete="off">
+			</div>
 		</div>
-
-		<div class="field">
-			<label for="class-number">Клас: </label>
-			<input type="number" name="class-number" min="8" max="12" id="class-number" value="<?php echo escape(Input::get('class-number')); ?>" autocomplete="off">
-			<select name="class-letter">
-			  <option value="А">А</option>
-			  <option value="Б">Б</option>
-			  <option value="В">В</option>
-			  <option value="Г">Г</option>
-			</select>		
+		<div class="row">
+			<div class="col-md-6">
+				<label for="class-number">Клас: </label>
+			</div>
+			<div class="col-md-6">
+				<div class="col-md-6">
+					<input type="number" name="class-number" class="form-control" min="8" max="12" id="class-number" value="<?php echo escape(Input::get('class-number')); ?>" autocomplete="off">
+				</div>
+				<div class="col-md-6">
+					<select name="class-letter" class="form-control">
+					  <option value="А">А</option>
+					  <option value="Б">Б</option>
+					  <option value="В">В</option>
+					  <option value="Г">Г</option>
+					</select>
+				</div>
+			</div>
 		</div>
-
-		<div class="field">
-			<label for="email">Ел. поща: </label>
-			<input type="email" name="email" id="email" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
+		<div class="row">
+			<div class="col-md-6">
+				<label for="email">Е-мейл: </label>
+			</div>
+			<div class="col-md-6">
+				<input type="email" name="email" id="email" class="form-control" placeholder="Е-мейл" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
+			</div>
 		</div>
-
-		<div class="field">
-			<label for="username">Потребител: </label>
-			<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
+		<div class="row">
+			<div class="col-md-6">
+				<label for="username">Потребител: </label>
+			</div>
+			<div class="col-md-6">				
+				<input type="text" name="username" id="username" class="form-control" placeholder="Потребител" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
+			</div>
 		</div>
-
-		<div class="field">
-			<label for="password">Парола: </label>
-			<input type="password" name="password" id="password">
+		<div class="row">
+			<div class="col-md-6">
+				<label for="password">Парола: </label>
+			</div>
+			<div class="col-md-6">
+				<input type="password" placeholder="Парола" class="form-control" name="password" id="password">
+			</div>
 		</div>
-
-		<div class="field">
-			<label for="password-again">Потвърди парола: </label>
-			<input type="password" name="password-again" id="password-again">		
+		<div class="row">
+			<div class="col-md-6">
+				<label for="password-again">Потвърди паролата: </label>
+			</div>
+			<div class="col-md-6">
+				<input type="password" name="password-again" class="form-control" placeholder="Потвърди парола" id="password-again">
+			</div>
 		</div>
-
-		<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-		<input type="submit" value="Регистрирай се!">
-	</form>
-	<a class="form-switch" href="#">Вече имаш акаунт?</a>
-</section>
-
+		<div class="row">
+			<div class="col-md-6">
+				<button>Отказ</button>
+			</div>
+			<div class="col-md-6">
+				<input type="submit" value="Регистрирай се!">				
+				<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+			</div>
+		</div>
+</form>
+<a class="form-switch" href="#">Вече имаш акаунт?</a>

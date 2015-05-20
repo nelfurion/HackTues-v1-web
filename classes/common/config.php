@@ -1,7 +1,8 @@
 <?php
 
 	//require '/../../core/config.php';
-	require 'core/config.php';
+	require dirname(__FILE__) . '/../../core/config.php'; // This shoudln't work. God knows why it does.
+	
 	class Config 
 	{
 		public static function getValue($path = null) 

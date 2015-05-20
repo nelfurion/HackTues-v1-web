@@ -45,14 +45,14 @@
 			</nav>
 		</header>
 		<hr />
-		<section>
+		<div class="row">
 			<div class="col-sm-12">
 				<h2>FAQ</h2>
 				<?php
 					require_once 'controllers/faq-controller.php';
 				?>
 			</div>		
-		</section>
+		</div>
 		<hr />
 	</div>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
