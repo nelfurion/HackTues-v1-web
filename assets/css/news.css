@@ -1,0 +1,42 @@
+.container #news-section {
+	overflow: hidden;
+	clear: both; /*just in case*/
+	text-align: center;
+}
+
+.container #news-section div>span {
+	font-size: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.container>#news-section div #news-container>.newsArticle {
+	text-align: left;
+	max-height: 400px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.container>#news-section div #news-container>.newsArticle>.news-title {
+	font-size: 1.5em;
+	padding: 5px;
+	display: block;
+	border-bottom: 1px double #EEEEEE; 
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.container>#news-section div #news-container>.newsArticle>p {
+	width: 80%;
+	padding-left: 50px;
+}
+.container>#news-section div #news-container>.newsArticle img {
+	max-width: 100%;
+}
+.container>#news-section div #news-container>.newsArticle>p>.article-exit {
+	display: block;
+	background-color: transparent;
+	width: 100%;
+	border: 1px solid #EEEEEE;
+	border-radius: 5px;
+}

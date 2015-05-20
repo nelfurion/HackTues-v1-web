@@ -46,8 +46,30 @@
 		<hr />
 		<section>
 			<div class="col-sm-12">
-				<h2>Регламент</h2>
-				<p>Ем хуу някой го напише. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consequatur quae nihil possimus eveniet, sapiente facilis, id officia quisquam quaerat corrupti, doloremque nulla adipisci, distinctio nisi ab harum magni quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat velit et, laboriosam nobis non sit, molestias id, autem inventore sed aperiam optio tenetur. Delectus hic enim libero, nobis laborum quisquam.</p>
+				<h2 id="rules-header">Регламент</h2>
+				<ul>
+					<li>
+						HackTUES е тридневно състезание по програмиране, което се провежда на територията на ТУЕС към ТУ-София и ТУ-София. Темата на състезанието е Hack for TUES.
+					</li>
+					<li>
+						Всеки човек, желаещ да участва в състезанието трябва да се регистрира през формата на сайта
+						 - ‘hacktues.denied.in’ и да потвърди, през имейл, регистрацията си.
+						 Регистрациите се приемат до първия ден от състезанието (включително).
+					</li>
+					<li>
+						Участниците могат да участват по отбори - до 5 човека или по отделно.
+					</li>
+					<li>
+						През последния ден, всеки отбор/участник представя своето приложение пред жури, което го оценява и награждава.
+					</li>
+					<li>
+						Забавлявайте се!
+					</li>
+				</ul>
+				<p>
+					Кодът се лицензира според MIT лиценза.
+					Добре е приложенията да се придържат към темата.
+				</p>
 			</div>		
 		</section>
 		<hr />

@@ -5,7 +5,7 @@
 			'host' => '127.0.0.1',
 			'username' => 'root',
 			'password' => 'test',
-			'db' => 'hacktues'
+			'db' => 'access'
 		),
 		'remember' => array(
 			'cookie_name' => 'hash',

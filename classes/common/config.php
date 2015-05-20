@@ -1,6 +1,6 @@
 <?php
 
-	require 'core/config.php';
+	require '/../../core/config.php';
 
 	class Config 
 	{

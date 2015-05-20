@@ -85,49 +85,54 @@
 	}
 
 ?>
-<meta charset="UTF-8">
-<form action="" method="post">
-	<div class="field">
-		<label for="firstname">Име: </label>
-		<input type="text" name="firstname" id="firstname" value="<?php echo escape(Input::get('firstname')); ?>" autocomplete="off">
-	</div>
+<!-- <meta charset="UTF-8"> -->
+<section id="section-register">
+	<img id="form-exit" src="assets/images/X.png"></img>
+	<form id="form-register" action="" method="post">
+		<div class="field">
+			<label for="firstname">Име: </label>
+			<input type="text" name="firstname" id="firstname" value="<?php echo escape(Input::get('firstname')); ?>" autocomplete="off">
+		</div>
 
-	<div class="field">
-		<label for="lastname">Фамилия: </label>
-		<input type="text" name="lastname" id="lastname" value="<?php echo escape(Input::get('lastname')); ?>" autocomplete="off">
-	</div>
+		<div class="field">
+			<label for="lastname">Фамилия: </label>
+			<input type="text" name="lastname" id="lastname" value="<?php echo escape(Input::get('lastname')); ?>" autocomplete="off">
+		</div>
 
-	<div class="field">
-		<label for="class-number">Клас: </label>
-		<input type="number" name="class-number" min="8" max="12" id="class-number" value="<?php echo escape(Input::get('class-number')); ?>" autocomplete="off">
-		<select name="class-letter">
-		  <option value="А">А</option>
-		  <option value="Б">Б</option>
-		  <option value="В">В</option>
-		  <option value="Г">Г</option>
-		</select>		
-	</div>
+		<div class="field">
+			<label for="class-number">Клас: </label>
+			<input type="number" name="class-number" min="8" max="12" id="class-number" value="<?php echo escape(Input::get('class-number')); ?>" autocomplete="off">
+			<select name="class-letter">
+			  <option value="А">А</option>
+			  <option value="Б">Б</option>
+			  <option value="В">В</option>
+			  <option value="Г">Г</option>
+			</select>		
+		</div>
 
-	<div class="field">
-		<label for="email">Ел. поща: </label>
-		<input type="email" name="email" id="email" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
-	</div>
+		<div class="field">
+			<label for="email">Ел. поща: </label>
+			<input type="email" name="email" id="email" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
+		</div>
 
-	<div class="field">
-		<label for="username">Потребител: </label>
-		<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
-	</div>
+		<div class="field">
+			<label for="username">Потребител: </label>
+			<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
+		</div>
 
-	<div class="field">
-		<label for="password">Парола: </label>
-		<input type="password" name="password" id="password">
-	</div>
+		<div class="field">
+			<label for="password">Парола: </label>
+			<input type="password" name="password" id="password">
+		</div>
 
-	<div class="field">
-		<label for="password-again">Потвърди парола: </label>
-		<input type="password" name="password-again" id="password-again">		
-	</div>
+		<div class="field">
+			<label for="password-again">Потвърди парола: </label>
+			<input type="password" name="password-again" id="password-again">		
+		</div>
 
-	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-	<input type="submit" value="Регистрирай се!">
-</form> 
+		<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+		<input type="submit" value="Регистрирай се!">
+	</form>
+	<a class="form-switch" href="#">Вече имаш акаунт?</a>
+</section>
+

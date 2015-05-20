@@ -36,24 +36,25 @@
 		}
 	}
 ?>
+<section id="section-login">
+	<form action="" method="post">
+		<div class="field">
+			<label for="username">Потребител</label>
+			<input type="text" name="username" id="username" autocomplete="off">
+		</div>
 
-<meta charset="UTF-8">
-<form action="" method="post">
-	<div class="field">
-		<label for="username">Потребител</label>
-		<input type="text" name="username" id="username" autocomplete="off">
-	</div>
+		<div class="field">
+			<label for="password">Парола</label>
+			<input type="password" name="password" id="password" autocomplete="off">
+		</div>
 
-	<div class="field">
-		<label for="password">Парола</label>
-		<input type="password" name="password" id="password" autocomplete="off">
-	</div>
-
-	<div class="field">
-		<label for="remember">
-			<input type="checkbox" name="remember" id="remember"> Запомни ме
-		</label>
-	</div>
-	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-	<input type="submit" value="Влез">
-</form>
+		<div class="field">
+			<label for="remember">
+				<input type="checkbox" name="remember" id="remember"> Запомни ме
+			</label>
+		</div>
+		<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+		<input type="submit" value="Влез">
+	</form>
+	<a class="form-switch" href="#">Назад</a>
+</section>

@@ -1,5 +1,5 @@
 <?php
-	require 'functions/dbquery.php';
+	require '/../functions/dbquery.php';
 
 	if (isset($_GET['func'])) {
 		switch ($_GET['func']) {
@@ -33,10 +33,10 @@
 
 		for ($i=0; $i < $newsPerPage; $i++) { 
 			echo
-				"<article class=\"newsArticle clear\">
-					<h3>" . $news[$i]->name . "</h3>
-					<p>" . $news[$i]->content . "</p>
-				</article>";
+				'<article class="newsArticle clear">
+					<h3 class="news-title">' . $news[$i]->name . '</h3>
+					<p class="news-content">' . $news[$i]->content . '</p>
+				</article>';
 		}
 	}
 	
@@ -65,10 +65,10 @@
 
 		while ($index < count($news) && $index < $endIndex) {
 			echo
-				"<article class=\"newsArticle clear\">
-					<h3>" . $news[$index]->name . "</h3>
-					<p>" . $news[$index]->content . "</p>
-				</article>";
+				'<article class="newsArticle clear">
+					<h3 class="news-title">' . $news[$index]->name . '</h3>
+					<p class="news-content">' . $news[$index]->content . '</p>
+				</article>';
 			$index++;
 		}
 	}
@@ -78,7 +78,7 @@
 		$reqData = ['*'];
 		$news = getData('news', $reqData);
 		$pagesCount;
-		echo '<li><a class="page-link selected-page" href="#">1</a></li>';
+		echo '<li><a class="page-link selected-page" onclick="return false;" href="#">1</a></li>';
 
 		if (count($news) % 5 == 0) {
 			$pagesCount = count($news) / 5;
@@ -88,7 +88,7 @@
 		}
 
 		for ($i=2; $i <= $pagesCount; $i++) { 
-			echo '<li><a class="page-link" href="#">' . $i . '</a></li>';
+			echo '<li><a class="page-link" onclick="return false;" href="#">' . $i . '</a></li>';
 		}
 	}
 ?>

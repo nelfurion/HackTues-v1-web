@@ -1,0 +1,15 @@
+#section-register {
+	width: 80%;
+}
+#form-exit {
+	/*display: block;*/
+	float: right;
+}
+#form-register {
+	clear: both;
+	width: 99%;
+}
+#form-register label {
+	width: 20%;
+	min-width: 70px;
+}

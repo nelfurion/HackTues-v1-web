@@ -1,3 +1,13 @@
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;")
+        .replace(/\//g, "&#x2F;")
+}
+
 function addArticle () {
 	var section = document.getElementById("content");
 	var firstArticle = document.querySelector(".newsArticle");
@@ -21,9 +31,16 @@ function addArticle () {
 
 	new nicEditor({
 			fullPanel : true, onSave : function(content, id, instance) {
-				var name = document.getElementById('articleName').innerHTML;
-				var content = nicEditors.findEditor('niceditArea').getContent();
-				
+				var name = escapeHtml(document.getElementById('articleName').innerHTML);
+				if (!name) {
+					alert('You must add a name to the piece of news!');
+					return;
+				};
+
+				var content = escapeHtml(nicEditors.findEditor('niceditArea').getContent());
+				if (!content) {
+					alert('The news must have content!');
+				};
 				//AJAXRequest uses AJAX script to contact the server
 				AJAXRequest(
 					"scripts/dbquery.php",
