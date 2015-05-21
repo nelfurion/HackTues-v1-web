@@ -49,7 +49,7 @@
 				<div id="form-container" class="col-sm-6">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, perspiciatis quae tempore recusandae consequuntur, fugit, perferendis incidunt alias omnis totam libero, culpa minus ratione maxime necessitatibus eius dolorem itaque natus.</p>
 					<button type="button" id="registerBtn" class="hidden left-pane-button">Регистрирай се | Влез</button>
-					<button type="button" class="hidden left-pane-button"><a href="rules">Регламент</a></button>
+					<button type="button" class="hidden left-pane-button">Регламент</button>
 				</div>
 				<div class="col-sm-6">
 					<img src="assets/images/right-pane-dates.png" alt="Hackathon dates" class="img-responsive"/>
@@ -135,7 +135,7 @@
 		
 		
 
-		/**/
+		/* PROCCESS FORMS */
 
 		document.getElementById('form-container').addEventListener('click', function (e) {
 			if (e.target.id === 'registerBtn') {
@@ -180,6 +180,21 @@
 				
 				return false;
 			}
+			else if (e.target.id === 'reg-send') {
+				//For hiding request data
+
+				//$.post('register.php', $('#form-register').serialize());
+				/*e.preventDefault();
+				e.stopImmediatePropagation();
+
+				var form = document.getElementById('form-register');
+				var kids = form.children;
+				for (var i = kids.length - 1; i >= 0; i--) {
+					for (var j = kids[i].children.length - 1; j >= 0; j--) {
+						console.log(kids[i].children);
+					};
+				};*/
+			};
 		});
 	</script>
 		

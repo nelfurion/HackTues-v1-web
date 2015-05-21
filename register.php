@@ -86,7 +86,7 @@
 
 ?>
 <meta charset="utf-8">
-<form id="form-register" class="form-signin" action="" method="post">
+<form id="form-register" class="form-signin" action="register.php" method="post">
 		<div class="row">
 			<div class="col-md-6">
 				<label for="firstname">Име: </label>
@@ -158,7 +158,7 @@
 				<button id="form-exit">Отказ</button>
 			</div>
 			<div class="col-md-6">
-				<input type="submit" value="Регистрирай се!">				
+				<input id="reg-send" type="submit" value="Регистрирай се!">				
 				<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 			</div>
 		</div>

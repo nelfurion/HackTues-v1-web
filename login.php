@@ -37,7 +37,7 @@
 	}
 ?>
 <section id="section-login">
-	<form action="" method="post">
+	<form action="login.php" method="post">
 		<div class="field">
 			<label for="username">Потребител</label>
 			<input type="text" name="username" id="username" autocomplete="off">
