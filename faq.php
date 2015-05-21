@@ -34,7 +34,6 @@
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
 							<li><a href="prizes">Награди</a></li>
-							<li><a href="sponsors">Спонсори</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li class="active"><a href="#">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>

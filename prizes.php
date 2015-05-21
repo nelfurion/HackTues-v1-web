@@ -46,7 +46,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h2>Награди</h2>
-				<p>Малко награди. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consequatur quae nihil possimus eveniet, sapiente facilis, id officia quisquam quaerat corrupti, doloremque nulla adipisci, distinctio nisi ab harum magni quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat velit et, laboriosam nobis non sit, molestias id, autem inventore sed aperiam optio tenetur. Delectus hic enim libero, nobis laborum quisquam.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consequatur quae nihil possimus eveniet, sapiente facilis, id officia quisquam quaerat corrupti, doloremque nulla adipisci, distinctio nisi ab harum magni quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat velit et, laboriosam nobis non sit, molestias id, autem inventore sed aperiam optio tenetur. Delectus hic enim libero, nobis laborum quisquam.</p>
 			</div>		
 		</div>
 		<hr />

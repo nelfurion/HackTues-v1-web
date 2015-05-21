@@ -37,7 +37,7 @@
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
 							<li><a href="team">Екип</a></li>
-							<li><a href="profile">Username</a></li>
+							<!-- <li><a href="profile">Username</a></li> -->
 						</ul>
 					</div>
 				</div>

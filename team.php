@@ -80,7 +80,7 @@
 					</div>
 					<div class="col-sm-6">					
 						<div class="row"><span class="name">Николай Карагьозов</span></div>
-						<div class="row"><span class="description">Организатор, Developer</span></div>
+						<div class="row"><span class="description">Организатор</span></div>
 					</div>								
 				</div>
 				<div class="col-md-4">
