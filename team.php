@@ -47,45 +47,45 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
+					</div>
+					<div class="col-sm-6">					
+						<div class="row"><span class="name">Радостин Ангелов</span></div>
+						<div class="row"><span class="description">Организатор, Developer</span></div>
+					</div>								
+				</div>
+				<div class="col-md-4">
+					<div class="col-sm-6">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
+					</div>
+					<div class="col-sm-6">					
+						<div class="row"><span class="name">Ивайло Арнаудов</span></div>
+						<div class="row"><span class="description">Организатор, Developer</span></div>
+					</div>								
+				</div>
+				<div class="col-md-4">
+					<div class="col-sm-6">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
 					</div>
 					<div class="col-sm-6">					
 						<div class="row"><span class="name">Валентин Йонев</span></div>
 						<div class="row"><span class="description">Организатор</span></div>
-					</div>								
-				</div>
-				<div class="col-md-4">
-					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
-					</div>
-					<div class="col-sm-6">					
-						<div class="row"><span class="name">Ванеса Стойнова</span></div>
-						<div class="row"><span class="description">Организатор</span></div>
-					</div>								
-				</div>
-				<div class="col-md-4">
-					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
-					</div>
-					<div class="col-sm-6">					
-						<div class="row"><span class="name">Ивайло Арнаудов</span></div>
-						<div class="row"><span class="description">Организатор/Developer</span></div>
 					</div>								
 				</div>				
 			</div>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
 					</div>
 					<div class="col-sm-6">					
-						<div class="row"><span class="name">Иво Гергинов</span></div>
-						<div class="row"><span class="description">Организатор</span></div>
+						<div class="row"><span class="name">Николай Карагьозов</span></div>
+						<div class="row"><span class="description">Организатор, Developer</span></div>
 					</div>								
 				</div>
 				<div class="col-md-4">
 					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
 					</div>
 					<div class="col-sm-6">					
 						<div class="row"><span class="name">Мартин Димитров</span></div>
@@ -94,10 +94,10 @@
 				</div>
 				<div class="col-md-4">
 					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
 					</div>
 					<div class="col-sm-6">					
-						<div class="row"><span class="name">Николай Карагьозов</span></div>
+						<div class="row"><span class="name">Ванеса Стойнова</span></div>
 						<div class="row"><span class="description">Организатор</span></div>
 					</div>								
 				</div>				
@@ -105,22 +105,13 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
+						<img src="assets/images/team/watbabaprofile.png" alt="Снимка">
 					</div>
 					<div class="col-sm-6">					
-						<div class="row"><span class="name">Николай Рангелов</span></div>
+						<div class="row"><span class="name">Иво Гергинов</span></div>
 						<div class="row"><span class="description">Организатор</span></div>
 					</div>								
-				</div>
-				<div class="col-md-4">
-					<div class="col-sm-6">
-						<img src="../crew-photos/watbabaprofile.png" alt="Снимка">
-					</div>
-					<div class="col-sm-6">					
-						<div class="row"><span class="name">Радостин Ангелов</span></div>
-						<div class="row"><span class="description">Организатор/Developer</span></div>
-					</div>								
-				</div>		
+				</div>	
 			</div>
 		</section>
 		<hr />
