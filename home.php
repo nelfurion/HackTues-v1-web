@@ -9,8 +9,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/news.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
@@ -58,9 +56,10 @@
 				</div>
   			</div>
   		</div>
-  		<?php
-  			require_once 'partials/news-partial.php';
-  		?>
+  		<hr />
+  		<section id="news-section">
+  			<!-- Do not delete! -->
+  		</section>
 		<hr />
 		<footer>
 			<div class="row">
@@ -150,15 +149,24 @@
 				};
 				
 			} else if (e.target.id === 'form-exit') {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+
 				document.getElementById('registerBtn').style.display = 'inline-block';
-				var regSection = document.getElementById('section-register');
+				var regSection = document.getElementById('form-register');
+				var formSwitch = document.getElementsByClassName('form-switch')[0];
 				document.getElementById('form-container').removeChild(regSection);
+				document.getElementById('form-container').removeChild(formSwitch);
 			} else if (e.target.className.indexOf('form-switch') > -1) {
-				if (e.target.parentNode.id === 'section-register') {
+				e.stopImmediatePropagation();
+				e.preventDefault();
+
+				if (e.target.previousSibling.previousSibling.id === 'form-register') {
 					AJAXRequest('login.php', {done: function () {
-						var reg = document.getElementById('section-register');
+						var reg = document.getElementById('form-register');
 						var formContainer = document.getElementById('form-container');
 						formContainer.removeChild(reg);
+						formContainer.removeChild(e.target);
 						formContainer.innerHTML += xmlhttp.responseText;
 					}});
 				} else {

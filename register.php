@@ -86,7 +86,7 @@
 
 ?>
 <meta charset="utf-8">
-<form class="form-signin" action="" method="post">
+<form id="form-register" class="form-signin" action="" method="post">
 		<div class="row">
 			<div class="col-md-6">
 				<label for="firstname">Име: </label>
@@ -155,7 +155,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<button>Отказ</button>
+				<button id="form-exit">Отказ</button>
 			</div>
 			<div class="col-md-6">
 				<input type="submit" value="Регистрирай се!">				
