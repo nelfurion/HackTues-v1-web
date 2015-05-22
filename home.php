@@ -47,9 +47,43 @@
 		<div class="jumbotron">
 			<div class="row">
 				<div id="form-container" class="col-sm-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, perspiciatis quae tempore recusandae consequuntur, fugit, perferendis incidunt alias omnis totam libero, culpa minus ratione maxime necessitatibus eius dolorem itaque natus.</p>
-					<button type="button" id="registerBtn" class="hidden left-pane-button">Регистрирай се | Влез</button>
-					<button type="button" class="hidden left-pane-button">Регламент</button>
+					<div id="carousel" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+						<ol class="carousel-indicators">
+						    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+						    <li data-target="#carousel" data-slide-to="1"></li>
+						</ol>
+
+					  <!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+						    <div class="item active">
+						    	<img src="assets/images/competition/img1.jpg" alt="...">
+						    	<div class="carousel-caption">
+						        	...
+						    	</div>
+						  	</div>
+					  	<div class="item">
+					    	<img src="assets/images/competition/img2.jpg" alt="...">
+					    	<div class="carousel-caption">
+					        	...
+					    	</div>
+					  	</div>
+					</div>
+
+					  <!-- Controls -->
+						<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+						    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+					    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    					<span class="sr-only">Next</span>
+						</a>
+					</div>
+					<div>
+						<button type="button" id="registerBtn" class="hidden left-pane-button">Регистрирай се | Влез</button>
+						<button type="button" class="hidden left-pane-button">Регламент</button>
+					</div>
 				</div>
 				<div class="col-sm-6">
 					<img src="assets/images/right-pane-dates.png" alt="Hackathon dates" class="img-responsive"/>
@@ -140,61 +174,49 @@
 		document.getElementById('form-container').addEventListener('click', function (e) {
 			if (e.target.id === 'registerBtn') {
 				e.target.style.display = 'none';
-				if (!document.getElementById('section-register')) {
+				if (!document.getElementById('form-register')) {
 					AJAXRequest('register.php', {
 						done: function () {
+							document.getElementById('carousel').style.display = 'none';
 							document.getElementById('form-container').innerHTML += xmlhttp.responseText;
 						}
 					});
-				};
+				} else {
+					document.getElementById('carousel').style.display = 'none';
+					document.getElementById('form-register').style.display = 'block';
+					document.getElementsByClassName('form-switch')[0].style.display = 'block';
+				}
 				
 			} else if (e.target.id === 'form-exit') {
 				e.preventDefault();
 				e.stopImmediatePropagation();
 
 				document.getElementById('registerBtn').style.display = 'inline-block';
-				var regSection = document.getElementById('form-register');
-				var formSwitch = document.getElementsByClassName('form-switch')[0];
-				document.getElementById('form-container').removeChild(regSection);
-				document.getElementById('form-container').removeChild(formSwitch);
+				document.getElementById('form-register').style.display = 'none';
+				document.getElementsByClassName('form-switch')[0].style.display = 'none';
+				document.getElementById('carousel').style.display = 'block';
 			} else if (e.target.className.indexOf('form-switch') > -1) {
 				e.stopImmediatePropagation();
 				e.preventDefault();
 
-				if (e.target.previousSibling.previousSibling.id === 'form-register') {
-					AJAXRequest('login.php', {done: function () {
-						var reg = document.getElementById('form-register');
-						var formContainer = document.getElementById('form-container');
-						formContainer.removeChild(reg);
-						formContainer.removeChild(e.target);
-						formContainer.innerHTML += xmlhttp.responseText;
-					}});
+				if (document.getElementById('form-register').style.display !== 'none') {
+					if (!document.getElementById('section-login')) {
+						document.getElementById('form-register').style.display = 'none';
+						AJAXRequest('login.php', {done: function () {
+							var reg = document.getElementById('form-register');
+							var formContainer = document.getElementById('form-container');
+							reg.style.display = 'none';
+							formContainer.innerHTML += xmlhttp.responseText;
+						}});
+					} else {
+						document.getElementById('form-register').style.display = 'none';
+						document.getElementById('section-login').style.display = 'block';
+					}
 				} else {
-					AJAXRequest('register.php', {done: function () {
-						var login = document.getElementById('section-login');
-						var formContainer = document.getElementById('form-container');
-						formContainer.removeChild(login);
-						formContainer.innerHTML += xmlhttp.responseText;
-					}});
+					document.getElementById('section-login').style.display = 'none';
+					document.getElementById('form-register').style.display = 'block';
 				}
-				
-				return false;
 			}
-			else if (e.target.id === 'reg-send') {
-				//For hiding request data
-
-				//$.post('register.php', $('#form-register').serialize());
-				/*e.preventDefault();
-				e.stopImmediatePropagation();
-
-				var form = document.getElementById('form-register');
-				var kids = form.children;
-				for (var i = kids.length - 1; i >= 0; i--) {
-					for (var j = kids[i].children.length - 1; j >= 0; j--) {
-						console.log(kids[i].children);
-					};
-				};*/
-			};
 		});
 	</script>
 		

@@ -43,6 +43,18 @@ header .row .blue {
  	font-family: 'Raleway', sans-serif;		
 }
 
+.jumbotron #carousel {
+	//height: 300px;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+.jumbotron #carousel img{
+	height: 352px;
+	width: 100%;
+	max-height: 50vh;
+	min-height: 160px;
+}
+
 hr {
 	clear: both;	
 }
