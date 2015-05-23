@@ -12,7 +12,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
-<<<<<<< Updated upstream
 	<div class="container">
 		<header>		
 			<div class="row">					
@@ -88,7 +87,6 @@
 				</div>
 				<div class="col-sm-6">
 					<img src="assets/images/right-pane-dates.png" alt="Hackathon dates" class="img-responsive"/>
-=======
 	<div class="row">
 		<div id="carousel" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
@@ -150,7 +148,6 @@
 							</div>
 						</div>
 					</nav>
->>>>>>> Stashed changes
 				</div>
 				<!-- nav hack ends -->
 			</header>
@@ -210,8 +207,6 @@
 				processNewsNavigation();
 			}});
 		});
-<<<<<<< Updated upstream
-=======
 		/* CAROUSEL CONTROL */
 		 /*$('#carousel').carousel({
 		    interval: 6000
@@ -227,7 +222,6 @@
 				nav.removeClass("navbar-fixed");
 			}
 		});
->>>>>>> Stashed changes
 
 		/*FORMS PAGE */
 		$('#form-container').height(window.innerHeight - 55);
@@ -365,7 +359,6 @@
 				};
 			};
 		});*/
->>>>>>> Stashed changes
 	</script>
 		
 </body>
