@@ -12,6 +12,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
+<<<<<<< Updated upstream
 	<div class="container">
 		<header>		
 			<div class="row">					
@@ -87,10 +88,100 @@
 				</div>
 				<div class="col-sm-6">
 					<img src="assets/images/right-pane-dates.png" alt="Hackathon dates" class="img-responsive"/>
+=======
+	<div class="row">
+		<div id="carousel" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			<ol class="carousel-indicators">
+			    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel" data-slide-to="1"></li>
+			</ol>
+
+		  <!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			    	<img src="assets/images/competition/img1.jpg" alt="...">
+			    	<div class="carousel-caption">
+			        	...
+			    	</div>
+			  	</div>
+			  	<div class="item">
+			    	<img src="assets/images/competition/img2.jpg" alt="...">
+			    	<div class="carousel-caption">
+			        	...
+			    	</div>
+			  	</div>
+			  	HackTUES 2015
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<!-- div height hack-->
+		<div id="top-container-hack">
+			<header>		
+				<div class="row">					
+					<div id="hacktues" class="col-sm-12">
+						<h1>Hack(<span class="blue">&amp;TUES</span>)</h1>
+					</div>
 				</div>
+				<!-- navigation is fixed, so we use hack to push things down -->
+				<div id="navigation-push">
+					<nav id="main-nav" class="navbar navbar-default">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+				            		<span class="sr-only">Toggle navigation</span>
+				            		<span class="icon-bar"></span>
+				            		<span class="icon-bar"></span>
+				            		<span class="icon-bar"></span>
+				          		</button>
+							</div>
+							<div id="navbar" class="collapse navbar-collapse">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="#">Начало <span class="sr-only">(current)</span></a></li>
+									<li><a href="prizes">Награди</a></li>
+									<li><a href="rules">Регламент</a></li>
+									<li><a href="faq">FAQ</a></li>
+									<li><a href="about">За хакатона</a></li>
+									<li><a href="team">Екип</a></li>
+									<!-- <li><a href="profile">Username</a></li> -->
+								</ul>
+							</div>
+						</div>
+					</nav>
+>>>>>>> Stashed changes
+				</div>
+				<!-- nav hack ends -->
+			</header>
+			<hr />
+			<div class="jumbotron">
+
+				<div class="row">
+					<div id="top-text" class="col-sm-6">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, perspiciatis quae tempore recusandae consequuntur, fugit, perferendis incidunt alias omnis totam libero, culpa minus ratione maxime necessitatibus eius dolorem itaque natus.</p>
+						<button type="button" id="forms-link" class="hidden left-pane-button">Регистрирай се | Влез</button>
+						<button type="button" class="hidden left-pane-button">Регламент</button>
+					</div>
+					<!--<div class="col-sm-6">
+						<img src="assets/images/trans.png" alt="Hackathon dates" class="img-responsive"/>
+					</div>-->
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<!-- div height hack ends -->
+  		<hr id="forms-delimiter" />
+  		<section id="form-container" class="vcenter-parent">
+  			<h2 id="participate">Участвай!</h2>
+  			<div class="row">
+  				<div id="form" class="col-sm-6 vcenter">
+  					<?php
+		  				require_once 'register.php';
+		  			?>
+  				</div>
+	  			<img class="col-sm-6 vcenter" src="assets/images/trans.gif" atl="Dates: 19,20,21.6.2015">
   			</div>
-  		</div>
-  		<hr />
+  		</section>
   		<section id="news-section">
   			<!-- Do not delete! -->
   		</section>
@@ -119,8 +210,42 @@
 				processNewsNavigation();
 			}});
 		});
+<<<<<<< Updated upstream
+=======
+		/* CAROUSEL CONTROL */
+		 /*$('#carousel').carousel({
+		    interval: 6000
+		});*/
+		/* NAVIGATION FIXED CONTROL */
+		var doc = $(document);
+		var nav = $('#main-nav');
+
+		doc.on("scroll", function(e) {
+			if (doc.scrollTop() > 0 /*35*/) {
+				nav.addClass("navbar-fixed");
+			} else {
+				nav.removeClass("navbar-fixed");
+			}
+		});
+>>>>>>> Stashed changes
+
+		/*FORMS PAGE */
+		$('#form-container').height(window.innerHeight - 55);
+		/*$('#form-container').css('padding-top', 0.1 * $('#form-container').height()
+			- $('#participate').height() - 150);
+
+		console.log($('#form-container').height());*/
+
+		$('#forms-link').click(function () {
+			$('html, body').animate({
+		        scrollTop: $("#form-container").offset().top - 55 - 20
+		    }, 2000);
+		});
+
+
 
 		/* For smaller screen sizes remove the padding of the article paragraphs */
+		/* NEWS*/
 		function changeNewsStyle () {
 			if (document.body.clientWidth <= 480) {
 				var artContents = document.getElementsByClassName('news-content');
@@ -168,13 +293,17 @@
 		}
 		
 		
-
+		
 		/* PROCCESS FORMS */
-
-		document.getElementById('form-container').addEventListener('click', function (e) {
+		/* OLD WAY
+		document.getElementById('top-text').addEventListener('click', function (e) {
 			if (e.target.id === 'registerBtn') {
+<<<<<<< Updated upstream
 				e.target.style.display = 'none';
 				if (!document.getElementById('form-register')) {
+=======
+				if (!document.getElementById('section-register')) {
+>>>>>>> Stashed changes
 					AJAXRequest('register.php', {
 						done: function () {
 							document.getElementById('carousel').style.display = 'none';
@@ -217,7 +346,26 @@
 					document.getElementById('form-register').style.display = 'block';
 				}
 			}
+<<<<<<< Updated upstream
 		});
+=======
+			else if (e.target.id === 'reg-send') {
+				//For hiding request data
+
+				//$.post('register.php', $('#form-register').serialize());
+				/*e.preventDefault();
+				e.stopImmediatePropagation();
+
+				var form = document.getElementById('form-register');
+				var kids = form.children;
+				for (var i = kids.length - 1; i >= 0; i--) {
+					for (var j = kids[i].children.length - 1; j >= 0; j--) {
+						console.log(kids[i].children);
+					};
+				};
+			};
+		});*/
+>>>>>>> Stashed changes
 	</script>
 		
 </body>

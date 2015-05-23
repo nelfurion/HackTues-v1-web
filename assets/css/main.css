@@ -1,6 +1,43 @@
+<<<<<<< Updated upstream
+=======
+*, .row{
+	padding: 0;
+	margin: 0;
+	color: white;
+}
+body {
+	min-height: 100%;
+	height: 2000px;
+	background-color: white;
+}
+#top-container-hack {
+	height: 100vh;
+}
+
+/*.vcenter-parent {
+	display: table !important;
+	table-layout: fixed;
+	width: 100%;
+}
+.vcenter {
+	display: table-cell !important;
+	vertical-align: middle;
+}*/
+.vcenter-parent {
+	padding: 10% 0;
+	//max-height: 100vh;
+}
+>>>>>>> Stashed changes
 .container {
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 20px;
+}
+
+.container header #hacktues{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .container hr:first-of-type {
@@ -10,14 +47,46 @@
 .container section #rules-header {
 	text-align: center;
 }
+<<<<<<< Updated upstream
+=======
+.container .jumbotron .img-responsive {
+	width: 100%;
+}
+
+/*FORMS*/
+
+.container hr#forms-delimiter {
+	margin-bottom: 0px;
+	border-bottom: 20px solid #354458;
+}
+
+.container #form-container {
+	padding: 0;
+	background-color: #354458;
+	vertical-align: middle;
+}
+.container #form-container h2 {
+	text-align: center;
+	font-size: 4em;
+	margin-bottom: 150px;
+}
+
+>>>>>>> Stashed changes
 header h1 {
-	font-size: 45px;
- 	font-family: 'Raleway', sans-serif;	
+	font-size: 7em;
+ 	//font-family: 'Raleway', sans-serif;
+ 	font-family: 'Amaranth';
 	text-align: center;
 }
 
 header .row .blue {	
 	color: #446576;;
+}
+
+#top-text {
+	position: absolute;
+	bottom: 0;
+	font-size: 1.2em;
 }
 
 .jumbotron {
@@ -47,12 +116,28 @@ header .row .blue {
 	//height: 300px;
 	overflow: hidden;
 	margin-bottom: 5px;
+<<<<<<< Updated upstream
+=======
+	position: absolute;
+	top: 0;
+	left: 0;
+>>>>>>> Stashed changes
 }
 .jumbotron #carousel img{
 	height: 352px;
 	width: 100%;
+<<<<<<< Updated upstream
 	max-height: 50vh;
 	min-height: 160px;
+=======
+	/*max-height: 50vh;
+	min-height: 160px;*/
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+>>>>>>> Stashed changes
 }
 
 hr {
@@ -87,6 +172,25 @@ section h2 {
 	float: none;	
 }
 
+<<<<<<< Updated upstream
+=======
+#main-nav {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	background-color: rgb(64,64,64);
+	//background-color: rgba(64,64,64, 0.5);
+	/*background-color: rgb(47,79,79);
+	background-color: rgba(47,79,79, 0.9);*/
+	
+	z-index: 99;
+	//opacity: 0.5;
+}
+
+footer {
+	background-color: #3E3E3E;
+}
+>>>>>>> Stashed changes
 @media(min-width:1200px) {
 	.navbar .navbar-collapse {
 	    text-align: center;
