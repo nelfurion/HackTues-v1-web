@@ -1,4 +1,15 @@
+@font-face {
+    font-family: 'LLPixel';
+    src: url('../fonts/LLPIXEL3.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/fonts/glyphicons-halflings-regular.ttf');
+}
 .container {
+	font-size: 15px;
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 20px;
 }
@@ -10,14 +21,17 @@
 .container section #rules-header {
 	text-align: center;
 }
+
 header h1 {
-	font-size: 45px;
- 	font-family: 'Raleway', sans-serif;	
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 50px;
+ 	font-family: 'Helvetica', sans-serif;	
 	text-align: center;
 }
 
 header .row .blue {	
-	color: #446576;;
+	color: #446576;
 }
 
 .jumbotron {
@@ -25,7 +39,8 @@ header .row .blue {
 	background: #FFF;
 }
 
-.jumbotron button, input[type=submit] {
+.jumbotron .home-left-pane-button {
+	font-size: 1em;
 	color: #888;
 	background-color: transparent;
 	border: 1px solid #ddd;
@@ -39,8 +54,29 @@ header .row .blue {
 }
 
 .jumbotron p {
-	font-size: 1.2em;
- 	font-family: 'Raleway', sans-serif;		
+	font-size: 1em;
+ 	font-family: 'Open Sans';		
+}
+
+#navbar {
+	padding-left: 0px;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top: 9px !important; 
+    padding-bottom:0 !important;
+    height: 35px;
+}
+.navbar {min-height:35px !important;}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }
 
 hr {
@@ -61,51 +97,34 @@ section h2 {
 	box-shadow: none;
 	border: none;
 	border-radius: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-	color: #000;
-	background: transparent;
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav>.active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+	color: #fff;
+	background: #446576;
+	border-radius: 5px;
 }
 
-
-.nav, .navbar-nav {
-	display: inline-block;	
-	float: none;	
+.navbar-default .navbar-nav > li > a:hover {
+	text-decoration: underline;	
+}
+.navbar-nav > li > a {
+	font-size: 0.9em;
+	font-family: 'Helvetica';
 }
 
-@media(min-width:1200px) {
-	.navbar .navbar-collapse {
-	    text-align: center;
-	}
+.navbar > .container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
 }
-
 @media(max-width:767px){
 	footer .row .col-sm-1 {
-		text-align: center;
 		margin-top: 15px;
 	}
-}
 
-.form-signin input, select {
-	margin-bottom: 10px;
-}
-
-.form-signin .row > .col-md-6 > .col-md-6:nth-of-type(2) {
-	padding: 0px;
-}
-
-@media(min-width:1200px) {
-	.form-signin .row > .col-md-6 > .col-md-6:nth-of-type(1) {
-		padding: 0px;
-		padding-right: 10px;
-	}
-}
-
-@media(max-width:767px){
-	.form-signin .row > .col-md-6 > .col-md-6:nth-of-type(1) {
-		padding: 0px;
+	#class-letter-xs-fix {
+		margin-top: 5px;
 	}
 }
 
@@ -131,3 +150,31 @@ section#team div.row div.col-md-4 div.col-sm-6:last-of-type {
 		margin-bottom: 10px;
 	}
 }
+
+#rules-list ol {
+	padding-left: 5px;
+}
+
+#rules-list ol > li {
+	margin-top: 5px;
+}
+
+#rules-list ol > li:first-of-type {
+	margin-top: 0px;
+}
+
+    .faqHeader {
+        font-size: 1.3em;
+        margin: 20px 0px 20px 0px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        content: "x"; /* "play" icon */
+        float: right;
+        color: #446576;
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+    	content: '+';
+        color: #446576;
+    }

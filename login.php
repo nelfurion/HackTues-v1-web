@@ -19,7 +19,7 @@
 
 				if ($login)
 				{
-					Redirect::to('index.php');
+					Redirect::to('home');
 				}
 				else 
 				{

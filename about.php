@@ -17,7 +17,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack(<span class="blue">&amp;TUES</span>)</h1>
+					<h1>Hack<span class="blue">TUES</span></h1>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -32,11 +32,11 @@
 					</div>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
+							<li><a href="home">Начало</a></li>
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
-							<li class="active"><a href="#">За хакатона</a></li>
+							<li class="active"><a href="#">За хакатона<span class="sr-only">(current)</span></a></li>
 							<li><a href="team">Екип</a></li>	        		        	        
 						</ul>
 					</div>
@@ -44,20 +44,12 @@
 			</nav>
 		</header>
 		<hr />
-		<div class="row">
-			<div class="col-sm-12">
-				<h2>За хакатона</h2>
-					<p>
-						HackTUES е тридневно състезание по програмиране, провеждано в ТУЕС към ТУ-София.
-						В него могат да участват всички ученици на училището. Целта е да се направят приложения,
-						които да бъдат полезни в бъдещето, като същевременно учениците добият практически знания
-						по програмиране и се научат да работят в екип. Състезанието е организирано от учениците
-						на ТУЕС, с подкрепата на училището и нашите спонсори.
-					</p>
-			</div>		
+		<div class="jumbotron">
+			<p>
+				<strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София. За ценителите на програмирането има награди, а за неопитните - хакатона е перфектния начин да се придобият скромни, но фундаментални практически познания.
+			</p>
 		</div>
 		<hr />
-		
 	</div>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

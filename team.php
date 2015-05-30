@@ -16,7 +16,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack(<span class="blue">&amp;TUES</span>)</h1>
+					<h1>Hack<span class="blue">TUES</span></h1>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -31,12 +31,12 @@
 					</div>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="home">Начало <span class="sr-only">(current)</span></a></li>
+							<li><a href="home">Начало</a></li>
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
-							<li class="active"><a href="#">Екип</a></li>	        		        	        
+							<li class="active"><a href="#">Екип<span class="sr-only">(current)</span></a></li>	        		        	        
 						</ul>
 					</div>
 				</div>

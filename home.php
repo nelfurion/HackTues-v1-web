@@ -1,3 +1,16 @@
+<?php 
+
+	require_once 'functions/user/init.php';
+
+	if (Session::exists('home'))
+	{
+		echo Session::flash('home');
+	}
+
+	$user = new User();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +29,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack(<span class="blue">&amp;TUES</span>)</h1>
+					<h1>Hack<span class="blue">TUES</span></h1>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -31,13 +44,22 @@
 					</div>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Начало <span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="#">Начало<span class="sr-only">(current)</span></a></li>
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
 							<li><a href="team">Екип</a></li>
-							<!-- <li><a href="profile">Username</a></li> -->
+							<?php 
+								if ($user->isLoggedIn())
+								{
+							?>
+								<li><a href="profile"><?php echo escape($user->getData()->username); ?></a></li>
+								<!-- <a href="/<?php echo escape($user->getData()->username); ?>"> -->
+								<li><a href="logout.php">Излез</a></li>
+							<?php
+								}
+							?>
 						</ul>
 					</div>
 				</div>
@@ -46,10 +68,10 @@
 		<hr />
 		<div class="jumbotron">
 			<div class="row">
-				<div id="form-container" class="col-sm-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, perspiciatis quae tempore recusandae consequuntur, fugit, perferendis incidunt alias omnis totam libero, culpa minus ratione maxime necessitatibus eius dolorem itaque natus.</p>
-					<button type="button" id="registerBtn" class="hidden left-pane-button">Регистрирай се | Влез</button>
-					<button type="button" class="hidden left-pane-button">Регламент</button>
+				<div class="col-sm-6">
+					<p><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София. За ценителите на програмирането има награди, а за неопитните - хакатона е перфектния начин да се придобият скромни, но фундаментални практически познания.</p> 
+					<a href="#"><button type="button" class="hidden home-left-pane-button">Регистрирай се!</button></a>				
+					<a href="rules"><button type="button" class="hidden home-left-pane-button">Регламент</button></a>
 				</div>
 				<div class="col-sm-6">
 					<img src="assets/images/right-pane-dates.png" alt="Hackathon dates" class="img-responsive"/>
@@ -61,17 +83,6 @@
   			<!-- Do not delete! -->
   		</section>
 		<hr />
-		<footer>
-			<div class="row">
-				<div class="col-sm-1">
-					<a href="http://elsys-bg.org"><img src="assets/images/elsys-logo.png" alt="TUES" /></a>	
-				</div>
-				<div class="col-sm-1">	
-					<a href="https://hackbulgaria.com/"><img src="assets/images/hbg-logo.png" alt="Hack Bulgaria" /></a>
-				</div>
-			</div>		
-		</footer>
-		
 	</div>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -132,70 +143,6 @@
 				};
 			});
 		}
-		
-		
-
-		/* PROCCESS FORMS */
-
-		document.getElementById('form-container').addEventListener('click', function (e) {
-			if (e.target.id === 'registerBtn') {
-				e.target.style.display = 'none';
-				if (!document.getElementById('section-register')) {
-					AJAXRequest('register.php', {
-						done: function () {
-							document.getElementById('form-container').innerHTML += xmlhttp.responseText;
-						}
-					});
-				};
-				
-			} else if (e.target.id === 'form-exit') {
-				e.preventDefault();
-				e.stopImmediatePropagation();
-
-				document.getElementById('registerBtn').style.display = 'inline-block';
-				var regSection = document.getElementById('form-register');
-				var formSwitch = document.getElementsByClassName('form-switch')[0];
-				document.getElementById('form-container').removeChild(regSection);
-				document.getElementById('form-container').removeChild(formSwitch);
-			} else if (e.target.className.indexOf('form-switch') > -1) {
-				e.stopImmediatePropagation();
-				e.preventDefault();
-
-				if (e.target.previousSibling.previousSibling.id === 'form-register') {
-					AJAXRequest('login.php', {done: function () {
-						var reg = document.getElementById('form-register');
-						var formContainer = document.getElementById('form-container');
-						formContainer.removeChild(reg);
-						formContainer.removeChild(e.target);
-						formContainer.innerHTML += xmlhttp.responseText;
-					}});
-				} else {
-					AJAXRequest('register.php', {done: function () {
-						var login = document.getElementById('section-login');
-						var formContainer = document.getElementById('form-container');
-						formContainer.removeChild(login);
-						formContainer.innerHTML += xmlhttp.responseText;
-					}});
-				}
-				
-				return false;
-			}
-			else if (e.target.id === 'reg-send') {
-				//For hiding request data
-
-				//$.post('register.php', $('#form-register').serialize());
-				/*e.preventDefault();
-				e.stopImmediatePropagation();
-
-				var form = document.getElementById('form-register');
-				var kids = form.children;
-				for (var i = kids.length - 1; i >= 0; i--) {
-					for (var j = kids[i].children.length - 1; j >= 0; j--) {
-						console.log(kids[i].children);
-					};
-				};*/
-			};
-		});
 	</script>
 		
 </body>
