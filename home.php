@@ -29,7 +29,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack<span class="blue">TUES</span></h1>
+					<a href="home.php"><h1>Hack<span class="blue">(&amp;TUES)</span></h1></a>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -69,8 +69,9 @@
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-sm-6">
-					<p><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София. За ценителите на програмирането има награди, а за неопитните - хакатона е перфектния начин да се придобият скромни, но фундаментални практически познания.</p> 
-					<a href="#"><button type="button" class="hidden home-left-pane-button">Регистрирай се!</button></a>				
+					<p><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София.
+					 Участващите придобиват фундаментални практически знания по програмиране и работа в екип, а за победителите има и награди.</p> 
+					<a href="#"><button type="button" class="hidden home-left-pane-button">Регистрирай се!</button></a>
 					<a href="rules"><button type="button" class="hidden home-left-pane-button">Регламент</button></a>
 					<!-- Carousel. TODO: Add better images and uncomment.
 					<div id="form-container" class="col-sm-6">

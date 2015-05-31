@@ -148,7 +148,7 @@
 				</div>
 			</nav>
 		</header>
-		<form class="form-horizontal" action="register.php" role="form" method="post">
+		<form class="form-horizontal" action="register.php" onsubmit="return validateOnClient();" role="form" method="post">
 			<div class="panel panel-default">		
 				<div class="panel-heading">
 					<h3 class="panel-title">Регистрация</h3>
@@ -212,15 +212,45 @@
 					<div class="form-group">
 						<div class="col-sm-offset-4 col-sm-4">
 							<div class="checkbox">
-								<label><input type="checkbox">Прочетох и приемам <a href="rules">регламента</a> за участие.</label>
+								<label><input type="checkbox" id="agree">Прочетох и приемам <a href="rules">регламента</a> за участие.</label>
 							</div>
 		    			</div>
-					</div> 
+					</div>
+					<div class="form-group">
+						<h4>Какъв сте?</h4>
+						<ul>
+							<li><label><input type="checkbox" class="competitor-type" id= "idea-man"/>Човек с идеи</label></li>
+							<li><label><input type="checkbox" class="competitor-type" id= "programmer"/>Програмист</label></li>
+							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>Дизайнер</label></li>
+							<li><label><input type="checkbox" class="competitor-type" id= "project-manager"/>Project Manager</label></li>
+						</ul>
+					</div>
+					<div class="form-group">
+						<h4>За тва трябва да се измисли име</h4>
+						<ul>
+							<li><label><input type="checkbox" class="knowledge" id= "html"/>HTML</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "xaml"/>XAML</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "xml"/>XML</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "css"/>CSS</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "php"/>PHP</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "perl"/>Perl</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "python"/>Python</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "javascript"/>Javascript</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "c++"/>C++</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "c#"/>C#</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "c"/>C</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "objective-c"/>Objective-C</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "java"/>Java</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "pascal"/>Pascal</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "oop"/>OOP</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "qa"/>QA</label></li>
+						</ul>
+					</div>
 				</div>
 				<div class="panel-footer" style="overflow:hidden;text-align:right;">
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-primary btn-sm">Регистрирай се!</button>
+							<button type="submit" class="btn btn-primary btn-sm" id="form-submit">Регистрирай се!</button>
 							<button onclick="location.href = 'www.yoursite.com';" class="btn btn-default btn-sm">Отказ</button>		
 							<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 						</div>
@@ -243,5 +273,61 @@
 	</div>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		document.getElementById('form-submit').addEventListener('submit', function (event) {
+			event.preventDefault();
+			event.stopImmediatePropagation();
+		});
+		function validateOnClient () {
+			var firstname = document.getElementById('firstname');
+			if (firstname.value.length < 2 || firstname.value.length > 20) {
+				firstname.parentNode.className += " has-error";
+				return false;
+			};
+
+			var lastname = document.getElementById('lastname');
+			if (lastname.value.length < 2 || lastname.value.length > 20) {
+				lastname.parentNode.className += " has-error";
+				return false;
+			};
+
+			var grade = document.getElementById('class-number');
+			if (grade.value < 8 || grade.value > 12) {
+				grade.parentNode.className += " has-error";
+				return false;
+			};
+
+			var email = document.getElementById('email');
+			if (email.value.indexOf('@') === -1) {
+				email.parentNode.className += " has-error";
+				return false;
+			};
+
+			var username = document.getElementById('username');
+			if (username.value < 2 || username.value > 20) {
+				username.parentNode.className += " has-error";
+				return false;
+			};
+
+			var pass = document.getElementById('password');
+			
+			if (pass.value.length < 6) {
+				pass.parentNode.className += " has-error";
+				return false;
+			};
+
+			var passValid = document.getElementById('password-again');
+			if (passValid.value !== pass.value) {
+				passValid.parentNode.className += " has-error";
+				return false;
+			};
+
+			var agree = document.getElementById('agree');
+			if (!agree.checked) {
+				agree.parentNode.parentNode.className += " has-error";
+				return false;
+			};
+		}
+	</script>
 </body>
 </html>

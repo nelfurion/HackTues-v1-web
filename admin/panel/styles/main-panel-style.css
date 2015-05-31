@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+	color: black;
+}
+
+#top-nav {
+	height: 29px;
+	background-color: #656665;
+}
+#left-nav {
+	clear: left;
+	width: 128px;
+	float: left;
+	display: inline-block;
+}
+#top-nav li, #left-nav li {
+	background-color: #656665;
+	padding: 5px;
+	border: 1px solid black;
+	border-top: none;
+}
+#top-nav li{
+	background-color: #656665;
+	float: left;
+	width: 120px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-right: -5px;
+}
+#top-nav li a {
+	color: black;
+}
+#top-nav li a:active {
+	background-color: #797A78;
+}
+#content {
+	overflow: hidden;
+}
+/*NEWS BEGIN*/
+#content #areaHolder {
+	height: 200px;
+	width: 800px;
+	overflow-y: scroll;
+}
+
+#content #areaHolder #nicedit-area {
+	width: 98%;
+	min-height: 200px;
+}
+
+#content #areaHolder label {
+	float: left;
+	clear: left;
+	display: inline-block;
+}
+
+#content #areaHolder #article-content {
+	display: inline;
+	float: left;
+}
+
+#content .newsArticle
+{
+	overflow: hidden;
+	width: 500px;
+	max-width: 500px;
+}
+#content #competitors, #competitors th, #competitors td {
+	border: 1px solid black;
+	border-collapse: collapse;
+
+}
+.clear {
+	clear: both;
+}

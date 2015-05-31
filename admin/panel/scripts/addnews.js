@@ -11,46 +11,62 @@ function escapeHtml(str) {
 function addArticle () {
 	var section = document.getElementById("content");
 	var firstArticle = document.querySelector(".newsArticle");
+	var newsAreaExists = document.getElementById('areaHolder');
 
-	var input = document.createElement('input');
-	input.id="articleName";
-	input.type="text";
+	if (!newsAreaExists) {
+		var nameLabel = document.createElement('label');
+		nameLabel.htmlFor = "article-name";
+		nameLabel.innerHTML = "<strong>Име<strong>:";
 
-	var textarea = document.createElement('textarea');
-	textarea.cols = "80";
-	textarea.rows = "5";
-	textarea.id = "niceditArea";
+		var input = document.createElement('input');
+		input.id="article-name";
+		input.type="text";
 
-	var areaHolder = document.createElement('div');
-	areaHolder.id = "areaHolder";
+		var contentLabel = document.createElement('label');
+		contentLabel.htmlFor = "article-content";
+		contentLabel.innerHTML = "<strong>Съдържание<strong>:";
 
-	areaHolder.appendChild(input);
-	areaHolder.appendChild(textarea);
+		var textarea = document.createElement('textarea');
+		textarea.cols = "80";
+		textarea.rows = "5";
+		textarea.id = "article-content";
 
-	section.insertBefore(areaHolder, firstArticle);
+		var areaHolder = document.createElement('div');
+		areaHolder.id = "areaHolder";
+		
+		areaHolder.appendChild(nameLabel);
+		areaHolder.appendChild(input);
+		areaHolder.appendChild(contentLabel);
+		areaHolder.appendChild(textarea);
 
-	new nicEditor({
-			fullPanel : true, onSave : function(content, id, instance) {
-				var name = escapeHtml(document.getElementById('articleName').innerHTML);
-				if (!name) {
-					alert('You must add a name to the piece of news!');
-					return;
-				};
+		section.insertBefore(areaHolder, firstArticle);
 
-				var content = escapeHtml(nicEditors.findEditor('niceditArea').getContent());
-				if (!content) {
-					alert('The news must have content!');
-				};
-				//AJAXRequest uses AJAX script to contact the server
-				AJAXRequest(
-					"scripts/dbquery.php",
-				 	[
-				 		{'name': name, 'content': content}
-				 	],
-					"saveNews"
-				);
+		new nicEditor({
+				fullPanel : true, onSave : function(content, id, instance) {
+					var name = escapeHtml(document.getElementById('article-name').value);
+					//console.log(document.getElementById('article-name').innerHTML);
+					if (!name) {
+						alert('You must add a name to the piece of news!');
+						return;
+					};
 
-			} 
-		}
-  	).panelInstance('niceditArea');
+					var content = escapeHtml(nicEditors.findEditor('article-content').getContent());
+					console.log("content: " + content);
+					if (!content || content === '&lt;br&gt;') {
+						alert('The news must have content!');
+					}
+					else {
+						//AJAXRequest uses AJAX script to contact the server
+						AJAXRequest(
+							"scripts/dbquery.php",
+						 	[
+						 		{'name': name, 'content': content}
+						 	],
+							"saveNews"
+						);
+					}
+				} 
+			}
+	  	).panelInstance('article-content');
+	};
 }

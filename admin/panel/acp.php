@@ -3,68 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>HackTues - Админ панел</title>
-	<style type="text/css">
-		* {
-			margin: 0;
-			padding: 0;
-			text-decoration: none;
-			list-style-type: none;
-			color: black;
-		}
-		#top-nav {
-			height: 29px;
-			background-color: #656665;
-		}
-		#left-nav {
-			clear: left;
-			width: 128px;
-			float: left;
-			display: inline-block;
-		}
-		#top-nav li, #left-nav li {
-			background-color: #656665;
-			padding: 5px;
-			border: 1px solid black;
-			border-top: none;
-		}
-		#top-nav li{
-			background-color: #656665;
-			float: left;
-			width: 120px;
-			border-top-right-radius: 5px;
-			border-bottom-right-radius: 5px;
-			margin-right: -5px;
-		}
-		#top-nav li a {
-			color: black;
-		}
-		#top-nav li a:active {
-			background-color: #797A78;
-		}
-		#content {
-			overflow: hidden;
-		}
-		#content #areaHolder {
-			height: 200px;
-			min-width: 300px;
-			max-width: 50%;
-			overflow: scroll;
-		}
-		#content .newsArticle
-		{
-			overflow: hidden;
-			width: 500px;
-			max-width: 500px;
-		}
-		#content #competitors, #competitors th, #competitors td {
-			border: 1px solid black;
-			border-collapse: collapse;
-
-		}
-		.clear {
-			clear: both;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="styles/main-panel-style.css">
 </head>
 <body>
 	<nav>

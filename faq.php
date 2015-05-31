@@ -59,12 +59,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Автоматизация и софтуер за подобрение на учебния процес a.k.a. Hack for TUES a.k.a. Hack for education.
                 </div>
             </div>
         </div>
@@ -76,12 +71,19 @@
             </div>
             <div id="collapseTen" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Хакатонът ще се проведе на 19,20,21 юни в ТУЕС.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Имате въпроси или препоръки?</a>
+                </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Пишете ни на httues@gmail.com.
                 </div>
             </div>
         </div>
@@ -95,12 +97,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Да. Регистрацията през сайта е задължителна. Ако имате проблеми с регистрацията можете да ни пишете на имейл: httues@gmail.com.
                 </div>
             </div>
         </div>
@@ -113,12 +110,10 @@
             </div>
             <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
-                	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                	Участниците имат правото сами да съставят отборите си. През първия ден(19-ти) съставените отбори ще могат да представят идеите си
+                    и да потърсят още хора, ако им трябват. Хората, които не са си намерили отбори до тогава, ще могат да го направят тогава.
+                    Ако след това все още има хора без отбори, те трябва да се объррнат към някой от организаторите. Ако искат, могат и да участват в
+                    хакатона без отбор, въпреки, че това не се препоръчва, от гледна точка на придобиването на знания за работа в екип.
                 </div>
             </div>
         </div>
@@ -130,15 +125,11 @@
             </div>
             <div id="collapseSeven" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    В процес на изграждане.
+                    Участниците в журито от фирмите спонсори на хакатона, ще награждават отбори по тяхна преценка.
                 </div>
             </div>
-        </div>      
+        </div>
     </div>
 		</div>
 		<hr />
