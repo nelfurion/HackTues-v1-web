@@ -8,7 +8,7 @@
 				if (!isset($_GET['startIndex'])) {
 					exit("To get news, you need a startIndex. StartIndex is not given.");
 				}
-				showFiveNews($_GET['startIndex'] - 1);
+				showFiveNews($_GET['startIndex']);
 				break;
 			default:
 				# code...
@@ -17,27 +17,8 @@
 	}
 
 	else {
-		$newsPerPage = 5;
-		$reqData = ["name", "content"];
-		$news = getData("news", $reqData);
-
-		if (!count($news)) {
-			echo "В момента няма информация.";
-			return;
-		}
-
-		if (count($news) < 5) {
-			$newsPerPage = count($news);
-		}
-
-		$numOfPages = count($news) / $newsPerPage;
-		if (count($news) % $newsPerPage != 0) {
-			$numOfPages++;
-		}
-
-		for ($i=$newsPerPage - 1; $i >= 0; $i--) { 
-			echo '<h3>' . $news[$i]->name . '</h3><p>' . $news[$i]->content . '</p>';
-		}
+		$firstPage = 1;
+		showFiveNews($firstPage);
 	}
 
 	function showFiveNews($pageNumber) {
@@ -50,22 +31,22 @@
 			return;
 		}
 
-		$startIndex = count($news) - 1;
+		$startIndex = count($news);
 		$newsPerPage = 5;
 
 		$numOfPages = count($news) / $newsPerPage;
 		if (count($news) % $newsPerPage != 0) {
 			$numOfPages++;
 		}
-		
-		if ($startIndex  > 1 && count($news) > 5) {
+
+		if ($startIndex  > 1 && count($news) > 5 && $pageNumber > 1) {
 			$startIndex = $startIndex - ($pageNumber - 1) * 5;
 		}
-
-		
+		else {
+			$startIndex -= 1;
+		}
 
 		$curIndex = $startIndex;
-
 		$written = 0;
 
 		while (($written < $newsPerPage) && $curIndex >= 0) {

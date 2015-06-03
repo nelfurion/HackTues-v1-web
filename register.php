@@ -104,6 +104,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
@@ -152,7 +153,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Регистрация</h3>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body" id="form-panel">
 					<div class="form-group">
 						<label for="firstname" class="col-sm-4 control-label">Име</label>
 						<div class="col-sm-4">
@@ -215,17 +216,20 @@
 							</div>
 		    			</div>
 					</div>
-					<div class="form-group">
-						<h4>Какъв сте?</h4>
-						<ul>
-							<li><label><input type="checkbox" class="competitor-type" id= "idea-man"/>Човек с идеи</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "programmer"/>Програмист</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>Дизайнер</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>QA</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "project-manager"/>Project Manager</label></li>
-						</ul>
+					<div class="form-group added col-lg-4">
+						<div class="col-sm-4">
+							<h4>Какъв сте?</h4>
+							<ul>
+								<li><label><input type="checkbox" class="competitor-type" id= "idea-man"/>Човек с идеи</label></li>
+								<li><label><input type="checkbox" class="competitor-type" id= "programmer"/>Програмист</label></li>
+								<li><label><input type="checkbox" class="competitor-type" id= "designer"/>Дизайнер</label></li>
+								<li><label><input type="checkbox" class="competitor-type" id= "designer"/>QA</label></li>
+								<li><label><input type="checkbox" class="competitor-type" id= "project-manager"/>Project Manager</label></li>
+							</ul>
+						</div>
+						
 					</div>
-					<div class="form-group">
+					<div class="form-group added col-sm-10">
 						<h4>Какви технологии предпочитате да използвате по време на състезанието?</h4>
 						<ul>
 							<li><label><input type="checkbox" class="knowledge" id= "html"/>HTML</label></li>
