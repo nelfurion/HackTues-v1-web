@@ -36,7 +36,6 @@
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
-							<li><a href="team">Екип</a></li>	        		        	        
 						</ul>
 					</div>
 				</div>
@@ -44,7 +43,7 @@
 		</header>
 		<hr />
 		<div class="jumbotron">
-			<p>Наградите ще се добавят с времето, като наближи хакатона.</p>
+			<p>Добавят се в момента.</p>
 		</div>
 		<hr />
 		

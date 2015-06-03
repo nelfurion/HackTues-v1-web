@@ -36,7 +36,6 @@
 							<li class="active"><a href="#">Регламент<span class="sr-only">(current)</span></a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
-							<li><a href="team">Екип</a></li>	        		        	        
 						</ul>
 					</div>
 				</div>

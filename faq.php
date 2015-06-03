@@ -36,8 +36,7 @@
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li class="active"><a href="#">FAQ<span class="sr-only">(current)</span></a></li>
-							<li><a href="about">За хакатона</a></li>
-							<li><a href="team">Екип</a></li>	        		        	        
+							<li><a href="about">За хакатона</a></li>		        	        
 						</ul>
 					</div>
 				</div>
@@ -60,44 +59,78 @@
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                     Автоматизация и софтуер за подобрение на учебния процес a.k.a. Hack for TUES a.k.a. Hack for education.
+                    <br>
+                    Тоест състезателите трябва да създадат проект, който по някакъв начин да подпомага учебния процес в ТУЕС или като цяло.
+                    Проектите могат да бъдат най-различни, от автоматизиране на целия процес, до конкретни приложения за конкретни предмети.
+                    <br>
+                    С две думи - каквото ви дойде на ум.
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Кога и къде ще се проведе хакатона?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Кога и къде ще се проведе хакатона?</a>
                 </h4>
             </div>
-            <div id="collapseTen" class="panel-collapse collapse">
+            <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Хакатонът ще се проведе на 19,20,21 юни в ТУЕС.
+                    Доопределят се датите, а мястото е ТУЕС.
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Имате въпроси или препоръки?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Имате въпроси или препоръки?</a>
                 </h4>
             </div>
-            <div id="collapseSeven" class="panel-collapse collapse">
+            <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
                     Пишете ни на httues@gmail.com.
                 </div>
             </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFinished">Трябва ли проектът да бъде завършен до края на състезанието?</a>
+                </h4>
+            </div>
+            <div id="collapseFinished" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Не. Разбираме, че времето е малко и това би било много трудно за постигане, ако не и невъзможно.
+                    <br>
+                    Трябва обаче, отборите/състезателите да могат да покажат какво представляват идеите им. Ако могат да завършат проектите си на време,
+                    разбира се би било супер.
+                </div>
+            </div>
+
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOutsiders">Могат ли външни хора да участват в състезанието?</a>
+                </h4>
+            </div>
+            <div id="collapseOutsiders" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Състезанието е за учениците на ТУЕС към ТУ-София. Външни хора, поне за това издание на състезанието не могат да участват.
+                </div>
+            </div>
+            
         </div>
 
         <div class="faqHeader">Записване</div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Задължителна ли е регистрацията през сайта?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Задължителна ли е регистрацията през сайта?</a>
                 </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
+            <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Да. Регистрацията през сайта е задължителна. Ако имате проблеми с регистрацията можете да ни пишете на имейл: httues@gmail.com.
+                    <strong>Да, за хората, които не са се регистрирали до сега(през формата).</strong> Ако имате проблеми с регистрацията можете да ни пишете на имейл: httues@gmail.com.
                 </div>
             </div>
         </div>
@@ -105,31 +138,33 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Как се разпределят отборите?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Как се разпределят отборите?</a>
                 </h4>
             </div>
-            <div id="collapseFour" class="panel-collapse collapse">
+            <div id="collapseFive" class="panel-collapse collapse">
                 <div class="panel-body">
-                	Участниците имат правото сами да съставят отборите си. През първия ден(19-ти) съставените отбори ще могат да представят идеите си
+                	Участниците имат правото сами да съставят отборите си. През първия ден съставените отбори/самостоятелни състезатели ще могат да представят идеите си
                     и да потърсят още хора, ако им трябват. Хората, които не са си намерили отбори до тогава, ще могат да го направят тогава.
-                    Ако след това все още има хора без отбори, те трябва да се объррнат към някой от организаторите. Ако искат, могат и да участват в
-                    хакатона без отбор, въпреки, че това не се препоръчва, от гледна точка на придобиването на знания за работа в екип.
+                    <br>Ако след това все още има хора без отбори, те трябва да се объррнат към някой от организаторите. Ако все пак искат да участват без
+                    отбори, могат, позволено е.
                 </div>
             </div>
         </div>
+        <!--
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">На какъв принцип става оценяването?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">На какъв принцип става оценяването?</a>
                 </h4>
             </div>
-            <div id="collapseSeven" class="panel-collapse collapse">
+            <div id="collapseSix" class="panel-collapse collapse">
                 <div class="panel-body">
-                    В процес на изграждане.
-                    Участниците в журито от фирмите спонсори на хакатона, ще награждават отбори по тяхна преценка.
+                    Проектите се оценяват от жури. През последният ден, отборите/състезателите представвят своите проекти(не е нужно да са напълно завършени).
+                    Журито им задава въпроси относно тях и ги оценява. Победителите се разбират на края на хакатона.
                 </div>
             </div>
         </div>
+        -->
     </div>
 		</div>
 		<hr />

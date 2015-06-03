@@ -131,7 +131,6 @@
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
 							<li><a href="about">За хакатона</a></li>
-							<li><a href="team">Екип</a></li>
 							<li class="active"><a href="#">Регистрация <span class="sr-only">(current)</span></a></li>
 							<?php 
 								if ($user->isLoggedIn())
@@ -222,11 +221,12 @@
 							<li><label><input type="checkbox" class="competitor-type" id= "idea-man"/>Човек с идеи</label></li>
 							<li><label><input type="checkbox" class="competitor-type" id= "programmer"/>Програмист</label></li>
 							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>Дизайнер</label></li>
+							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>QA</label></li>
 							<li><label><input type="checkbox" class="competitor-type" id= "project-manager"/>Project Manager</label></li>
 						</ul>
 					</div>
 					<div class="form-group">
-						<h4>За тва трябва да се измисли име</h4>
+						<h4>Какви технологии предпочитате да използвате по време на състезанието?</h4>
 						<ul>
 							<li><label><input type="checkbox" class="knowledge" id= "html"/>HTML</label></li>
 							<li><label><input type="checkbox" class="knowledge" id= "xaml"/>XAML</label></li>
@@ -242,14 +242,16 @@
 							<li><label><input type="checkbox" class="knowledge" id= "objective-c"/>Objective-C</label></li>
 							<li><label><input type="checkbox" class="knowledge" id= "java"/>Java</label></li>
 							<li><label><input type="checkbox" class="knowledge" id= "pascal"/>Pascal</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "oop"/>OOP</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "qa"/>QA</label></li>
+							<li><label><input type="checkbox" class="knowledge" id= "else"/>
+								Друго
+								<input type="text" id="else-tech">
+							</label></li>
 						</ul>
 					</div>
 				</div>
 				<div class="panel-footer" style="overflow:hidden;text-align:right;">
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-offset-2 col-sm-10" id="form-footer">
 							<button type="submit" class="btn btn-primary btn-sm" id="form-submit">Регистрирай се!</button>
 							<button onclick="location.href = 'www.yoursite.com';" class="btn btn-default btn-sm">Отказ</button>		
 							<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
@@ -279,52 +281,66 @@
 			event.stopImmediatePropagation();
 		});
 		function validateOnClient () {
+			var hasError = false;
 			var firstname = document.getElementById('firstname');
 			if (firstname.value.length < 2 || firstname.value.length > 20) {
 				firstname.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var lastname = document.getElementById('lastname');
 			if (lastname.value.length < 2 || lastname.value.length > 20) {
 				lastname.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var grade = document.getElementById('class-number');
 			if (grade.value < 8 || grade.value > 12) {
 				grade.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var email = document.getElementById('email');
 			if (email.value.indexOf('@') === -1) {
 				email.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var username = document.getElementById('username');
 			if (username.value < 2 || username.value > 20) {
 				username.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var pass = document.getElementById('password');
 			
 			if (pass.value.length < 6) {
 				pass.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var passValid = document.getElementById('password-again');
 			if (passValid.value !== pass.value) {
 				passValid.parentNode.className += " has-error";
-				return false;
+				hasError = true;
 			};
 
 			var agree = document.getElementById('agree');
 			if (!agree.checked) {
 				agree.parentNode.parentNode.className += " has-error";
+				hasError = true;
+			};
+
+			if (hasError) {
+				/*var regBtn = document.getElementById('form-submit');
+				var nodes = regBtn.parentNode.childNodes;
+				console.log(nodes);
+				return false;
+				.*if (nodes.indexOf("Не е попълнено задължително поле!") === -1) {
+					var errorText = document.createTextNode("Не е попълнено задължително поле!");
+					regBtn.parentNode.insertBefore(errorText, regBtn);
+				};*/
+				//console.log('im here!');*/
 				return false;
 			};
 		}
