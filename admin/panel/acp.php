@@ -1,3 +1,12 @@
+<?php
+	if (isset($_GET['article-content'])) {
+		require_once 'scripts/dbquery.php';
+		saveNews($_GET['article-content']);
+		require_once dirname(__FILE__) . '/../../classes/common/redirect.php';
+		Redirect::to('acp');
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,10 +61,12 @@
 		<!-- 
 			AJAX request
 		-->
+
 	</section>
 	<div class="clear"></div>
 	<script type="text/javascript" src="scripts/ajaxrequest.js"></script>
-	<script type="text/javascript" src="scripts/nicedit.js"></script>
+	<!--<script type="text/javascript" src="scripts/nicedit.js"></script>-->
+	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="scripts/addnews.js"></script>
 	<script type="text/javascript">
 		var viewsDir = "views/";

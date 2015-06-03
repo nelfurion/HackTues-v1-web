@@ -1,7 +1,7 @@
 
 <?php
-	require '../../../classes/common/config.php';
-	require '../../../classes/common/database.php';
+	require_once dirname(__FILE__) . '/../../../classes/common/config.php';
+	require_once dirname(__FILE__) . '/../../../classes/common/database.php';
 
 	//print_r($_GET);
 
@@ -36,12 +36,19 @@
 		return $db->getResults();
 	}
 
-	function saveNews()
+	/*function saveNews()
 	{
 		$db = Database::getInstance();
 		$name = $_GET['name'];
 		$content = $_GET['content'];
 
 		$db->insert("news", array('name' => $name, 'content' => $content));
+	}*/
+
+	//Newer function
+	function saveNews($content)
+	{
+		$db = Database::getInstance();
+		$db->insert("news", array('name' => "TESTCKEDITOR", 'content' => $content));
 	}
  ?>
