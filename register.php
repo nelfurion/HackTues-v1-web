@@ -104,6 +104,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/css/bootstrap-select.min.css">	
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
@@ -158,7 +159,6 @@
 								  <span class="sr-only">Error:</span>' . $error . '</div>';
 						}
 					?>
-
 					<div class="form-group">
 						<label for="firstname" class="col-sm-4 control-label">Име</label>
 						<div class="col-sm-4">

@@ -1,3 +1,12 @@
+<?php
+	if (isset($_GET['article-content'])) {
+		require_once 'scripts/dbquery.php';
+		saveNews($_GET['article-content']);
+		require_once dirname(__FILE__) . '/../../classes/common/redirect.php';
+		Redirect::to('acp');
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,31 +61,36 @@
 		<!-- 
 			AJAX request
 		-->
+
 	</section>
 	<div class="clear"></div>
-	<script type="text/javascript" src="scripts/ajaxrequest.js"></script>
-	<script type="text/javascript" src="scripts/nicedit.js"></script>
-	<script type="text/javascript" src="scripts/addnews.js"></script>
+	<script type="text/javascript" src="../../functions/ajaxrequest.js"></script>
+	<!--<script type="text/javascript" src="scripts/nicedit.js"></script>-->
+	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="scripts/helper.js"></script>
+	<script type="text/javascript" src="controllers/js/news-controller.js"></script>
 	<script type="text/javascript">
 		var viewsDir = "views/";
 		//TODO: fix request with fields and stuff
 		document.getElementById("top-nav").addEventListener("click", function (e) {
 			if (e.target.id != 'statistics' && e.target.parentNode.id != 'statistics') {
 				if (e.target && e.target.nodeName == "A") {
-					AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
+					AJAXRequest(viewsDir + e.target.parentNode.id + ".php", {done: function () {
+						document.getElementById('content').innerHTML = xmlhttp.responseText;
+					}});
 				};
 				if (e.target && e.target.nodeName == "LI") {
-					AJAXRequest(viewsDir + e.target.id + ".php", []);
+					AJAXRequest(viewsDir + e.target.id + ".php", {done: function (e) {
+						document.getElementById('content').innerHTML = xmlhttp.responseText;
+					}});
 				};
 			};
 		});
-		document.getElementById("left-nav").addEventListener("click", function (e) {
-			if (e.target && e.target.nodeName == "A") {
-				AJAXRequest(viewsDir + e.target.parentNode.id + ".php", []);
-			};
-			if (e.target && e.target.nodeName == "LI") {
-				AJAXRequest(viewsDir + e.target.id + ".php", []);
-			};
+
+		document.getElementById('news').addEventListener('click', function(ev) {
+			AJAXRequest(viewsDir + 'news.php', {func: 'showNews', done: function () {
+				document.getElementById('content').innerHTML = xmlhttp.responseText;
+			}});
 		});
 		
 

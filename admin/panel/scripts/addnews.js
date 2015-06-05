@@ -22,26 +22,30 @@ function addArticle () {
 		input.id="article-name";
 		input.type="text";
 
-		var contentLabel = document.createElement('label');
-		contentLabel.htmlFor = "article-content";
-		contentLabel.innerHTML = "<strong>Съдържание<strong>:";
+		var ckform = document.createElement('form');
 
 		var textarea = document.createElement('textarea');
 		textarea.cols = "80";
 		textarea.rows = "5";
 		textarea.id = "article-content";
+		textarea.name = "article-content";
 
 		var areaHolder = document.createElement('div');
 		areaHolder.id = "areaHolder";
 		
-		areaHolder.appendChild(nameLabel);
-		areaHolder.appendChild(input);
-		areaHolder.appendChild(contentLabel);
-		areaHolder.appendChild(textarea);
+		areaHolder.appendChild(ckform);
+
+		ckform.appendChild(nameLabel);
+		ckform.appendChild(input);
+		ckform.appendChild(textarea);
+
 
 		section.insertBefore(areaHolder, firstArticle);
 
-		new nicEditor({
+		CKEDITOR.replace('article-content');
+	}
+}
+		/*new nicEditor({
 				fullPanel : true, onSave : function(content, id, instance) {
 					var name = escapeHtml(document.getElementById('article-name').value);
 					//console.log(document.getElementById('article-name').innerHTML);
@@ -69,4 +73,4 @@ function addArticle () {
 			}
 	  	).panelInstance('article-content');
 	};
-}
+}*/ //Old way using nicedit.js
