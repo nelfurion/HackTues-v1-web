@@ -236,7 +236,7 @@
 					<div class="form-group">
 						<div class="col-sm-offset-4 col-sm-4">
 							<div class="checkbox">
-								<label><input type="checkbox" id="agree">Прочетох и приемам <a href="rules" class="link-blue">регламента</a> за участие.</label>
+								<label><input type="checkbox" id="agree">Прочетох и приемам <a href="rules" target="_blank" class="link-blue">регламента</a> за участие.</label>
 							</div>
 		    			</div>
 					</div>
