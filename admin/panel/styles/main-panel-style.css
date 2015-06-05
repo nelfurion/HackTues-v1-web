@@ -67,6 +67,8 @@
 	width: 500px;
 	max-width: 500px;
 }
+/*NEWS END*/
+/*COMPETITORS BEGIN*/
 #content #competitors, #competitors th, #competitors td {
 	border: 1px solid black;
 	border-collapse: collapse;
