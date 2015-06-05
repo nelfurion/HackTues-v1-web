@@ -119,7 +119,7 @@
 
 			if ($level->getCount())
 			{
-				echo $permissions = json_decode($level->getFirstResult()->permissions, true);
+				$permissions = json_decode($level->getFirstResult()->permissions, true);
 
 				if ($permissions[$key])
 				{

@@ -54,14 +54,14 @@
 							case 'matches':
 								if ($value != $source[$rule_value])
 								{
-									$this->addError("Полетата '" . $this->toString($rule_value) . "' и '{$translatedItem}' трябва да съвпадат.");
+									$this->addError("Въведените пароли не съвпадат.");
 								}
 								break;
 							case 'unique':
 								$check = $this->_db->select($rule_value, array($item, '=', $value));
 								if ($check->getCount())
 								{
-									$this->addError("Стойността на полето '{$translatedItem}' вече съществува в базата данни.");	
+									$this->addError("Въведеното потребителско име вече съществува в базата данни.");	
 								}
 								break;
 						}

@@ -1,3 +1,15 @@
+<?php 
+
+	require_once 'functions/user/init.php';
+
+	if (Session::exists('home'))
+	{
+		echo Session::flash('home');
+	}
+
+	$user = new User();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +28,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack<span class="blue">TUES</span></h1>
+					<a href="home"><h1>Hack<span class="blue">TUES</span></h1></a>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -35,7 +47,16 @@
 							<li class="active"><a href="#">Награди<span class="sr-only">(current)</span></a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
-							<li><a href="about">За хакатона</a></li>
+                            <?php 
+                                if ($user->isLoggedIn())
+                                {
+                            ?>
+                                <li><a href="profile">Профил</a></li>
+                                <!-- <a href="/<?php echo escape($user->getData()->username); ?>"> -->
+                                <li><a href="logout.php">Излез</a></li>
+                            <?php
+                                }
+                            ?>  							
 						</ul>
 					</div>
 				</div>
@@ -43,7 +64,7 @@
 		</header>
 		<hr />
 		<div class="jumbotron">
-			<p>Добавят се в момента.</p>
+			<p>Coming soon.</p>
 		</div>
 		<hr />
 		

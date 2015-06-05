@@ -2,6 +2,7 @@
 
 	require_once 'functions/user/init.php';
 
+	$errors = array();
 	if (Input::exists())
 	{
 		if (Token::check(Input::get('token')))
@@ -62,7 +63,8 @@
 							'email' => Input::get('email'),
 							'class' => Input::get('class-number') . Input::get('class-letter'),					
 							'timestamp' => date('Y-m-d H:i:s'),
-							'level' => 1
+							'level' => 1,
+							'languages' => implode(' ', Input::get('languages'))
 						));
 
 					$user->login(Input::get('username'), Input::get('password'), true);
@@ -76,10 +78,7 @@
 			}
 			else
 			{
-				foreach ($validation->getErrors() as $error)
-				{
-					echo $error, '<br>';
-				}
+				$errors = $validation->getErrors();
 			}
 		}
 	}
@@ -103,6 +102,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/css/bootstrap-select.min.css">	
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
@@ -111,7 +111,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack<span class="blue">TUES</span></h1>
+					<a href="home"><h1>Hack<span class="blue">TUES</span></h1></a>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -130,8 +130,6 @@
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
-							<li><a href="about">За хакатона</a></li>
-							<li class="active"><a href="#">Регистрация <span class="sr-only">(current)</span></a></li>
 							<?php 
 								if ($user->isLoggedIn())
 								{
@@ -147,12 +145,20 @@
 				</div>
 			</nav>
 		</header>
+		<hr />
 		<form class="form-horizontal" action="register.php" onsubmit="return validateOnClient();" role="form" method="post">
-			<div class="panel panel-default">		
-				<div class="panel-heading">
-					<h3 class="panel-title">Регистрация</h3>
-				</div>
-				<div class="panel-body">
+			<div id="register-panel" class="panel panel-default">		
+				<div class="panel-body" id="form-panel">
+					<?php
+
+						foreach ($errors as $error)
+						{
+							echo '<div class="alert alert-danger" role="alert">
+  								  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+								  <span class="sr-only">Error:</span>' . $error . '</div>';
+						}
+					?>
+
 					<div class="form-group">
 						<label for="firstname" class="col-sm-4 control-label">Име</label>
 						<div class="col-sm-4">
@@ -182,6 +188,25 @@
 						</div>	
 					</div>
 					<div class="form-group">
+						<label for="languages" class="col-sm-4 control-label">Предпочитани технологии</label>
+						<div class="col-sm-4">
+							<select class="selectpicker" name="languages[]" data-width="100%" title="Изберете технологии" id="languages" multiple>
+								<option value="C">C</option>
+								<option value="C++">C++</option>
+								<option value="C#">C#</option>
+								<option value="Java">Java</option>
+								<option value="Objective-C">Objective-C</option>
+								<option value="Perl">Perl</option>
+								<option value="Python">Python</option>
+								<option value="Ruby">Ruby</option>								
+								<option value="PHP">PHP</option>
+								<option value="JavaScript">JavaScript</option>																											
+								<option value="HTML">HTML</option>
+								<option value="CSS">CSS</option>																																																							
+							</select>							
+						</div>
+					</div>						
+					<div class="form-group">
 						<label for="email" class="col-sm-4 control-label">Е-поща</label>
 						<div class="col-sm-4">
 							<input type="email" name="email" id="email" class="form-control" placeholder="Е-поща" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off" aria-describedby="email-help-block">
@@ -207,53 +232,20 @@
 		  				<div class="col-sm-4">
 		  					<input type="password" name="password-again" class="form-control" placeholder="Потвърди парола" id="password-again">
 		  				</div>
-		  			</div>
+		  			</div>	  			
 					<div class="form-group">
 						<div class="col-sm-offset-4 col-sm-4">
 							<div class="checkbox">
-								<label><input type="checkbox" id="agree">Прочетох и приемам <a href="rules">регламента</a> за участие.</label>
+								<label><input type="checkbox" id="agree">Прочетох и приемам <a href="rules" class="link-blue">регламента</a> за участие.</label>
 							</div>
 		    			</div>
-					</div>
-					<div class="form-group">
-						<h4>Какъв сте?</h4>
-						<ul>
-							<li><label><input type="checkbox" class="competitor-type" id= "idea-man"/>Човек с идеи</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "programmer"/>Програмист</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>Дизайнер</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "designer"/>QA</label></li>
-							<li><label><input type="checkbox" class="competitor-type" id= "project-manager"/>Project Manager</label></li>
-						</ul>
-					</div>
-					<div class="form-group">
-						<h4>Какви технологии предпочитате да използвате по време на състезанието?</h4>
-						<ul>
-							<li><label><input type="checkbox" class="knowledge" id= "html"/>HTML</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "xaml"/>XAML</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "xml"/>XML</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "css"/>CSS</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "php"/>PHP</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "perl"/>Perl</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "python"/>Python</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "javascript"/>Javascript</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "c++"/>C++</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "c#"/>C#</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "c"/>C</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "objective-c"/>Objective-C</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "java"/>Java</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "pascal"/>Pascal</label></li>
-							<li><label><input type="checkbox" class="knowledge" id= "else"/>
-								Друго
-								<input type="text" id="else-tech">
-							</label></li>
-						</ul>
 					</div>
 				</div>
 				<div class="panel-footer" style="overflow:hidden;text-align:right;">
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10" id="form-footer">
-							<button type="submit" class="btn btn-primary btn-sm" id="form-submit">Регистрирай се!</button>
-							<button onclick="location.href = 'www.yoursite.com';" class="btn btn-default btn-sm">Отказ</button>		
+							<button type="submit" class="btn btn-default btn-sm" id="form-submit">Регистрирай се!</button>
+							<button onclick="location.href = 'home';" class="btn btn-default btn-sm">Отказ</button>		
 							<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 						</div>
 					</div>
@@ -261,19 +253,10 @@
 			</div>
 		</form>
 		<hr />
-		<footer>
-			<div class="row">
-				<div class="col-sm-1">
-					<a href="http://elsys-bg.org"><img src="assets/images/elsys-logo.png" alt="TUES" /></a>	
-				</div>
-				<div class="col-sm-1">	
-					<a href="https://hackbulgaria.com/"><img src="assets/images/hbg-logo.png" alt="Hack Bulgaria" /></a>
-				</div>
-			</div>		
-		</footer>
 		
 	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		document.getElementById('form-submit').addEventListener('submit', function (event) {
@@ -320,8 +303,14 @@
 			};
 
 			var passValid = document.getElementById('password-again');
-			if (passValid.value !== pass.value) {
+			if ((passValid.value !== pass.value) || !passValid.value) {
 				passValid.parentNode.className += " has-error";
+				hasError = true;
+			};
+
+			var tech = document.getElementById('languages');
+			if (tech.selectedIndex === -1) {
+				tech.parentNode.className += " has-error";
 				hasError = true;
 			};
 

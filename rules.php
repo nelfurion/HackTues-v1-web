@@ -1,3 +1,15 @@
+<?php 
+
+    require_once 'functions/user/init.php';
+
+    if (Session::exists('home'))
+    {
+        echo Session::flash('home');
+    }
+
+    $user = new User();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +28,7 @@
 		<header>		
 			<div class="row">					
 				<div class="col-sm-12">
-					<h1>Hack<span class="blue">TUES</span></h1>
+					<a href="home"><h1>Hack<span class="blue">TUES</span></h1></a>
 				</div>
 			</div>
 			<nav class="navbar navbar-default">
@@ -35,7 +47,16 @@
 							<li><a href="prizes">Награди</a></li>
 							<li class="active"><a href="#">Регламент<span class="sr-only">(current)</span></a></li>
 							<li><a href="faq">FAQ</a></li>
-							<li><a href="about">За хакатона</a></li>
+                            <?php 
+                                if ($user->isLoggedIn())
+                                {
+                            ?>
+                                <li><a href="profile">Профил</a></li>
+                                <!-- <a href="/<?php echo escape($user->getData()->username); ?>"> -->
+                                <li><a href="logout.php">Излез</a></li>
+                            <?php
+                                }
+                            ?>  							
 						</ul>
 					</div>
 				</div>
@@ -43,24 +64,22 @@
 		</header>
 		<hr />
 		<div class="jumbotron">
-			<div id="rules-list" class="col-sm-12">
-				<ol>
-					<li>
-						За да участва, лицето трябва да се регистрира през формата на сайта, въвеждайки <strong>валидни</strong> данни за себе си. 
-						От валидността на данните зависи това дали реално ще бъдете допуснати до участие, тъй като следващо разпределение няма да има.
-						Регистрациите се приемат до деня преди началото на хакатона.
-					</li>
-					<li>
-						Участниците могат да участват по отбори - до 5 човека или по отделно.
-					</li>
-					<li>
-						През последния ден, всеки отбор/участник представя своето приложение пред жури, което го оценява. Според оценката се определя дали има награда и каква е тя.
-					</li>
-					<li>
-						Кодът се лицензира според <a href="http://opensource.org/licenses/MIT">MIT</a> лиценза. 
-					</li>
-				</ul>
-			</div>		
+			<ul id="rules-list">
+				<li>
+					За да участва, лицето трябва да се регистрира през формата на сайта, въвеждайки <strong>валидни</strong> данни за себе си. 
+					От валидността на данните зависи това дали реално ще бъдете допуснати до участие, тъй като следващо разпределение няма да има.
+					Регистрациите се приемат до деня преди началото на хакатона.
+				</li>
+				<li>
+					Участниците могат да участват по отбори - до 5 човека или по отделно.
+				</li>
+				<li>
+					През последния ден, всеки отбор/участник представя своето приложение пред жури, което го оценява. Според оценката се определя дали има награда и каква е тя.
+				</li>
+				<li>
+					Кодът се лицензира според <a href="http://opensource.org/licenses/MIT" class="link-blue">MIT</a> лиценза. 
+				</li>
+			</ul>		
 		</div>
 		<hr />
 		
