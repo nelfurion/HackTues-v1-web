@@ -23,7 +23,7 @@
 
 	function showFiveNews($pageNumber) {
 		//the $startIndex is taken - 1 in the call, for pagination reasons
-		$reqData = ["name", "content"];
+		$reqData = ["*"];
 		$news = getData("news", $reqData);
 
 		if (!count($news)) {
@@ -52,9 +52,9 @@
 		while (($written < $newsPerPage) && $curIndex >= 0) {
 			echo
 				'<article class="newsArticle clear">
-					<h3 class="news-title">' . $news[$curIndex]->name . '</h3>
 					<p class="news-content">' . $news[$curIndex]->content . '</p>
-				</article>';
+				</article>
+				<div class="div-news-footer" onclick="openNewsContent(this);">Повече информация</div>';
 			$written++;
 			$curIndex--;
 		}

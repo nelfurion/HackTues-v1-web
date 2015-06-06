@@ -1,5 +1,5 @@
 <!-- Don't fucking change -->
-
+<link rel="stylesheet" type="text/css" href="assets/css/news.css">
 <div id="row news-section">
 	<div class="col-sm-12">
 		<div id="news-container">

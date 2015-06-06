@@ -18,11 +18,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">		
 	<title>HackTUES</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='dependencies/fonts/open-sans.css' rel='stylesheet' type='text/css'>
+	<link href='dependencies/fonts/raleway.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="dependencies/bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="dependencies/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -73,7 +73,7 @@
 			<p><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София.
 			 Участващите придобиват фундаментални практически знания по програмиране и работа в екип, а за победителите има и награди.</p> 
 			<div class="row">
-				<div class="col-md-2 col-md-offset-5"><a href="register"><button type="button" class="hidden btn btn-default btn-sm">Регистрирай се!</button></a></div>
+				<div class="col-md-2 col-md-offset-5"><a href="register"><button id="btn-register" type="button" class="hidden btn btn-default btn-sm">Регистрирай се!</button></a></div>
 			</div>
   		</div>
   		<hr />
@@ -85,8 +85,9 @@
   		</section>
 	</div>
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="dependencies/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="functions/ajaxrequest.js"></script>
+	<script type="text/javascript" src="functions/helper.js"></script>
 	<script>
 		$(document).ready(function () {			
 		    $('button.hidden').fadeIn(2000).removeClass('hidden');
@@ -142,6 +143,19 @@
 					e.target.parentNode.removeChild(e.target);
 				};
 			});
+		}
+
+		function openNewsContent (caller) {
+			if (previousElementSibling(caller).style.overflow === "visible") {
+				previousElementSibling(caller).style.overflow = "hidden";
+				previousElementSibling(caller).style.maxHeight = "500px";
+				caller.innerHTML = "Повече информация";
+			} else {
+				caller.innerHTML = "Скрий";
+				previousElementSibling(caller).style.overflow = "visible";
+				previousElementSibling(caller).style.maxHeight = "none";
+			}
+			
 		}
 		/* Forms. Note: Not needed until the registration button is fixed.
 

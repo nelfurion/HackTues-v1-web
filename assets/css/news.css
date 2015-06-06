@@ -1,0 +1,18 @@
+.newsArticle {
+	max-width: 80%;
+	margin: 0 auto;
+	max-height: 200px;
+	overflow: hidden;
+}
+
+.newsArticle a {
+	color: blue;
+}
+
+.div-news-footer {
+	text-align: center;
+	color: darkgrey;
+	cursor: pointer;
+	height: 20px;
+	padding: 10px;
+}

@@ -99,13 +99,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">		
 	<title>HackTUES</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='dependencies/fonts/open-sans.css' rel='stylesheet' type='text/css'>
+    <link href='dependencies/fonts/raleway.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="dependencies/bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/css/bootstrap-select.min.css">	
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="dependencies/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -257,8 +257,8 @@
 		
 	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="dependencies/bootstrap-3.3.4-dist/js/bootstrap-select.min.js"></script>
+	<script src="dependencies/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		document.getElementById('form-submit').addEventListener('submit', function (event) {
 			event.preventDefault();
