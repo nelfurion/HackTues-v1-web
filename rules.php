@@ -44,6 +44,7 @@
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало</a></li>
+							<li><a href="teams">Отбори</a></li>
 							<li><a href="prizes">Награди</a></li>
 							<li class="active"><a href="#">Регламент<span class="sr-only">(current)</span></a></li>
 							<li><a href="faq">FAQ</a></li>

@@ -20,7 +20,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">		
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/teams.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
@@ -44,8 +46,8 @@
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало</a></li>
-							<li><a href="teams">Отбори</a></li>
-							<li class="active"><a href="#">Награди<span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="teams">Отбори<span class="sr-only">(current)</span></a></li>
+							<li><a href="#">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
                             <?php 
@@ -65,7 +67,24 @@
 		</header>
 		<hr />
 		<div class="jumbotron">
-			<p>Coming soon.</p>
+			<table id="teams">
+				<caption>HackTUES - Отбори</caption>
+				<tfoot>Отбори на HackTUES 1 - 2015</tfoot>
+				<tbody>
+					<tr><th>Отбор:</th><th>Проект:</th></tr>
+					<?php
+						require dirname(__FILE__) . '/functions/dbquery.php';
+						$fields = ['*'];
+						$teams = getData('teams', $fields);
+						for ($i=0; $i < count($teams); $i++) { 
+							echo '<tr>
+										<td><strong>' . $teams[$i]->name . '</strong></td>
+										<td>' . $teams[$i]->project_description . '</td>
+								 </tr>';
+						}
+					?>
+				</tbody>
+			</table>
 		</div>
 		<hr />
 		

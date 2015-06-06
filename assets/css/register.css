@@ -1,9 +1,9 @@
-#section-register {
+/*#section-register {
 	width: 80%;
 }
 #form-exit {
 	/*display: block;*/
-	float: right;
+/*	float: right;
 }
 #form-register {
 	clear: both;
@@ -13,3 +13,12 @@
 	width: 20%;
 	min-width: 70px;
 }
+*/
+#form-panel {
+	text-align: center;
+}
+
+
+/*.added ul {
+	text-align: left;
+}*/

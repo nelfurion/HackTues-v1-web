@@ -1,3 +1,19 @@
+<?php 
+/*
+	require_once dirname(__FILE__) . '/../../functions/user/init.php';
+
+	if (Session::exists('home'))
+	{
+		echo Session::flash('home');
+	}
+
+	$user = new User();
+
+	if (!$user->isLoggedIn() || !$user->hasPermission('admin')) {
+		Redirect::to(dirname(__FILE__) . '/../../home.php');
+	}
+*/
+?>
 <?php
 	if (isset($_GET['article-content'])) {
 		require_once 'scripts/dbquery.php';

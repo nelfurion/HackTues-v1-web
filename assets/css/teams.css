@@ -1,0 +1,5 @@
+html body .container .jumbotron #teams caption{
+	text-align: middle !important;
+	padding-left: 0;
+	padding-right: 0;
+}

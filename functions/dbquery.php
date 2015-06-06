@@ -1,6 +1,6 @@
 <?php
-	require dirname(__FILE__) . '/../classes/common/config.php';
-	require dirname(__FILE__) . '/../classes/common/database.php';
+	require_once dirname(__FILE__) . '/../classes/common/config.php';
+	require_once dirname(__FILE__) . '/../classes/common/database.php';
 	//require_once '/../classes/common/config.php';
 	//require_once '/../classes/common/database.php';
 	//print_r($_GET);

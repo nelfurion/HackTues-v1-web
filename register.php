@@ -128,6 +128,7 @@
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало</a></li>
+							<li><a href="teams">Отбори</a></li>
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
 							<li><a href="faq">FAQ</a></li>
@@ -269,56 +270,93 @@
 			if (firstname.value.length < 2 || firstname.value.length > 20) {
 				firstname.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = firstname.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				firstname.parentNode.className = className;
+			}
 
 			var lastname = document.getElementById('lastname');
 			if (lastname.value.length < 2 || lastname.value.length > 20) {
 				lastname.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = lastname.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				lastname.parentNode.className = className;
+			}
 
 			var grade = document.getElementById('class-number');
 			if (grade.value < 8 || grade.value > 12) {
 				grade.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = grade.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				grade.parentNode.className = className;
+			}
 
 			var email = document.getElementById('email');
 			if (email.value.indexOf('@') === -1) {
 				email.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = email.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				email.parentNode.className = className;
+			}
 
 			var username = document.getElementById('username');
 			if (username.value < 2 || username.value > 20) {
 				username.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = username.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				username.parentNode.className = className;
+			}
 
 			var pass = document.getElementById('password');
 			
 			if (pass.value.length < 6) {
 				pass.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = pass.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				pass.parentNode.className = className;
+			}
+
 
 			var passValid = document.getElementById('password-again');
 			if ((passValid.value !== pass.value) || !passValid.value) {
 				passValid.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = passValid.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				passValid.parentNode.className = className;
+			}
 
 			var tech = document.getElementById('languages');
 			if (tech.selectedIndex === -1) {
 				tech.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = tech.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				tech.parentNode.className = className;
+			}
 
 			var agree = document.getElementById('agree');
 			if (!agree.checked) {
 				agree.parentNode.parentNode.className += " has-error";
 				hasError = true;
-			};
+			} else {
+				var className = agree.parentNode.className;
+				className = className.replace(' has-error', ' has-success');
+				agree.parentNode.className = className;
+			}
 
 			if (hasError) {
 				/*var regBtn = document.getElementById('form-submit');
