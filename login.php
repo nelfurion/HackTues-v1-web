@@ -19,6 +19,9 @@
 
 				if ($login)
 				{
+					session_start();
+					$_SESSION['logged'] = true;
+					$_SESSION['username'] = $user->username;
 					Redirect::to('home');
 				}
 				else 
@@ -34,6 +37,33 @@
 				}
 			}
 		}
+	}
+	else if (isset($_GET['response']))
+	{
+		$response = json_decode($_GET['response']);
+		print_r($response);
+		echo $response->id;
+		$user = new User();
+		//$login = $user->login($response->)
+		$salt = Hash::salt(32);
+		$user->create(array(
+							'username' => $response->name,
+							'password' => Hash::make($response->id, $salt),
+							'salt' => $salt,
+							'firstname' => $response->first_name,
+							'lastname' => $response->last_name,
+							'email' => $response->email,
+							'class' => 'not given',
+							'timestamp' => date('Y-m-d H:i:s'),
+							'level' => 1,
+							'languages' => ''
+						));
+
+		$user->login($response->name, $response->id, true);
+		session_start();
+		$_SESSION['logged'] = true;
+		$_SESSION['username'] = $user->username;
+		Redirect::to('home.php');			
 	}
 ?>
 <section id="section-login">

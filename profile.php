@@ -2,13 +2,16 @@
 
 	require_once 'functions/user/init.php';
 
-	if (!$username = Input::get('user'))
+	/*if (!$username = Input::get('user'))
 	{
-		Redirect::to("index.php");
+		Redirect::to("home.php");
+	}*/
+	if (!$_SESSION['logged']) {
+		Redirect::to("home.php");
 	}
 	else 
 	{
-		$user = new User($username);
+		$user = new User($_SESSION['username']);
 		if (!$user->exists())
 		{
 			Redirect::to(404);
@@ -19,7 +22,7 @@
 		}
 		?>
 		<head>
-			<meta charset="UTF-8">			
+			<meta charset="UTF-8">
 			<title><?php echo escape($data->username) ?> - HackTUES</title>
 		</head>
 		<body>
