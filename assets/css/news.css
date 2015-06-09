@@ -1,5 +1,6 @@
 .newsArticle {
 	overflow: hidden;
+	max-height: 300px;
 }
 
 .newsArticle a {

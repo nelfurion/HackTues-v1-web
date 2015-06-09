@@ -1,16 +1,3 @@
-<?php 
-
-    require_once 'functions/user/init.php';
-
-    if (Session::exists('home'))
-    {
-        echo Session::flash('home');
-    }
-
-    $user = new User();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,20 +33,9 @@
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало</a></li>
-                            <li><a href="teams">Отбори</a></li>
 							<li><a href="prizes">Награди</a></li>
 							<li><a href="rules">Регламент</a></li>
-							<li class="active"><a href="#">FAQ<span class="sr-only">(current)</span></a></li>
-                            <?php 
-                                if ($user->isLoggedIn())
-                                {
-                            ?>
-                                <li><a href="profile">Профил</a></li>
-                                <!-- <a href="/<?php echo escape($user->getData()->username); ?>"> -->
-                                <li><a href="logout.php">Излез</a></li>
-                            <?php
-                                }
-                            ?>                            		        	        
+							<li class="active"><a href="#">FAQ<span class="sr-only">(current)</span></a></li>                   		        	        
 						</ul>
 					</div>
 				</div>
@@ -173,21 +149,6 @@
                         </div>
                     </div>
                 </div>
-        <!--
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">На какъв принцип става оценяването?</a>
-                </h4>
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Проектите се оценяват от жури. През последният ден, отборите/състезателите представвят своите проекти(не е нужно да са напълно завършени).
-                    Журито им задава въпроси относно тях и ги оценява. Победителите се разбират на края на хакатона.
-                </div>
-            </div>
-        </div>
-        -->
     </div>
 		</div>
 		<hr />

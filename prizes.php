@@ -1,15 +1,3 @@
-<?php 
-
-	require_once 'functions/user/init.php';
-
-	if (Session::exists('home'))
-	{
-		echo Session::flash('home');
-	}
-
-	$user = new User();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,20 +32,9 @@
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="home">Начало</a></li>
-							<li><a href="teams">Отбори</a></li>
 							<li class="active"><a href="#">Награди<span class="sr-only">(current)</span></a></li>
 							<li><a href="rules">Регламент</a></li>
-							<li><a href="faq">FAQ</a></li>
-                            <?php 
-                                if ($user->isLoggedIn())
-                                {
-                            ?>
-                                <li><a href="profile">Профил</a></li>
-                                <!-- <a href="/<?php echo escape($user->getData()->username); ?>"> -->
-                                <li><a href="logout.php">Излез</a></li>
-                            <?php
-                                }
-                            ?>  							
+							<li><a href="faq">FAQ</a></li>							
 						</ul>
 					</div>
 				</div>
