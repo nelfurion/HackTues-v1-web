@@ -1,6 +1,14 @@
 .newsArticle {
-	overflow: hidden;
 	text-align: justify;
+	overflow: hidden;
+}
+
+.newsArticle h2{
+	font-size: 1.5em;
+}
+
+.newsArticle span, h2 {
+	font-family: 'Open Sans';
 }
 
 .newsArticle a {

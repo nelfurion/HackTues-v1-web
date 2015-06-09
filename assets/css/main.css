@@ -1,3 +1,7 @@
+body {
+	background-color: #FFF;
+}
+
 a, a:hover, a:visited, a:link, a:active{
 	text-decoration: none;
 	color: black;
@@ -18,6 +22,7 @@ a, a:hover, a:visited, a:link, a:active{
 }
 
 .container {
+	box-shadow: 0 0 15px #ddd;
 	font-size: 15px;
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 20px;
@@ -213,3 +218,12 @@ section#team div.row div.col-md-4 div.col-sm-6:last-of-type {
 }
 .pagination.center { left: 50%; }
 .pagination.center ul { left: -50%; }
+
+footer {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+footer img {
+	margin-left: 50px;
+}

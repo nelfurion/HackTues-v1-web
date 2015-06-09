@@ -44,7 +44,7 @@
 		</header>
 		<hr />	
 		<div class="jumbotron">
-			<p><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София.
+			<p style="text-align: center;"><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София.
 			 Участващите придобиват фундаментални практически знания по програмиране и работа в екип, а за победителите има и награди.</p> 
  			<div class="row">
 				<div class="col-md-2 col-md-offset-5"><a href="https://docs.google.com/forms/d/184RMv9uRyOwlDeoyj92iDPmQVqDPhNJCQhTNmfUF4Bc/viewform"><button id="btn-register" type="button" class="hidden btn btn-primary btn-sm">Регистрирай се!</button></a></div>
@@ -55,6 +55,14 @@
   		<section id="news-section">
   			<!-- Do not delete! -->
   		</section>
+  		<hr />
+  		<footer>
+  			<img src="assets/images/elsys-logo.png" alt="TUES" />  			
+  			<img src="assets/images/hbg-logo.png" alt="HackBulgaria" />
+  			<img src="assets/images/musala-logo.png" alt="MusalaSoft" />
+  			<img src="assets/images/chaos-logo.png" alt="ChaosGroup" />
+  			<img src="assets/images/softuni-logo.png" alt="Software University" />  			
+		</footer>
 	</div>
 
 	<script src="dependencies/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
