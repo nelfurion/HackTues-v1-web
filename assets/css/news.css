@@ -1,13 +1,15 @@
 .newsArticle {
 	overflow: hidden;
-	max-height: 300px;
-	width: 90%;
-	margin: 0 auto;
 	text-align: justify;
+	font-family: 'Open Sans' !important;
 }
 
 .newsArticle a {
-	color: blue;
+	color: #5AB3E8 !important;
+}
+
+.newsArticle a:hover {
+	text-decoration: underline;
 }
 
 .div-news-footer {

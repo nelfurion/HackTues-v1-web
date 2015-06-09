@@ -8,7 +8,7 @@
 				require_once dirname(__FILE__) . '/../controllers/news-controller.php';
 			?>
 		</div>
-		<ul class="pagination" id="news-nav">
+		<ul class="pagination center" id="news-nav">
 	  		<?php
 				//require_once '/../controllers/news-controller.php';
 	  			require_once dirname(__FILE__) . '/../controllers/news-controller.php';

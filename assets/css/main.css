@@ -205,3 +205,11 @@ section#team div.row div.col-md-4 div.col-sm-6:last-of-type {
 .panel-footer {
 	background-color: transparent;
 }
+
+.pagination.center,
+.pagination.center ul {
+    float: left;
+    position: relative;
+}
+.pagination.center { left: 50%; }
+.pagination.center ul { left: -50%; }

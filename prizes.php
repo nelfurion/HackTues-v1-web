@@ -42,9 +42,10 @@
 		</header>
 		<hr />
 		<div class="jumbotron">
-			<ul>
-				<li>Една от наградите е Raspberry pi 2 B. <br />Можете да прочетете повече тук: <a class="link-blue" href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Цък</a></li>
-			</ul>
+			<img style="margin: 0 auto;" class="img-responsive" src="http://techedemic.com/wp-content/uploads/2014/08/raspberry-pi-xl.gif" alt="Raspberry Pi"/>
+			<p>Платката <strong>Raspberry Pi</strong> е разработена от британската фирма <em>Raspberry Pi Foundation</em>, за да направи по-достъпно ученето на компютърни науки в училищата.
+			Може да се използва за повечето неща, които правите на настолния си компютър. Истинската сила на платката обаче е в компактността - цялата мощ на Model B, състояща се в четириядрен процесор и 1GB RAM, е скрита в платка с размер на пакетче носни кърпички. </p>
+			<p>Повече информация може да намерите на <a class="link-blue" href="https://www.raspberrypi.org/">официалния сайт</a>.</p>
 		</div>
 		<hr />
 		

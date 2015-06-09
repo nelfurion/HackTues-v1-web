@@ -46,6 +46,10 @@
 		<div class="jumbotron">
 			<p><strong>HackTUES</strong> е тридневно състезание по програмиране - хакатон, провеждащ се в ТУЕС към ТУ-София.
 			 Участващите придобиват фундаментални практически знания по програмиране и работа в екип, а за победителите има и награди.</p> 
+ 			<div class="row">
+				<div class="col-md-2 col-md-offset-5"><a href="https://docs.google.com/forms/d/184RMv9uRyOwlDeoyj92iDPmQVqDPhNJCQhTNmfUF4Bc/viewform"><button id="btn-register" type="button" class="hidden btn btn-primary btn-sm">Регистрирай се!</button></a></div>
+			</div> 		
+
   		</div>
   		<hr />		
   		<section id="news-section">

@@ -1,4 +1,4 @@
-DirectoryIndex home.php
+DirectoryIndex soon.php
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME}.php -f  
 RewriteRule ^([^\.]+)$ $1.php [NC]

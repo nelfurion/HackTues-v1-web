@@ -53,8 +53,8 @@
 			echo
 				'<article class="newsArticle clear">
 					<p class="news-content">' . $news[$curIndex]->content . '</p>
-				</article>
-				<div class="div-news-footer" onclick="openNewsContent(this);">Повече информация</div>';
+				</article>';
+			// <div class="div-news-footer" onclick="openNewsContent(this);">Повече информация</div>
 			$written++;
 			$curIndex--;
 		}
