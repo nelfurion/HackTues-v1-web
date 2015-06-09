@@ -65,7 +65,9 @@
 		</header>
 		<hr />
 		<div class="jumbotron">
-			<p>Coming soon.</p>
+			<ul>
+				<li>Една от наградите е Raspberry pi 2 B. <br />Можете да прочетете повече тук: <a class="link-blue" href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Цък</a></li>
+			</ul>
 		</div>
 		<hr />
 		

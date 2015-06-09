@@ -14,7 +14,7 @@
 	}
 	else
 	{
-		echo "NE E SETNATA";
+		echo "NE E SETNATA 'func'";
 	}
 	
 
@@ -32,7 +32,6 @@
 			echo
 				'<article class="newsArticle clear">
 					' . $news[$i]->content . '
-					<p class="article-id">ID= ' . $i . '</p>
 				</article>
 				<button class="edit-news-btn" onclick="editNews(this, ' . $news[$i]->id . ');"> Edit </button>
 				<button class="remove-news-btn" onclick="removeNews(this, '.$news[$i]->id.');"> Remove </button>';

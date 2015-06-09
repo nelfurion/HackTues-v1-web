@@ -4,18 +4,10 @@
 
 	if (Session::exists('home'))
 	{
-		//When this fires, I will cum!
-		exit("KUUUUUUUUUUUUUUUREEEEEEEEC");
-		error_log("SESSION EXIST");
-		echo "SESSION EXISTS";
 		echo Session::flash('home');
-		
 	}
 
 	$user = new User();
-
-	/* If this shits another error kill it with fire!*/
-	//require_once 'fb-auth.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +29,6 @@
 <script>
   // This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
-		console.log('statusChangeCallback');
-		console.log(response);
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
 		// Full docs on the response object can be found in the documentation
@@ -106,7 +96,6 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       AJAXRequest('login.php', {response: JSON.stringify(response), done: function () {
       	console.log(xmlhttp.responseText);
@@ -147,7 +136,7 @@
 								{
 							?>
 								<li><a href="profile">Профил</a></li>
-								<!-- <a href="/<?php echo escape($user->getData()->username); ?>"> -->
+								<!-- <a href="/<?php /* echo escape($user->getData()->username); */?>"> -->
 								<li><a href="logout.php" onclick="FB.logout(); ">Излез</a></li>
 							<?php
 								}
@@ -173,13 +162,7 @@
 			 Участващите придобиват фундаментални практически знания по програмиране и работа в екип, а за победителите има и награди.</p> 
 			<div class="row">
 				<div class="col-md-2 col-md-offset-5"><a href="register"><button id="btn-register" type="button" class="hidden btn btn-default btn-sm">Регистрирай се!</button></a></div>
-				<!--
-				  Below we include the Login Button social plugin. This button uses
-				  the JavaScript SDK to present a graphical Login button that triggers
-				  the FB.login() function when clicked.
-				-->
-				
-				<div id="status"></div>
+				<div id="status"></div><!-- fb thing, to be deleted later -->
 			</div>
   		</div>
   		<hr />
@@ -194,26 +177,7 @@
 	<script src="dependencies/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	
 	<script type="text/javascript" src="functions/helper.js"></script>
-	<!-- FROM FACEBOOOK -->
-	<!--
-	<div id="fb-root"></div>
 	<script>
-		(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v2.3";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	-->
-	<!-- -->
-	<script>
-		//IS THIS USED?
-		/*AJAXRequest('fb-auth.php', {done: function () {
-				console.log(xmlhttp.responseText);
-			}});
-		*/
 		$(document).ready(function () {			
 		    $('button.hidden').fadeIn(2000).removeClass('hidden');
 		    AJAXRequest('partials/news-partial.php', {done: function () {
@@ -244,33 +208,6 @@
 					}});
 				};
 			});
-			/* THE FOLLOWING LINES OF CODE ARE SACRED AND MUST NOT BE TOUCHED!
-			DO NOT TOUCH! UNICORNS DON'T EXIST YET!
-			BAD THINGS WILL HAPPEN TO YOUR ANUS IF YOU TOUCH THIS.*/
-			/*document.getElementById('news-section').addEventListener('click', function (e) {
-				if (e.target.className.indexOf('news-title') > -1) {
-					if (e.target.parentNode.style.maxHeight !== 'none') {
-						e.target.parentNode.style.maxHeight = 'none';
-						e.target.nextSibling.nextSibling.innerHTML += '<input type="button" class="article-exit" value="Назад">';
-						return false;
-					} else {
-						e.target.parentNode.style.maxHeight = '400px';
-
-						for (var i = 0; i < e.target.nextSibling.nextSibling.childNodes.length; i++) {
-							var node = e.target.nextSibling.nextSibling.childNodes[i];
-
-							if (node.className && node.className.indexOf('article-exit') > -1) {
-								e.target.nextSibling.nextSibling.removeChild(node);
-							};
-						};
-					};
-				}
-				else if (e.target.className.indexOf('article-exit') > -1) {
-					e.target.parentNode.parentNode.style.maxHeight = '400px';
-					e.target.parentNode.removeChild(e.target);
-				};
-			});*/
-			/*SACRED CODE ENDS HERE ^^*/
 		}
 
 		function openNewsContent (caller) {
@@ -285,55 +222,6 @@
 			}
 			
 		}
-		/* Forms. Note: Not needed until the registration button is fixed.
-
-		document.getElementById('form-container').addEventListener('click', function (e) {
-			if (e.target.id === 'registerBtn') {
-				e.target.style.display = 'none';
-				if (!document.getElementById('form-register')) {
-					AJAXRequest('register.php', {
-						done: function () {
-							document.getElementById('carousel').style.display = 'none';
-							document.getElementById('form-container').innerHTML += xmlhttp.responseText;
-						}
-					});
-				} else {
-					document.getElementById('carousel').style.display = 'none';
-					document.getElementById('form-register').style.display = 'block';
-					document.getElementsByClassName('form-switch')[0].style.display = 'block';
-				}
-				
-			} else if (e.target.id === 'form-exit') {
-				e.preventDefault();
-				e.stopImmediatePropagation();
-
-				document.getElementById('registerBtn').style.display = 'inline-block';
-				document.getElementById('form-register').style.display = 'none';
-				document.getElementsByClassName('form-switch')[0].style.display = 'none';
-				document.getElementById('carousel').style.display = 'block';
-			} else if (e.target.className.indexOf('form-switch') > -1) {
-				e.stopImmediatePropagation();
-				e.preventDefault();
-
-				if (document.getElementById('form-register').style.display !== 'none') {
-					if (!document.getElementById('section-login')) {
-						document.getElementById('form-register').style.display = 'none';
-						AJAXRequest('login.php', {done: function () {
-							var reg = document.getElementById('form-register');
-							var formContainer = document.getElementById('form-container');
-							reg.style.display = 'none';
-							formContainer.innerHTML += xmlhttp.responseText;
-						}});
-					} else {
-						document.getElementById('form-register').style.display = 'none';
-						document.getElementById('section-login').style.display = 'block';
-					}
-				} else {
-					document.getElementById('section-login').style.display = 'none';
-					document.getElementById('form-register').style.display = 'block';
-				}
-			}
-		}); */
 	</script>
 		
 </body>
