@@ -29,6 +29,10 @@
 	<meta charset="utf-8">
 	<title>HackTues - Админ панел</title>
 	<link rel="stylesheet" type="text/css" href="styles/main-panel-style.css">
+	<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+	<script>
+
+	</script>
 </head>
 <body>
 	<nav>
@@ -80,10 +84,11 @@
 
 	</section>
 	<div class="clear"></div>
+	<script type="text/javascript" src="../../dependencies/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="../../functions/ajaxrequest.js"></script>
 	<!--<script type="text/javascript" src="scripts/nicedit.js"></script>-->
-	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="scripts/helper.js"></script>
+	<!--<script src="scripts/bootstrap-wysiwyg.js"></script>-->
+	<!--<script type="text/javascript" src="scripts/helper.js"></script>-->
 	<script type="text/javascript" src="controllers/js/news-controller.js"></script>
 	<script type="text/javascript">
 		var viewsDir = "views/";

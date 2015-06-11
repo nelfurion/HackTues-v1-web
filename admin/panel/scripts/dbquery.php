@@ -8,9 +8,11 @@
 	//print_r($_GET);
 
 	if (isset($_GET['func'])) {
+		//echo $_GET['func'];
 		switch ($_GET['func']) {
 			case 'saveNews':
-					saveNews();
+					saveNews($_GET['content']);
+					echo $_GET['content'];
 				break;
 			case 'updateNews':
 					updateNews($_GET['id'], $_GET['content']);
@@ -60,6 +62,7 @@
 	{
 		$db = Database::getInstance();
 		$db->update("news", $id, ['content' => $content]);
+		echo $content;
 	}
 
 	function saveNews($content)

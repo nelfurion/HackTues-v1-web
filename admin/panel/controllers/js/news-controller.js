@@ -15,24 +15,48 @@ function addArticle () {
 
 	if (!newsAreaExists) {
 
-		var ckform = document.createElement('form');
+		var editor = document.createElement('textarea');
+		editor.id = 'editor';
 
-		var textarea = document.createElement('textarea');
-		textarea.cols = "80";
-		textarea.rows = "5";
-		textarea.id = "article-content";
-		textarea.name = "article-content";
+		var form = document.createElement('form');
+		form.action="#";
+		form.appendChild(editor);
 
 		var areaHolder = document.createElement('div');
 		areaHolder.id = "areaHolder";
-		
-		areaHolder.appendChild(ckform);
-		ckform.appendChild(textarea);
 
+		//var boldButton = document.createElement();
+		
+		areaHolder.appendChild(form);
 
 		section.insertBefore(areaHolder, firstArticle);
 
-		CKEDITOR.replace('article-content');
+		tinymce.init({
+		    selector: "textarea",
+		    theme: "modern",
+		    plugins: [
+		        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+		        "searchreplace wordcount visualblocks visualchars code fullscreen",
+		        "insertdatetime media nonbreaking save table contextmenu directionality",
+		        "emoticons template paste textcolor colorpicker textpattern save"
+		    ],
+		    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+		    toolbar2: "print preview media | forecolor backcolor emoticons save",
+		    image_advtab: true,
+		    templates: [
+		        {title: 'Test template 1', content: 'Test 1'},
+		        {title: 'Test template 2', content: 'Test 2'}
+		    ],
+		    save_enablewhendirty: true,
+    		save_onsavecallback: function() {
+    			var content = tinyMCE.activeEditor.getContent();
+    			console.log(content);
+    			AJAXRequest('scripts/dbquery.php', {func: 'saveNews', content:content, done: function () {
+    				document.getElementById('content').innerHTML = xmlhttp.responseText;
+    			}});
+    		}
+		});
+
 	}
 }
 
@@ -51,28 +75,54 @@ function removeNews(caller, id) {
 }
 
 function editNews(caller, id) {
-	if (caller.parentNode.id.indexOf(' edited') === -1 && caller.innerHTML !== "SAVE") {
+	var section = document.getElementById("content");
+	var firstArticle = document.querySelector(".newsArticle");
+	var newsAreaExists = document.getElementById('areaHolder');
 
-		var textarea = document.createElement('textarea');
-		textarea.id = 'edited';
-		textarea.cols = '80';
-		textarea.rows = '5';
-		textarea.name = 'edited';
+	if (!newsAreaExists) {
 
-		var saveEditBtn = document.createElement('button');
-		saveEditBtn.onclick = 'saveEdit();';
-		saveEditBtn.className = 'save-edit-btn';
+		var editor = document.createElement('textarea');
+		editor.id = 'editor';
 
+		var form = document.createElement('form');
+		form.action="#";
+		form.appendChild(editor);
+
+		var areaHolder = document.createElement('div');
+		areaHolder.id = "areaHolder";
+
+		//var boldButton = document.createElement();
 		
-		caller.parentNode.insertBefore(textarea, caller.nextSibling.nextSibling.nextSibling);
+		areaHolder.appendChild(form);
 
-		CKEDITOR.replace('edited');
-		textarea.value = caller.previousSibling.previousSibling.innerHTML;
+		section.insertBefore(areaHolder, firstArticle);
 
-		caller.innerHTML = "SAVE";
-	} else if (caller.innerHTML === "SAVE") {
-		AJAXRequest('scripts/dbquery.php', {func: 'updateNews', id: id, content: CKEDITOR.instances.edited.getData(), done: function () {
-			document.getElementById('content').innerHTML = xmlhttp.responseText;
-		}});
+		tinymce.init({
+		    selector: "textarea",
+		    theme: "modern",
+		    plugins: [
+		        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+		        "searchreplace wordcount visualblocks visualchars code fullscreen",
+		        "insertdatetime media nonbreaking save table contextmenu directionality",
+		        "emoticons template paste textcolor colorpicker textpattern save"
+		    ],
+		    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+		    toolbar2: "print preview media | forecolor backcolor emoticons save",
+		    image_advtab: true,
+		    templates: [
+		        {title: 'Test template 1', content: 'Test 1'},
+		        {title: 'Test template 2', content: 'Test 2'}
+		    ],
+		    save_enablewhendirty: true,
+    		save_onsavecallback: function() {
+    			var content = tinyMCE.activeEditor.getContent();
+    			console.log(content);
+    			AJAXRequest('scripts/dbquery.php', {func: 'updateNews', id: id, content:content, done: function () {
+    				document.getElementById('content').innerHTML = xmlhttp.responseText;
+    			}});
+    		}
+		});
+		var jcaller = $(caller);
+		tinyMCE.activeEditor.setContent(jcaller.prev().html());
 	}
 }
